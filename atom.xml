@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>Hexo</title>
+  <title>言锡的小栈</title>
   
-  
+  <subtitle>谦虚谨慎，勤思求真</subtitle>
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2025-12-16T04:04:46.436Z</updated>
+  <updated>2025-12-16T04:05:01.158Z</updated>
   <id>http://example.com/</id>
   
   <author>
-    <name>John Doe</name>
+    <name>言锡</name>
     
   </author>
   
@@ -21,7 +21,7 @@
     <link href="http://example.com/2025/12/16/%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D/"/>
     <id>http://example.com/2025/12/16/%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D/</id>
     <published>2025-12-16T04:04:26.000Z</published>
-    <updated>2025-12-16T04:04:46.436Z</updated>
+    <updated>2025-12-16T04:05:01.158Z</updated>
     
     <content type="html"><![CDATA[<p>11111</p>]]></content>
     
