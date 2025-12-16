@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Hexo</title>
+  
+  
+  <link href="http://example.com/atom.xml" rel="self"/>
+  
+  <link href="http://example.com/"/>
+  <updated>2025-12-16T03:55:50.070Z</updated>
+  <id>http://example.com/</id>
+  
+  <author>
+    <name>John Doe</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>3C同学的自我介绍</title>
+    <link href="http://example.com/2025/12/15/Introduce-Myself/"/>
+    <id>http://example.com/2025/12/15/Introduce-Myself/</id>
+    <published>2025-12-15T08:07:30.000Z</published>
+    <updated>2025-12-16T03:55:50.070Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="✨个人简介"><a href="#✨个人简介" class="headerlink" title="✨个人简介"></a>✨个人简介</h1><p>可以叫我CCC或者3C同学 。<br>我的CSDN主页是：<a href="https://blog.csdn.net/CCCP_lus">https://blog.csdn.net/CCCP_lus</a> 。<br>我的Github主页是：<a href="https://github.com/CCCP-lus/CCCP-lus%E3%80%82">https://github.com/CCCP-lus/CCCP-lus。</a>  </p><h2 id="🌱教育经历"><a href="#🌱教育经历" class="headerlink" title="🌱教育经历"></a>🌱教育经历</h2><p>2021-2025 北京林业大学 计算机科学与技术<br>2025 至今 北京航空航天大学 仪器科学与技术</p><h2 id="💡科研经历"><a href="#💡科研经历" class="headerlink" title="💡科研经历"></a>💡科研经历</h2><p>2025至今 某项目<br>2024-2025 航空发动机装配检测系统 作者<br>2023-2024 基于多层次表征学习时序分类模型的脉诊系统 国家级大创项目 主持人  </p><h2 id="😄获奖经历"><a href="#😄获奖经历" class="headerlink" title="😄获奖经历"></a>😄获奖经历</h2><p>2025年 北京市优秀毕业生<br>2022年 国家奖学金 </p><h2 id="🔧项目经历"><a href="#🔧项目经历" class="headerlink" title="🔧项目经历"></a>🔧项目经历</h2><p>2024年 软件故障定位系统<br>2023年 口罩识别系统    </p><h2 id="🔭实习经历"><a href="#🔭实习经历" class="headerlink" title="🔭实习经历"></a>🔭实习经历</h2><p>2022年 四外维科技有限公司 前端开发岗  </p><h2 id="📸其他经历"><a href="#📸其他经历" class="headerlink" title="📸其他经历"></a>📸其他经历</h2><p>创建北京林业大学多元专业互助群——林小圈  </p><h1 id="✨林小圈文件"><a href="#✨林小圈文件" class="headerlink" title="✨林小圈文件"></a>✨林小圈文件</h1><h2 id="北林生存手册"><a href="#北林生存手册" class="headerlink" title="北林生存手册"></a>北林生存手册</h2><p><a href="https://github.com/CCCP-lus/BFU_SurvivalGuide">https://github.com/CCCP-lus/BFU_SurvivalGuide</a></p><h2 id="计科资料仓库"><a href="#计科资料仓库" class="headerlink" title="计科资料仓库"></a>计科资料仓库</h2><p><a href="https://github.com/CCCP-lus/BFU-CS">https://github.com/CCCP-lus/BFU-CS</a></p><span id="more"></span>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;✨个人简介&quot;&gt;&lt;a href=&quot;#✨个人简介&quot; class=&quot;headerlink&quot; title=&quot;✨个人简介&quot;&gt;&lt;/a&gt;✨个人简介&lt;/h1&gt;&lt;p&gt;可以叫我CCC或者3C同学 。&lt;br&gt;我的CSDN主页是：&lt;a href=&quot;https://blog.csdn.net/CCCP_lus&quot;&gt;https://blog.csdn.net/CCCP_lus&lt;/a&gt; 。&lt;br&gt;我的Github主页是：&lt;a href=&quot;https://github.com/CCCP-lus/CCCP-lus%E3%80%82&quot;&gt;https://github.com/CCCP-lus/CCCP-lus。&lt;/a&gt;  &lt;/p&gt;
+&lt;h2 id=&quot;🌱教育经历&quot;&gt;&lt;a href=&quot;#🌱教育经历&quot; class=&quot;headerlink&quot; title=&quot;🌱教育经历&quot;&gt;&lt;/a&gt;🌱教育经历&lt;/h2&gt;&lt;p&gt;2021-2025 北京林业大学 计算机科学与技术&lt;br&gt;2025 至今 北京航空航天大学 仪器科学与技术&lt;/p&gt;
+&lt;h2 id=&quot;💡科研经历&quot;&gt;&lt;a href=&quot;#💡科研经历&quot; class=&quot;headerlink&quot; title=&quot;💡科研经历&quot;&gt;&lt;/a&gt;💡科研经历&lt;/h2&gt;&lt;p&gt;2025至今 某项目&lt;br&gt;2024-2025 航空发动机装配检测系统 作者&lt;br&gt;2023-2024 基于多层次表征学习时序分类模型的脉诊系统 国家级大创项目 主持人  &lt;/p&gt;
+&lt;h2 id=&quot;😄获奖经历&quot;&gt;&lt;a href=&quot;#😄获奖经历&quot; class=&quot;headerlink&quot; title=&quot;😄获奖经历&quot;&gt;&lt;/a&gt;😄获奖经历&lt;/h2&gt;&lt;p&gt;2025年 北京市优秀毕业生&lt;br&gt;2022年 国家奖学金 &lt;/p&gt;
+&lt;h2 id=&quot;🔧项目经历&quot;&gt;&lt;a href=&quot;#🔧项目经历&quot; class=&quot;headerlink&quot; title=&quot;🔧项目经历&quot;&gt;&lt;/a&gt;🔧项目经历&lt;/h2&gt;&lt;p&gt;2024年 软件故障定位系统&lt;br&gt;2023年 口罩识别系统    &lt;/p&gt;
+&lt;h2 id=&quot;🔭实习经历&quot;&gt;&lt;a href=&quot;#🔭实习经历&quot; class=&quot;headerlink&quot; title=&quot;🔭实习经历&quot;&gt;&lt;/a&gt;🔭实习经历&lt;/h2&gt;&lt;p&gt;2022年 四外维科技有限公司 前端开发岗  &lt;/p&gt;
+&lt;h2 id=&quot;📸其他经历&quot;&gt;&lt;a href=&quot;#📸其他经历&quot; class=&quot;headerlink&quot; title=&quot;📸其他经历&quot;&gt;&lt;/a&gt;📸其他经历&lt;/h2&gt;&lt;p&gt;创建北京林业大学多元专业互助群——林小圈  &lt;/p&gt;
+&lt;h1 id=&quot;✨林小圈文件&quot;&gt;&lt;a href=&quot;#✨林小圈文件&quot; class=&quot;headerlink&quot; title=&quot;✨林小圈文件&quot;&gt;&lt;/a&gt;✨林小圈文件&lt;/h1&gt;&lt;h2 id=&quot;北林生存手册&quot;&gt;&lt;a href=&quot;#北林生存手册&quot; class=&quot;headerlink&quot; title=&quot;北林生存手册&quot;&gt;&lt;/a&gt;北林生存手册&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/CCCP-lus/BFU_SurvivalGuide&quot;&gt;https://github.com/CCCP-lus/BFU_SurvivalGuide&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;计科资料仓库&quot;&gt;&lt;a href=&quot;#计科资料仓库&quot; class=&quot;headerlink&quot; title=&quot;计科资料仓库&quot;&gt;&lt;/a&gt;计科资料仓库&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://github.com/CCCP-lus/BFU-CS&quot;&gt;https://github.com/CCCP-lus/BFU-CS&lt;/a&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="自我介绍" scheme="http://example.com/tags/%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D/"/>
+    
+  </entry>
+  
+</feed>
