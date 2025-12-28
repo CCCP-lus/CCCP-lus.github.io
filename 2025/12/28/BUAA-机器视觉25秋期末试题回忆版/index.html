@@ -19,10 +19,12 @@
     <link rel="dns-prefetch" href="https://cccp-lus.github.io">
     <!--SEO-->
 
-<meta name="keywords" content="" />
+<meta name="keywords" content="备考资料" />
 
 
-<meta name="description" content="随缘分享文学、摄影、互联网" />
+<meta name="description" content="（按照知识点在PPT中出现的顺序进行整理）
+圆经过射影变换变成椭圆，中心的坐标有没有改变？射影变换后圆的中心不会映射成椭圆中心，但是仿射变换可以（能保持平行性）
+仿射变换有交比不变性，射影变换没..." />
 
 
 <meta name="robots" content="all" />
@@ -33,7 +35,7 @@
 
 <title>
     
-    Tag: 自我介绍 |
+    BUAA-机器视觉25秋期末试题回忆版 |
     
     言锡的小栈
 </title>
@@ -138,180 +140,147 @@
     <section class="content-wrap">
         <div class="container">
             <div class="row">
-                <main class="col-md-8 main-content ">
-                    <ol class="breadcrumb">
-    
-    <li>
-        自我介绍
-    </li>
-    
-    
-</ol>
-
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
 <article class="post">
+    <div class="post-head">
+        <h1 id="BUAA-机器视觉25秋期末试题回忆版">
+            
+            BUAA-机器视觉25秋期末试题回忆版
+            
+        </h1>
+        <div class="post-meta">
     
-    <div class="post-content">
-        <div class="post-head home-post-head">
-            <h1 class="post-title">
-                <a href="/2025/12/16/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/">
-                    第一篇文章</a>
-            </h1>
-            <div class="post-meta"> &bull;
-                <time class="post-date" datetime="" title="">
-                    2025年12月16日
-                </time>
-            </div>
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a class="category-link" href="/categories/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/">学习资料</a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            <a class="tag-none-link" href="/tags/%E5%A4%87%E8%80%83%E8%B5%84%E6%96%99/" rel="tag">备考资料</a>
+            
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2025/12/28</span>
+    </span>
+    
+    <span class="fa-wrap">
+        <i class="fa fa-eye"></i>
+        <span id="busuanzi_value_page_pv"></span>
+    </span>
+    
+    
+</div>
+        
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <p><strong>（按照知识点在PPT中出现的顺序进行整理）</strong></p>
+<p>圆经过射影变换变成椭圆，中心的坐标有没有改变？<br>射影变换后圆的中心不会映射成椭圆中心，但是仿射变换可以（能保持平行性）</p>
+<p>仿射变换有交比不变性，射影变换没有，对吗？<br>仿射变换和射影变换都具有交比不变性，仿射变换是射影变换的特例</p>
+<p>二维射影变换需要几个不共线的点求解？<br>8个自由度，故需要四个点（二位仿射变换是三个点）</p>
+<p>计算：张正友标定法，已知四个共线点的像素坐标，靶标实际长度，求解图像坐标系到标定靶坐标系（交比不变性）<br>先建立像素坐标与世界坐标的投影关系，靶标为平面，设世界坐标系原点在第一个共线点，且四点沿世界坐标系的 X 轴排列。计算出交比，根据交比不变性求解实际的距离。  </p>
+<p>亚像素中心提取，三种海森矩阵特征值的含义  </p>
+<ul>
+<li>线条：中心位置两个特征值中最小值（或者绝对值极大）对应的特征向量是光条梯度方向。海森矩阵两个特征值分别代表灰度函数二阶导的极大值和极小值；两个特征向量正交，表示两个极值的方向。</li>
+<li>光点：中心位置两个特征值为极小值，方向为负且绝对值最大</li>
+<li>角点：中心位置两个特征值为极值，方向一正一负且绝对值最大</li>
+</ul>
+<p>张正友标定，2D情况下需要拍至少三张互不平行的照片才可完成标定</p>
+<p>3D靶标方法，每个靶标至少6个非共面点（5内参+6外参）；2D靶标方法至少4个非贡献点（8个约束）；2D靶标方法至少需要3个靶标位置，不可以相互平行；2D靶不知道边长，可以求解内参、外参旋转向量，但是不能求解外参平移向量</p>
+<p>空间中的点改变，对应的极点位置是否改变，极线是否改变？<br>极几何框架下，极点的位置仅由相机内外参决定，与空间点无关；而极线的位置会随空间点的改变而改变。</p>
+<p>多线光栅结构光三维视觉测量时，不同激光的平面方程可以互换进行三维结构光测量吗？<br>每条激光线对应唯一平面方程，互换会导致严重重建误差；激光线平行且间距极小 + 低精度需求时可以互换</p>
+<p>双重交比不变性结构光视觉标定可以在平面使用吗？<br>双重交比不变性结构光视觉标定可以在平面上使用，而且平面靶标是该方法最常用的标定载体。</p>
+<p>多传感器三维视觉的标定对比：点采样数和坐标系变换次数    </p>
+<ul>
+<li>同名坐标统一法：3个点，变换1次</li>
+<li>中介坐标统一法：3个点，变换2次</li>
+<li>世界坐标统一法：3个点，变换1次</li>
+</ul>
+<p>机器人手眼标定中，Eye In Hand的相机、标定板、机器人末端、机器人固定点之间的位姿变换关系；Eye To Hand下的关系又怎样？    </p>
+<ul>
+<li>Eye In Hand：固定点和标定板静止，相机随末端运动</li>
+<li>Eye To Hand：相机和固定点静止，标定板随末端运动</li>
+</ul>
+<p>CCD和CMOS对比<br>CCD灵敏度高、信噪比高；CCD每个像素的电信号都会传到下一个像素中，由末端输出，经放大器进行放大；CMOS每个像素都连接一个放大器与数模转换电路。</p>
+<p>接口传输速率：USB3 &gt;GigE</p>
+<p>激光的优点：方向性强、亮度高、单色性好、相干性好</p>
+
+    </div>
+    
+    <div class="reward" ontouchstart>
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            <span class="reward-type">
+                <img class="alipay" src="/img/Alipay.png"><b>支付宝打赏</b>
+            </span>
+            
+            
+            <span class="reward-type">
+                <img class="wechat" src="/img/Wepay.png"><b>微信打赏</b>
+            </span>
+            
         </div>
-        <p class="brief">
+    </div>
+    <p class="reward-tip">
+        如果觉得好用请支持我
+    </p>
+</div>
+    
+    <div class="post-footer">
+        <div>
             
-            ✨个人简介可以叫我CCC或者3C同学 。我的CSDN主页是：https://blog.csdn.net/CCCP_lus 。我的Github主页是：https://github.com/CCCP-lus/CCCP-lus。  
-🌱教育经历2021-2025 北京林业大学 计算机科学与技术2025 至今 北京航空航天大学 仪器科学与技术
-💡科研经历2025至今 某项目2024-2025 航空发动机装配检测系统 作者2023-2024 基于多层次表征学习时序分类模型的脉诊系统 国家级大创项目 主持人  
-😄获奖经历2025年 北京市优秀毕业生2022年 国家奖学金 
-🔧项目经历2024年 软件故障定位系统2023年 口罩识别系统    
-🔭实习经历2022年 四外维科技有限公司 前端开发岗  
-📸其他经历创建北京林业大学多元专业互助群——林小圈  
-✨林小圈文件北林生存手册https://github.com/CCCP-lus/BFU_SurvivalGuide
-计科资料仓库https://github.com/CCCP-lus/BFU-CS…
+            转载声明：
+            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">言锡的小栈</a>
             
-        </p>
+            
+        </div>
+        <div>
+            
+        </div>
     </div>
 </article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+    
+    <a href="/2025/12/16/%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/" class="next-post btn btn-default" title='第一篇文章'>
+        <span class="hidden-lg">下一篇</span>
+        <span class="hidden-xs">
+            第一篇文章</span><i class="fa fa-angle-right fa-fw"></i>
+    </a>
+    
+</div>
 
+<div id="comments">
+    
+<p>评论系统未开启，无法评论！</p>
 
+</div>
 
                 </main>
                 
-                    
-<aside class="col-md-4 sidebar">
-    
-    
-<div class="widget">
-    <h3 class="title">
-        Search
-    </h3>
-    <div id="search-form">
-        <div id="result-mask" class="hide"></div>
-        <div class="search-area">
-            
-            <input id="search-key" type="search" autocomplete="off" placeholder="Search What？">
-            <button type="button" class="search-form-submit" id="search-local">
-                localSearch</button>
-            
-            
-        </div>
-        <div id="result-wrap" class="hide">
-            <div id="search-result"></div>
-        </div>
-        <div class="hide">
-            <template id="search-tpl">
-                <div class="item">
-                    <a href="/{path}" title="{title}">
-                        <div class="title">{title}</div>
-                        <div class="content">{content}</div>
-                    </a>
-                </div>
-            </template>
-        </div>
-    </div>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        Notification
-    </h3>
-    <div class="notification">
-        <p>
-    如果觉得资料有用，请支持作者！
-</p>
-    </div>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        Social
-    </h3>
-    <div class="content social">
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            Table of Contents
+        </h3>
         
-        <a href="https://github.com/CCCP-lus" rel="external nofollow" title="Github" target="_blank">
-            <i class="git fa fa-git"></i>
-        </a>
-        
-        <a href="congchao_chang@buaa.edu.cn" rel="external nofollow" title="邮箱" target="_blank">
-            <i class="envelope-o fa fa-envelope-o"></i>
-        </a>
-        
-        <a href="/" rel="external nofollow" title="QQ（暂未开通）" target="_blank">
-            <i class="qq fa fa-qq"></i>
-        </a>
-        
-        <a href="/" rel="external nofollow" title="微信（暂未开通）" target="_blank">
-            <i class="weixin fa fa-weixin"></i>
-        </a>
-        
-        <a href="/" rel="external nofollow" title="QQ群（暂未开通）" target="_blank">
-            <i class="users fa fa-users"></i>
-        </a>
-        
-        <a href="/atom.xml" rel="external nofollow" title="RSS（暂未开通）" target="_blank">
-            <i class="feed fa fa-feed"></i>
-        </a>
+        <p>暂无目录</p>
         
     </div>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        Categories
-    </h3>
-    <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E8%B5%84%E6%96%99/"><i class="fa" aria-hidden="true">学习资料</i></a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%A1%90%E9%93%83%E9%9B%86/"><i class="fa" aria-hidden="true">桐铃集</i></a><span class="category-list-count">1</span></li></ul>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        Archives
-    </h3>
-    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2025/12/"><i class="fa" aria-hidden="true">2025年12月</i></a><span class="archive-list-count">2</span></li></ul>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        Tag Cloud
-    </h3>
-    <div class="content tag-cloud">
-        
-        <a href="/tags/%E5%A4%87%E8%80%83%E8%B5%84%E6%96%99/" style="font-size: 10px;">备考资料</a> <a href="/tags/%E8%87%AA%E6%88%91%E4%BB%8B%E7%BB%8D/" style="font-size: 10px;">自我介绍</a>
-        
-    </div>
-</div>
-
-    
-    
-<div class="widget">
-    <h3 class="title">
-        Friends
-    </h3>
-    <div class="content friends-link">
-        
-        <a href="https://hexo.io/zh-cn/" class="fa" target="_blank">
-            Hexo官网</a>
-        
-    </div>
-</div>
-
-    
 </aside>
-
                 
             </div>
         </div>
@@ -358,10 +327,6 @@
         </div>
     </div>
 </div>
-
-
-<script src="/js/search.js?rev=@@hash.js"></script>
-
 
 
 
