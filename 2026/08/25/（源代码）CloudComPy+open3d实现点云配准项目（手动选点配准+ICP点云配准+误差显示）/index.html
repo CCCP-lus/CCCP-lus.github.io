@@ -1,0 +1,349 @@
+<!DOCTYPE HTML>
+<html lang="zh_CN">
+
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="言锡的小栈">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.3.0">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="https://cccp-lus.github.io">
+    <!--SEO-->
+
+<meta name="keywords" content="编程拾贝" />
+
+
+<meta name="description" content="目录
+CloudComPy介绍
+
+CloudComPy介绍简单来说，CloudComPy通过Python接口，调用点云操作软件CloudCompare的一些功能。
+官方文档：CloudComPy..." />
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+<title>
+    
+    （源代码）CloudComPy+open3d实现点云配准项目（手动选点配准+ICP点云配准+误差显示） |
+    
+    言锡的小栈
+</title>
+
+<link rel="alternate" href="/atom.xml" title="言锡的小栈" type="application/atom+xml">
+
+
+<link rel="icon" href="/favicon.ico">
+
+    
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.7.0.css">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash.css">
+
+    
+<div class="hide">
+    <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</div>
+
+
+
+
+    
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+<body>
+    <header class="main-header"  style="background-image:url(
+    https://hexo-theme-snippet-1251680922.cos.ap-beijing.myqcloud.com/img/banner.jpg)"
+     >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='言锡'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+            <!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+            <h2>
+                让每一份努力都效率最大化
+            </h2>
+            
+        </div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                        <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://cccp-lus.github.io">
+                        言锡的小栈</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/"><i class="fa "></i>
+                                Home</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/桐铃集/"><i class="fa "></i>
+                                桐铃集</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/BFU-CS/"><i class="fa "></i>
+                                BJFU-CS</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/BUAA-IST/"><i class="fa "></i>
+                                BUAA-IST</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/学习资料/"><i class="fa "></i>
+                                学习资料</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/编程拾贝/"><i class="fa "></i>
+                                编程拾贝</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/踩坑记录/"><i class="fa "></i>
+                                踩坑记录</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/archives/"><i class="fa "></i>
+                                时间轴</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="（源代码）CloudComPy+open3d实现点云配准项目（手动选点配准+ICP点云配准+误差显示）">
+            
+            （源代码）CloudComPy+open3d实现点云配准项目（手动选点配准+ICP点云配准+误差显示）
+            
+        </h1>
+        <div class="post-meta">
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a class="category-link" href="/categories/%E7%BC%96%E7%A8%8B%E6%8B%BE%E8%B4%9D/">编程拾贝</a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            <a class="tag-none-link" href="/tags/%E7%BC%96%E7%A8%8B%E6%8B%BE%E8%B4%9D/" rel="tag">编程拾贝</a>
+            
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2026/08/25</span>
+    </span>
+    
+    <span class="fa-wrap">
+        <i class="fa fa-eye"></i>
+        <span id="busuanzi_value_page_pv"></span>
+    </span>
+    
+    
+</div>
+        
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <p><strong>目录</strong></p>
+<p><a href="#CloudComPy%E4%BB%8B%E7%BB%8D">CloudComPy介绍</a></p>
+<hr>
+<h2 id="CloudComPy介绍"><a href="#CloudComPy介绍" class="headerlink" title="CloudComPy介绍"></a>CloudComPy介绍</h2><p>简单来说，CloudComPy通过Python接口，调用点云操作软件CloudCompare的一些功能。</p>
+<p>官方文档：<a target="_blank" rel="noopener" href="https://www.simulation.openfields.fr/documentation/CloudComPy/html/">CloudComPy官方文档<img src="/img/cccplus/73f45026dce6.png"><a target="_blank" rel="noopener" href="https://www.simulation.openfields.fr/documentation/CloudComPy/html/">https://www.simulation.openfields.fr/documentation/CloudComPy/html/</a></a></p>
+<h3 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h3><p>必须在pt310及以上版本使用，最好部署在anaconda环境下。具体可以参考这篇CSDN博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/sljsxy/article/details/146494374">windows平台cloudcompy安装<img src="/img/cccplus/73f45026dce6.png"><a target="_blank" rel="noopener" href="https://blog.csdn.net/sljsxy/article/details/146494374">https://blog.csdn.net/sljsxy/article/details/146494374</a></a></p>
+<p>注意win7是不支持pt310版本的，如果非要使用，网上有适用于win7版本的pt310包，至于环境和包会不会起冲突则未加实验过。</p>
+<h2 id="项目代码"><a href="#项目代码" class="headerlink" title="项目代码"></a>项目代码</h2><p>项目包含了测试样例生成、手动选择三点作为粗配准、ICP细配准，以及配准可视化的模块，每个模块都可以单独使用。</p>
+<h3 id="环境配置与依赖检查"><a href="#环境配置与依赖检查" class="headerlink" title="环境配置与依赖检查"></a>环境配置与依赖检查</h3><p>基于上一章环境配置所述环境，另外安装适合版本的open3d即可。如果需要图形化界面，则需要安装PyQt5（后续会更新图形化界面版本的软件）。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> open3d <span class="keyword">as</span> o3d</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> copy</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line">SCIPY_AVAILABLE = <span class="literal">False</span></span><br><span class="line">CLOUDCOMPY_AVAILABLE = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="keyword">from</span> scipy.spatial <span class="keyword">import</span> cKDTree</span><br><span class="line"></span><br><span class="line">    SCIPY_AVAILABLE = <span class="literal">True</span></span><br><span class="line"><span class="keyword">except</span> ImportError:</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">try</span>:</span><br><span class="line">    <span class="keyword">import</span> cloudComPy <span class="keyword">as</span> cc</span><br><span class="line"></span><br><span class="line">    CLOUDCOMPY_AVAILABLE = <span class="literal">True</span></span><br><span class="line"><span class="keyword">except</span> ImportError:</span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
+<h3 id="基础工具"><a href="#基础工具" class="headerlink" title="基础工具"></a>基础工具</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">load_ply</span>(<span class="params">file_path</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;读取点云，支持PLY/Mesh自动转换&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(file_path):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;[错误] 文件不存在: <span class="subst">&#123;file_path&#125;</span>&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">    pcd = o3d.io.read_point_cloud(file_path)</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(pcd.points) == <span class="number">0</span>:</span><br><span class="line">        mesh = o3d.io.read_triangle_mesh(file_path)</span><br><span class="line">        pcd = o3d.geometry.PointCloud()</span><br><span class="line">        pcd.points = mesh.vertices</span><br><span class="line">        <span class="keyword">if</span> mesh.has_vertex_normals():</span><br><span class="line">            pcd.normals = mesh.vertex_normals</span><br><span class="line">    pcd.remove_non_finite_points()</span><br><span class="line">    <span class="keyword">return</span> pcd</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">save_ply</span>(<span class="params">pcd, file_path</span>):</span><br><span class="line">    o3d.io.write_point_cloud(file_path, pcd, write_ascii=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">generate_random_transform</span>():</span><br><span class="line">    <span class="string">&quot;&quot;&quot;生成随机变换矩阵及其逆矩阵(GT)&quot;&quot;&quot;</span></span><br><span class="line">    angle = <span class="number">0.25</span> * np.pi</span><br><span class="line">    r_xyz = np.random.uniform(-angle, angle, <span class="number">3</span>)</span><br><span class="line">    t_xyz = np.random.uniform(-<span class="number">100</span>, <span class="number">100</span>, <span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">    R = o3d.geometry.get_rotation_matrix_from_xyz(r_xyz)</span><br><span class="line">    T = np.eye(<span class="number">4</span>)</span><br><span class="line">    T[:<span class="number">3</span>, :<span class="number">3</span>] = R</span><br><span class="line">    T[:<span class="number">3</span>, <span class="number">3</span>] = t_xyz</span><br><span class="line">    <span class="keyword">return</span> T, np.linalg.inv(T)  <span class="comment"># 返回: 扰动矩阵, 还原矩阵(GT)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">get_downsampled_pcd</span>(<span class="params">pcd, target_count=<span class="number">10000</span></span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;自适应降采样&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(pcd.points) &lt;= target_count:</span><br><span class="line">        <span class="keyword">return</span> copy.deepcopy(pcd)</span><br><span class="line"></span><br><span class="line">    bbox = pcd.get_axis_aligned_bounding_box()</span><br><span class="line">    voxel_size = <span class="built_in">max</span>(bbox.get_extent()) / <span class="number">50.0</span></span><br><span class="line">    pcd_down = pcd.voxel_down_sample(voxel_size)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 简单迭代确保点数适中</span></span><br><span class="line">    <span class="keyword">while</span> <span class="built_in">len</span>(pcd_down.points) &gt; target_count * <span class="number">1.5</span>:</span><br><span class="line">        voxel_size *= <span class="number">1.5</span></span><br><span class="line">        pcd_down = pcd.voxel_down_sample(voxel_size)</span><br><span class="line">    <span class="keyword">return</span> pcd_down</span><br></pre></td></tr></table></figure>
+<h3 id="矩阵误差分析"><a href="#矩阵误差分析" class="headerlink" title="矩阵误差分析"></a>矩阵误差分析</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">calculate_matrix_error</span>(<span class="params">T_est, T_gt</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;</span></span><br><span class="line"><span class="string">    比较估计矩阵与参考矩阵的平移和旋转误差</span></span><br><span class="line"><span class="string">    :param T_est: 算法计算出的最终变换矩阵 (4x4)</span></span><br><span class="line"><span class="string">    :param T_gt:  真值矩阵 (Ground Truth) (4x4)</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;\n&quot;</span> + <span class="string">&quot;=&quot;</span> * <span class="number">20</span> + <span class="string">&quot; 矩阵精度分析 &quot;</span> + <span class="string">&quot;=&quot;</span> * <span class="number">20</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 1. 平移误差 (欧氏距离)</span></span><br><span class="line">    t_est = T_est[:<span class="number">3</span>, <span class="number">3</span>]</span><br><span class="line">    t_gt = T_gt[:<span class="number">3</span>, <span class="number">3</span>]</span><br><span class="line">    trans_error = np.linalg.norm(t_est - t_gt)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 2. 旋转误差 (Geodesic distance on SO(3))</span></span><br><span class="line">    R_est = T_est[:<span class="number">3</span>, :<span class="number">3</span>]</span><br><span class="line">    R_gt = T_gt[:<span class="number">3</span>, :<span class="number">3</span>]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># R_diff = R_est * R_gt^T</span></span><br><span class="line">    R_diff = np.dot(R_est, R_gt.T)</span><br><span class="line">    trace = np.trace(R_diff)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 限制数值范围在 [-1, 1] 避免数值噪音导致的 NaN</span></span><br><span class="line">    val = (trace - <span class="number">1</span>) / <span class="number">2.0</span></span><br><span class="line">    val = np.clip(val, -<span class="number">1.0</span>, <span class="number">1.0</span>)</span><br><span class="line"></span><br><span class="line">    rot_error_rad = np.arccos(val)</span><br><span class="line">    rot_error_deg = np.degrees(rot_error_rad)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;平移误差 (Translation Error): <span class="subst">&#123;trans_error:<span class="number">.6</span>f&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;旋转误差 (Rotation Error):    <span class="subst">&#123;rot_error_deg:<span class="number">.6</span>f&#125;</span> 度&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;\n--- 矩阵详情 ---&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Estimated Matrix:\n&quot;</span>, T_est)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Ground Truth Matrix:\n&quot;</span>, T_gt)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;Diff (Est - GT):\n&quot;</span>, T_est - T_gt)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> trans_error, rot_error_deg</span><br></pre></td></tr></table></figure>
+<h3 id="配准流程"><a href="#配准流程" class="headerlink" title="配准流程"></a>配准流程</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">manual_registration</span>(<span class="params">source, target</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;手动粗配准：左右分屏选点&quot;&quot;&quot;</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;\n&gt;&gt;&gt; 开始手动粗配准 (请在两窗口选至少3个对应点，Shift+左键)&quot;</span>)</span><br><span class="line">    src_vis = get_downsampled_pcd(source)</span><br><span class="line">    tgt_vis = get_downsampled_pcd(target)</span><br><span class="line"></span><br><span class="line">    src_vis.paint_uniform_color([<span class="number">1</span>, <span class="number">0.706</span>, <span class="number">0</span>])  <span class="comment"># 橙 (Source)</span></span><br><span class="line">    tgt_vis.paint_uniform_color([<span class="number">0</span>, <span class="number">0.651</span>, <span class="number">0.929</span>])  <span class="comment"># 蓝 (Target)</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 偏移显示 Source</span></span><br><span class="line">    tgt_bbox = tgt_vis.get_axis_aligned_bounding_box()</span><br><span class="line">    offset = tgt_bbox.get_extent()[<span class="number">0</span>] * <span class="number">1.5</span> + <span class="number">50.0</span></span><br><span class="line">    shift_vec = (tgt_bbox.get_center() - src_vis.get_center()) + [offset, <span class="number">0</span>, <span class="number">0</span>]</span><br><span class="line">    src_vis.translate(shift_vec)</span><br><span class="line"></span><br><span class="line">    vis = o3d.visualization.VisualizerWithEditing()</span><br><span class="line">    vis.create_window(window_name=<span class="string">&#x27;选点: 左目标(蓝) - 右源(橙)&#x27;</span>, width=<span class="number">1280</span>, height=<span class="number">720</span>)</span><br><span class="line">    vis.add_geometry(src_vis + tgt_vis)</span><br><span class="line">    vis.run()</span><br><span class="line">    vis.destroy_window()</span><br><span class="line"></span><br><span class="line">    indices = vis.get_picked_points()</span><br><span class="line">    pts_s, pts_t = [], []</span><br><span class="line">    points_all = np.asarray((src_vis + tgt_vis).points)</span><br><span class="line">    len_tgt = <span class="built_in">len</span>(tgt_vis.points)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> idx <span class="keyword">in</span> indices:</span><br><span class="line">        p = points_all[idx]</span><br><span class="line">        <span class="keyword">if</span> idx &lt; len_tgt:</span><br><span class="line">            pts_t.append(p)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            pts_s.append(p - shift_vec)  <span class="comment"># 还原坐标</span></span><br><span class="line"></span><br><span class="line">    min_k = <span class="built_in">min</span>(<span class="built_in">len</span>(pts_s), <span class="built_in">len</span>(pts_t))</span><br><span class="line">    <span class="keyword">if</span> min_k &lt; <span class="number">3</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;[警告] 选点不足3对，跳过粗配准。&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span> np.eye(<span class="number">4</span>)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&quot;使用 <span class="subst">&#123;min_k&#125;</span> 对点进行计算...&quot;</span>)</span><br><span class="line">    pcd_s = o3d.geometry.PointCloud(o3d.utility.Vector3dVector(pts_s[:min_k]))</span><br><span class="line">    pcd_t = o3d.geometry.PointCloud(o3d.utility.Vector3dVector(pts_t[:min_k]))</span><br><span class="line">    corr = o3d.utility.Vector2iVector([[i, i] <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(min_k)])</span><br><span class="line"></span><br><span class="line">    reg = o3d.pipelines.registration.TransformationEstimationPointToPoint()</span><br><span class="line">    <span class="keyword">return</span> reg.compute_transformation(pcd_s, pcd_t, corr)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">run_icp</span>(<span class="params">source_path, target_path</span>):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;调用 CloudComPy 进行 ICP&quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> CLOUDCOMPY_AVAILABLE:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;[跳过] 未检测到 cloudComPy，仅使用粗配准结果。&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span> np.eye(<span class="number">4</span>)</span><br><span class="line"></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;\n&gt;&gt;&gt; 执行 CloudComPy ICP 精配准...&quot;</span>)</span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        cc_src = cc.loadPointCloud(source_path)</span><br><span class="line">        cc_tgt = cc.loadPointCloud(target_path)</span><br><span class="line">        <span class="comment"># 参数: overlap=0.8, threads=auto, etc.</span></span><br><span class="line">        res = cc.ICP(cc_src, cc_tgt, <span class="number">1.0e-6</span>, <span class="number">50</span>, <span class="number">50000</span>, <span class="literal">True</span>,</span><br><span class="line">                     cc.CONVERGENCE_TYPE.MAX_ERROR_CONVERGENCE, <span class="literal">False</span>, <span class="number">0.8</span>)</span><br><span class="line"></span><br><span class="line">        mat = []</span><br><span class="line">        <span class="keyword">for</span> line <span class="keyword">in</span> res.transMat.toString().strip().split(<span class="string">&#x27;\n&#x27;</span>):</span><br><span class="line">            <span class="keyword">if</span> line.strip():</span><br><span class="line">                mat.append([<span class="built_in">float</span>(x) <span class="keyword">for</span> x <span class="keyword">in</span> line.split()])</span><br><span class="line">        <span class="keyword">return</span> np.array(mat)</span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;[ICP 错误] <span class="subst">&#123;e&#125;</span>&quot;</span>)</span><br><span class="line">        <span class="keyword">return</span> np.eye(<span class="number">4</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="结果可视化"><a href="#结果可视化" class="headerlink" title="结果可视化"></a>结果可视化</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">visualize_heatmap_on_target</span>(<span class="params">source, target, limit=<span class="number">5.0</span></span>):</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;\n&gt;&gt;&gt; 生成误差色谱 (基准: 目标点云)&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> target.has_normals():</span><br><span class="line">        target.estimate_normals()</span><br><span class="line">        target.orient_normals_consistent_tangent_plane(<span class="number">50</span>)</span><br><span class="line"></span><br><span class="line">    src_pts = np.asarray(source.points)</span><br><span class="line">    tgt_pts = np.asarray(target.points)</span><br><span class="line">    tgt_nrm = np.asarray(target.normals)</span><br><span class="line"></span><br><span class="line">    dists, signed_dists = np.zeros(<span class="built_in">len</span>(tgt_pts)), np.zeros(<span class="built_in">len</span>(tgt_pts))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> SCIPY_AVAILABLE:</span><br><span class="line">        tree = cKDTree(src_pts)</span><br><span class="line">        dists, idxs = tree.query(tgt_pts, k=<span class="number">1</span>, workers=-<span class="number">1</span>)</span><br><span class="line">        nearest_pts = src_pts[idxs]</span><br><span class="line">        diff_vec = nearest_pts - tgt_pts</span><br><span class="line">        <span class="comment"># 投影距离：(源-目标) 点乘 目标法线</span></span><br><span class="line">        signed_dists = np.einsum(<span class="string">&#x27;ij,ij-&gt;i&#x27;</span>, diff_vec, tgt_nrm)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;未安装 Scipy，仅显示绝对距离。&quot;</span>)</span><br><span class="line">        dists = np.asarray(target.compute_point_cloud_distance(source))</span><br><span class="line">        signed_dists = dists</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 渲染颜色: 红(+), 蓝(-), 绿(0)</span></span><br><span class="line">    colors = np.zeros((<span class="built_in">len</span>(tgt_pts), <span class="number">3</span>))</span><br><span class="line">    colors[:, <span class="number">1</span>] = <span class="number">1.0</span>  <span class="comment"># 默认绿</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 正偏差 (Source 在 Target 法线方向外侧) -&gt; 红</span></span><br><span class="line">    mask_pos = signed_dists &gt; <span class="number">0</span></span><br><span class="line">    <span class="keyword">if</span> np.<span class="built_in">any</span>(mask_pos):</span><br><span class="line">        norm_val = np.clip(signed_dists[mask_pos] / limit, <span class="number">0</span>, <span class="number">1</span>)</span><br><span class="line">        colors[mask_pos, <span class="number">0</span>] = norm_val</span><br><span class="line">        colors[mask_pos, <span class="number">1</span>] = <span class="number">1.0</span> - norm_val</span><br><span class="line">        colors[mask_pos, <span class="number">2</span>] = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 负偏差 (Source 在 Target 法线方向内侧) -&gt; 蓝</span></span><br><span class="line">    mask_neg = signed_dists &lt; <span class="number">0</span></span><br><span class="line">    <span class="keyword">if</span> np.<span class="built_in">any</span>(mask_neg):</span><br><span class="line">        norm_val = np.clip(np.<span class="built_in">abs</span>(signed_dists[mask_neg]) / limit, <span class="number">0</span>, <span class="number">1</span>)</span><br><span class="line">        colors[mask_neg, <span class="number">0</span>] = <span class="number">0</span></span><br><span class="line">        colors[mask_neg, <span class="number">1</span>] = <span class="number">1.0</span> - norm_val</span><br><span class="line">        colors[mask_neg, <span class="number">2</span>] = norm_val</span><br><span class="line"></span><br><span class="line">    vis_pcd = copy.deepcopy(target)</span><br><span class="line">    vis_pcd.colors = o3d.utility.Vector3dVector(colors)</span><br><span class="line"></span><br><span class="line">    stat_msg = <span class="string">f&quot;Abs Mean: <span class="subst">&#123;np.mean(np.<span class="built_in">abs</span>(signed_dists)):<span class="number">.4</span>f&#125;</span>, Max: <span class="subst">&#123;np.<span class="built_in">max</span>(signed_dists):<span class="number">.4</span>f&#125;</span>&quot;</span></span><br><span class="line">    <span class="built_in">print</span>(stat_msg)</span><br><span class="line"></span><br><span class="line">    o3d.visualization.draw_geometries([vis_pcd],</span><br><span class="line">                                      window_name=<span class="string">f&quot;偏差分析 (阈值 <span class="subst">&#123;limit&#125;</span>)&quot;</span>,</span><br><span class="line">                                      width=<span class="number">1024</span>, height=<span class="number">768</span>, left=<span class="number">50</span>, top=<span class="number">50</span>)</span><br></pre></td></tr></table></figure>
+<h3 id="主程序"><a href="#主程序" class="headerlink" title="主程序"></a>主程序</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>():</span><br><span class="line">    <span class="comment"># 路径配置</span></span><br><span class="line">    work_dir = <span class="string">r&quot;&quot;</span></span><br><span class="line">    target_ply = os.path.join(work_dir, <span class="string">&quot;.ply&quot;</span>)  <span class="comment"># 目标 (Standard)</span></span><br><span class="line">    source_ply = os.path.join(work_dir, <span class="string">&quot;.ply&quot;</span>)  <span class="comment"># 源 (待配准)</span></span><br><span class="line">    out_dir = os.path.join(work_dir, <span class="string">&quot;results&quot;</span>)</span><br><span class="line"></span><br><span class="line">    os.makedirs(out_dir, exist_ok=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 1. 准备数据</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;&gt;&gt;&gt; 初始化数据...&quot;</span>)</span><br><span class="line">    pcd_raw_source = load_ply(source_ply)</span><br><span class="line">    pcd_target = load_ply(target_ply)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> pcd_raw_source <span class="keyword">or</span> <span class="keyword">not</span> pcd_target:</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 生成测试扰动: pcd_disturbed = T_random * pcd_raw</span></span><br><span class="line">    <span class="comment"># 我们的目标是找到变换矩阵将 pcd_disturbed 变回 pcd_raw (即与 pcd_target 对齐)</span></span><br><span class="line">    <span class="comment"># 真实矩阵(Ground Truth)应为 T_random 的逆矩阵</span></span><br><span class="line">    T_rand, T_gt = generate_random_transform()</span><br><span class="line"></span><br><span class="line">    pcd_disturbed = copy.deepcopy(pcd_raw_source)</span><br><span class="line">    pcd_disturbed.transform(T_rand)</span><br><span class="line"></span><br><span class="line">    temp_dist_path = os.path.join(out_dir, <span class="string">&quot;disturbed_input.ply&quot;</span>)</span><br><span class="line">    save_ply(pcd_disturbed, temp_dist_path)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 2. 粗配准</span></span><br><span class="line">    T_coarse = manual_registration(pcd_disturbed, pcd_target)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 保存粗配准中间结果供ICP读取</span></span><br><span class="line">    pcd_coarse = copy.deepcopy(pcd_disturbed)</span><br><span class="line">    pcd_coarse.transform(T_coarse)</span><br><span class="line">    path_coarse = os.path.join(out_dir, <span class="string">&quot;temp_coarse.ply&quot;</span>)</span><br><span class="line">    save_ply(pcd_coarse, path_coarse)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 3. 精配准</span></span><br><span class="line">    T_icp = run_icp(path_coarse, target_ply)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 4. 计算最终变换矩阵: T_final = T_icp * T_coarse</span></span><br><span class="line">    T_final = np.dot(T_icp, T_coarse)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 5. 误差分析 (核心需求)</span></span><br><span class="line">    calculate_matrix_error(T_final, T_gt)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 6. 结果可视化</span></span><br><span class="line">    pcd_final = copy.deepcopy(pcd_disturbed)</span><br><span class="line">    pcd_final.transform(T_final)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 几何叠加</span></span><br><span class="line">    pcd_final.paint_uniform_color([<span class="number">0</span>, <span class="number">1</span>, <span class="number">0</span>])</span><br><span class="line">    temp_target = copy.deepcopy(pcd_target)</span><br><span class="line">    temp_target.paint_uniform_color([<span class="number">0</span>, <span class="number">0</span>, <span class="number">1</span>])</span><br><span class="line">    o3d.visualization.draw_geometries([pcd_final, temp_target], window_name=<span class="string">&quot;最终对齐效果&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 色谱分析</span></span><br><span class="line">    visualize_heatmap_on_target(pcd_final, pcd_target, limit=<span class="number">2.0</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&quot;__main__&quot;</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<h2 id="可能的报错与解决方案"><a href="#可能的报错与解决方案" class="headerlink" title="可能的报错与解决方案"></a>可能的报错与解决方案</h2><h3 id="使用PyInstaller打包该项目，报错：找不到cloudComPy"><a href="#使用PyInstaller打包该项目，报错：找不到cloudComPy" class="headerlink" title="使用PyInstaller打包该项目，报错：找不到cloudComPy"></a>使用PyInstaller打包该项目，报错：找不到cloudComPy</h3><p>参考我自己写的解决方案</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/CCCP_lus/article/details/149609890">CloudComPy使用PyInstaller打包后报错解决方案<img src="/img/cccplus/73f45026dce6.png"><a target="_blank" rel="noopener" href="https://blog.csdn.net/CCCP_lus/article/details/149609890">https://blog.csdn.net/CCCP_lus/article/details/149609890</a></a></p>
+
+    </div>
+    
+    <div class="reward" ontouchstart>
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            <span class="reward-type">
+                <img class="alipay" src="/img/Alipay.png"><b>支付宝打赏</b>
+            </span>
+            
+            
+            <span class="reward-type">
+                <img class="wechat" src="/img/Wepay.png"><b>微信打赏</b>
+            </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">
+        如果觉得好用请支持我
+    </p>
+</div>
+    
+    <div class="post-footer">
+        <div>
+            
+            转载声明：
+            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">言锡的小栈</a>
+            
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+    <a href="/2026/08/25/%EF%BC%88%E6%96%87%E6%A1%A3+%E4%BB%A3%E7%A0%81%EF%BC%89%E5%9F%BA%E4%BA%8E%E6%8E%A8%E8%8D%90%E7%AE%97%E6%B3%95%E5%92%8CSpringboot+Vue%E7%9A%84%E8%B4%AD%E7%89%A9%E5%95%86%E5%9F%8E/" class="pre-post btn btn-default" title='（文档+代码）基于推荐算法和Springboot+Vue的购物商城'>
+        <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+        <span class="hidden-xs">
+            （文档+代码）基于推荐算法和Springboot+Vue的购物商城</span>
+    </a>
+    
+    
+    <a href="/2026/08/25/%EF%BC%88%E5%B7%B2%E8%A7%A3%E5%86%B3%EF%BC%89%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95%EF%BC%9AWindows%2011%E5%AE%89%E8%A3%85pointops%E7%BC%96%E8%AF%91%E6%97%B6%E6%8A%A5%E9%94%99/" class="next-post btn btn-default" title='（已解决）踩坑记录：Windows 11安装pointops编译时报错'>
+        <span class="hidden-lg">下一篇</span>
+        <span class="hidden-xs">
+            （已解决）踩坑记录：Windows 11安装pointops编译时报错</span><i class="fa fa-angle-right fa-fw"></i>
+    </a>
+    
+</div>
+
+<div id="comments">
+    
+<p>评论系统未开启，无法评论！</p>
+
+</div>
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            Table of Contents
+        </h3>
+        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#CloudComPy%E4%BB%8B%E7%BB%8D"><span class="toc-text">CloudComPy介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="toc-text">环境配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A1%B9%E7%9B%AE%E4%BB%A3%E7%A0%81"><span class="toc-text">项目代码</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E4%B8%8E%E4%BE%9D%E8%B5%96%E6%A3%80%E6%9F%A5"><span class="toc-text">环境配置与依赖检查</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E7%A1%80%E5%B7%A5%E5%85%B7"><span class="toc-text">基础工具</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9F%A9%E9%98%B5%E8%AF%AF%E5%B7%AE%E5%88%86%E6%9E%90"><span class="toc-text">矩阵误差分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E5%87%86%E6%B5%81%E7%A8%8B"><span class="toc-text">配准流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C%E5%8F%AF%E8%A7%86%E5%8C%96"><span class="toc-text">结果可视化</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%BB%E7%A8%8B%E5%BA%8F"><span class="toc-text">主程序</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%AF%E8%83%BD%E7%9A%84%E6%8A%A5%E9%94%99%E4%B8%8E%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-text">可能的报错与解决方案</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8PyInstaller%E6%89%93%E5%8C%85%E8%AF%A5%E9%A1%B9%E7%9B%AE%EF%BC%8C%E6%8A%A5%E9%94%99%EF%BC%9A%E6%89%BE%E4%B8%8D%E5%88%B0cloudComPy"><span class="toc-text">使用PyInstaller打包该项目，报错：找不到cloudComPy</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+<a id="back-to-top" class="icon-btn hide">
+    <i class="fa fa-chevron-up"></i>
+</a>
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+    Total:
+    <strong id="busuanzi_value_site_pv">
+        <i class="fa fa-spinner fa-spin"></i>
+    </strong>
+    &nbsp; | &nbsp;
+    Visitors:
+    <strong id="busuanzi_value_site_uv">
+        <i class="fa fa-spinner fa-spin"></i>
+    </strong>
+    
+</div>
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;
+                    2017
+                    
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash.js"></script>
+
+</body>
+</html>

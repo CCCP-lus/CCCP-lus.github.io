@@ -1,0 +1,351 @@
+<!DOCTYPE HTML>
+<html lang="zh_CN">
+
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="言锡的小栈">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.3.0">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="https://cccp-lus.github.io">
+    <!--SEO-->
+
+<meta name="keywords" content="BJFU-CS" />
+
+
+<meta name="description" content="前言：计算机导论是笔者大学期间第一门结课的专业课，也是在这门课上笔者取得了大学生活中第一次满分。笔者近日整理文件发现笔记数十页，不忍抛弃，因稍加整理后发布于此。
+内容共八章，涵盖了计算机类专业学..." />
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+<title>
+    
+    BJFU|计算机导论（21下）第三章-计算机组成原理 |
+    
+    言锡的小栈
+</title>
+
+<link rel="alternate" href="/atom.xml" title="言锡的小栈" type="application/atom+xml">
+
+
+<link rel="icon" href="/favicon.ico">
+
+    
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.7.0.css">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash.css">
+
+    
+<div class="hide">
+    <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</div>
+
+
+
+
+    
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+<body>
+    <header class="main-header"  style="background-image:url(
+    https://hexo-theme-snippet-1251680922.cos.ap-beijing.myqcloud.com/img/banner.jpg)"
+     >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='言锡'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+            <!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+            <h2>
+                让每一份努力都效率最大化
+            </h2>
+            
+        </div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                        <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://cccp-lus.github.io">
+                        言锡的小栈</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/"><i class="fa "></i>
+                                Home</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/桐铃集/"><i class="fa "></i>
+                                桐铃集</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/BFU-CS/"><i class="fa "></i>
+                                BJFU-CS</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/BUAA-IST/"><i class="fa "></i>
+                                BUAA-IST</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/学习资料/"><i class="fa "></i>
+                                学习资料</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/编程拾贝/"><i class="fa "></i>
+                                编程拾贝</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/踩坑记录/"><i class="fa "></i>
+                                踩坑记录</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/archives/"><i class="fa "></i>
+                                时间轴</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="BJFU|计算机导论（21下）第三章-计算机组成原理">
+            
+            BJFU|计算机导论（21下）第三章-计算机组成原理
+            
+        </h1>
+        <div class="post-meta">
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a class="category-link" href="/categories/BJFU-CS/">BJFU-CS</a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            <a class="tag-none-link" href="/tags/BJFU-CS/" rel="tag">BJFU-CS</a>
+            
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2026/08/25</span>
+    </span>
+    
+    <span class="fa-wrap">
+        <i class="fa fa-eye"></i>
+        <span id="busuanzi_value_page_pv"></span>
+    </span>
+    
+    
+</div>
+        
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <h3 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h3><p>计算机导论是笔者大学期间第一门结课的专业课，也是在这门课上笔者取得了大学生活中第一次满分。笔者近日整理文件发现笔记数十页，不忍抛弃，因稍加整理后发布于此。</p>
+<p>内容共八章，涵盖了计算机类专业学生的基础知识。**对于行业初学者，可以提供一个专业的视角以便后续选择进一步发展方向；对于业外人士，也可做科普性质文章对待。**需要注意的是，<strong>笔记并不等于确切的、已知的考点</strong>，请校友（尤其是同门师弟师妹们）<strong>理性对待此资料，认真听讲，认真复习。</strong></p>
+<p>后续章节将会逐步更新，请各位读者静候。</p>
+<h3 id="考点整理："><a href="#考点整理：" class="headerlink" title="考点整理："></a>考点整理：</h3><p><img src="/img/cccplus/40a2d03406ef.png"></p>
+<p><strong>中央处理单元<strong><strong>CPU</strong></strong>由算术逻辑单元**<strong>ALU</strong></strong>、控制单元<strong><strong>CU</strong></strong>、寄存器组Register File组成。**</p>
+<p>存储器分内存和外存，内存储器又叫主存储器。内存可存放临时数据，断电数据丢失。存取速度快，容量有限。用于存放要执行的程序和数据。外存可永久存放数据，断电数据不丢失。存取速度慢，容量无限。用于存放暂时不执行的程序和数据。</p>
+<p>主存储器由一组存储位置组成，每个存储位置都有一个唯一标识符称为地址。所有在存储器中标识的独立的地址单元总数称为地址空间。如果计算机有N个字的存储空间，那就需要log2N位无符号数来定位一个存储单元。（寻址范围无单位）</p>
+<p>内存储器：<strong>ROM</strong><strong>（只读存储器）只能读出不能写入，断电数据不丢失；RAM（随机存取存储器）既能读出又能写入，断电数据丢失</strong>。<strong>Cache（高速缓存存储器）存取速度快，容量小</strong>，含有主存部分数据的副本，可以<strong>提高运算效率</strong>。</p>
+<p>高速缓冲存储器，Cache[kæʃ]，存取速度比主存快，但是比CPU及其内部的存储器要慢。通常容量较小，置于CPU和主存之间。在任何时间都含有主存中一部分数据的副本，当CPU要存取主存中的字时，将进行下列操作1)CPU首先检查Cache2)如果要存取的字存在，就将它复制；若不存在，将从主存中复制该字所在数据块，覆盖Cache的内容3)CPU存取Cache并复制该字意义：提高运算效率。</p>
+<p>主板上安装BIOS系统，既是硬件又含软件。</p>
+<p>外部设备对数据和信息起传输、转送、存储作用。</p>
+<p><strong>总线是计算机各种功能部件之间传送信息的公共通信干线</strong>，是由导线组成的传送线束。<strong>数据总线是双向总线，每一根线每次传送一位数据</strong>。<strong>地址总线是单项总线，每一根线每次传送一位地址数据</strong>。（32位系统最大支持4GB内存）控制总线一般是双向总线，不同CPU条数不同。</p>
+<p><strong>指令是构成程序的基本单位</strong>。指令采用二进制表示，规定计算机执行什么操作。一条指令由<strong>操作码和地址码</strong>构成。</p>
+<p><strong>机器周期：一条指令的执行过程包括取指令、译码、执行，完成一个基本操作所需要的时间</strong>。并行处理思想：计算机可以具备多个控制单元、算术逻辑单元和内存单元。流水线理念：如果控制单元能同时执行两个或者三个阶段，那么下一条指令就可以在前一条指令完成前开始。现代计算机使用流水线技术改善吞吐量（单位时间内完成的指令总数）。</p>
+<p><strong>计算机体系结构：构成系统主要部件的总体布局、部件主要性能以及部件之间连接方式。</strong></p>
+<p><img src="/img/cccplus/482126fea7f8.png"></p>
+<p>根据冯·诺依曼模型，计算机分为5个部分：存储器、算术逻辑单元、控制单元、输入设备和输出设备。</p>
+<p>控制单元和运算单元是其核心，组成CPU。程序必须存储在内存中。指令顺序执行。</p>
+<p><img src="/img/cccplus/ce717159c966.png"></p>
+<p>标称128GB的U盘实际空间为119GB。</p>
+<p>128*（1000&#x2F;1024）^3≈119</p>
+<p>磁介质存储设备用磁性存储位数据，有磁性表示1，无磁性表示0。<strong>磁盘存储的最小单位是扇区</strong>。光存储设备用激光刻盘，坑表示0，无坑表示1。</p>
+
+    </div>
+    
+    <div class="reward" ontouchstart>
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            <span class="reward-type">
+                <img class="alipay" src="/img/Alipay.png"><b>支付宝打赏</b>
+            </span>
+            
+            
+            <span class="reward-type">
+                <img class="wechat" src="/img/Wepay.png"><b>微信打赏</b>
+            </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">
+        如果觉得好用请支持我
+    </p>
+</div>
+    
+    <div class="post-footer">
+        <div>
+            
+            转载声明：
+            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">言锡的小栈</a>
+            
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+    <a href="/2026/08/25/BJFU_%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA%EF%BC%8821%E4%B8%8B%EF%BC%89%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%AD%E6%95%B0%E7%9A%84%E8%AE%A1%E7%AE%97%E5%92%8C%E5%AD%98%E5%82%A8/" class="pre-post btn btn-default" title='BJFU|计算机导论（21下）第二章-计算机中数的计算和存储'>
+        <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+        <span class="hidden-xs">
+            BJFU|计算机导论（21下）第二章-计算机中数的计算和存储</span>
+    </a>
+    
+    
+    <a href="/2026/08/25/BJFU_%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA%EF%BC%8821%E4%B8%8B%EF%BC%89%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="next-post btn btn-default" title='BJFU|计算机导论（21下）第四章-数据结构与算法'>
+        <span class="hidden-lg">下一篇</span>
+        <span class="hidden-xs">
+            BJFU|计算机导论（21下）第四章-数据结构与算法</span><i class="fa fa-angle-right fa-fw"></i>
+    </a>
+    
+</div>
+
+<div id="comments">
+    
+<p>评论系统未开启，无法评论！</p>
+
+</div>
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            Table of Contents
+        </h3>
+        
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E8%A8%80%EF%BC%9A"><span class="toc-text">前言：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%80%83%E7%82%B9%E6%95%B4%E7%90%86%EF%BC%9A"><span class="toc-text">考点整理：</span></a></li></ol>
+        
+    </div>
+</aside>
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+<a id="back-to-top" class="icon-btn hide">
+    <i class="fa fa-chevron-up"></i>
+</a>
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+    Total:
+    <strong id="busuanzi_value_site_pv">
+        <i class="fa fa-spinner fa-spin"></i>
+    </strong>
+    &nbsp; | &nbsp;
+    Visitors:
+    <strong id="busuanzi_value_site_uv">
+        <i class="fa fa-spinner fa-spin"></i>
+    </strong>
+    
+</div>
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;
+                    2017
+                    
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash.js"></script>
+
+</body>
+</html>

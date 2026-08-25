@@ -1,0 +1,356 @@
+<!DOCTYPE HTML>
+<html lang="zh_CN">
+
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="言锡的小栈">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.3.0">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="https://cccp-lus.github.io">
+    <!--SEO-->
+
+<meta name="keywords" content="编程拾贝" />
+
+
+<meta name="description" content="KDT介绍KDT&#x2F;K-D Tree（K-Dimension Tree，K维树）是一种高效处理K维空间信息的数据结构，其可以看做二叉树在K维空间的扩展，它主要用于多维空间关键数据的搜索。..." />
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+<title>
+    
+    简单介绍一下KDT/K-D Tree |
+    
+    言锡的小栈
+</title>
+
+<link rel="alternate" href="/atom.xml" title="言锡的小栈" type="application/atom+xml">
+
+
+<link rel="icon" href="/favicon.ico">
+
+    
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.7.0.css">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash.css">
+
+    
+<div class="hide">
+    <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</div>
+
+
+
+
+    
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+<body>
+    <header class="main-header"  style="background-image:url(
+    https://hexo-theme-snippet-1251680922.cos.ap-beijing.myqcloud.com/img/banner.jpg)"
+     >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='言锡'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+            <!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+            <h2>
+                让每一份努力都效率最大化
+            </h2>
+            
+        </div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                        <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://cccp-lus.github.io">
+                        言锡的小栈</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/"><i class="fa "></i>
+                                Home</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/桐铃集/"><i class="fa "></i>
+                                桐铃集</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/BFU-CS/"><i class="fa "></i>
+                                BJFU-CS</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/BUAA-IST/"><i class="fa "></i>
+                                BUAA-IST</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/学习资料/"><i class="fa "></i>
+                                学习资料</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/编程拾贝/"><i class="fa "></i>
+                                编程拾贝</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/踩坑记录/"><i class="fa "></i>
+                                踩坑记录</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/archives/"><i class="fa "></i>
+                                时间轴</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="简单介绍一下KDT/K-D Tree">
+            
+            简单介绍一下KDT/K-D Tree
+            
+        </h1>
+        <div class="post-meta">
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a class="category-link" href="/categories/%E7%BC%96%E7%A8%8B%E6%8B%BE%E8%B4%9D/">编程拾贝</a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            <a class="tag-none-link" href="/tags/%E7%BC%96%E7%A8%8B%E6%8B%BE%E8%B4%9D/" rel="tag">编程拾贝</a>
+            
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2026/08/25</span>
+    </span>
+    
+    <span class="fa-wrap">
+        <i class="fa fa-eye"></i>
+        <span id="busuanzi_value_page_pv"></span>
+    </span>
+    
+    
+</div>
+        
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <h2 id="KDT介绍"><a href="#KDT介绍" class="headerlink" title="KDT介绍"></a>KDT介绍</h2><p>KDT&#x2F;K-D Tree（K-Dimension Tree，K维树）是一种高效处理K维空间信息的数据结构，其可以看做<strong>二叉树在K维空间的扩展</strong>，它主要用于多维空间关键数据的搜索。KDT是一种特殊的二进制空间分割树，每个节点都表示k维空间中的一个点，并且所有非叶子节点可以用一个超平面将空间分割成两个半空间。节点左边的子树代表在超平面左边的点，节点右边的子树代表在超平面右边的点。</p>
+<p>相较于二叉树只需要根据一维数据进行划分，KDT交替的使用某一维的数据进行划分。</p>
+<h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><ul>
+<li>激光SLAM处理三维点云数据</li>
+<li>维护高维度信息、处理偏序问题</li>
+<li>KNN的一种实现方法</li>
+</ul>
+<h2 id="算法解析"><a href="#算法解析" class="headerlink" title="算法解析"></a>算法解析</h2><h3 id="构建KDT"><a href="#构建KDT" class="headerlink" title="构建KDT"></a>构建KDT</h3><p>已知K维空间内有n个不同的点坐标，构建K-D Tree的方法如下：</p>
+<ol>
+<li>若当前超立方体中只有一个点，则返回这个点。</li>
+<li>选择一个维度，将当前超立方体按照这个维度分成两个超立方体。</li>
+<li>选择切割点：在选择的维度上选择一个点，在这个维度上，值小于这个点的，归入左超立方体（左子树），其余归入右超立方体（右子树）。</li>
+<li>将选择的点作为该子树的根节点，递归上述操作。</li>
+</ol>
+<h3 id="最近邻搜索"><a href="#最近邻搜索" class="headerlink" title="最近邻搜索"></a>最近邻搜索</h3><p>首先使用类似于二分搜索的方式从根节点开始向下搜索，直到找到叶子节点，期间将访问过的节点都加入到一个栈(Stack)中，同时记录最短距离；找到叶子节点后开始回溯，依次从栈中弹出之前的访问过的节点，判断以待查询点为球心，当前最短距离为半径的超球面，与分割面是否有相交，如果相交则进入该节点的另一个分支，继续执行二分搜索，直到搜索到叶子节点，以此循环往复，直到超球面与分割面没有相交。</p>
+<h3 id="插入新节点"><a href="#插入新节点" class="headerlink" title="插入新节点"></a>插入新节点</h3><p>借鉴了替罪羊树的思想，替罪羊树是一种自平衡树，但它不是严格意义上的平衡树，而是允许一定的失衡，失衡的程度用一个常数α表示。当失衡时重建整个子树，被重建的子树的根节点就是“替罪羊”节点。虽然重构的代价较大，但是并不是每次插入新节点都会引发重构操作，所以使用这样一种代价较大但是次数较少的重构方式。</p>
+<h3 id="补充说明"><a href="#补充说明" class="headerlink" title="补充说明"></a>补充说明</h3><h4 id="超立方体"><a href="#超立方体" class="headerlink" title="超立方体"></a>超立方体</h4><p>采用类比的方法理解</p>
+<ol>
+<li>正方形是四条长度相等的一维图形围成的二维图形。其四条边首尾相连，每个端点由两条线段共用。</li>
+<li>正方体是六个面积相等的二维图形围成的三维图形。其六个面首尾相连，每个棱由两个面共用。</li>
+<li>不难得出：超立方体是八个体积相等的三维图形围成的四维图形。其八个体首尾相连，每个面由两个体共用。</li>
+</ol>
+<h4 id="维度选择"><a href="#维度选择" class="headerlink" title="维度选择"></a>维度选择</h4><p>K维轮流法</p>
+<p>大方差优先法</p>
+<p>随机划分法</p>
+<h4 id="选中位数"><a href="#选中位数" class="headerlink" title="选中位数"></a>选中位数</h4><p>只需要找出部分数组的中位数就可以了，即找出第k大的数</p>
+<h2 id="代码模板"><a href="#代码模板" class="headerlink" title="代码模板"></a>代码模板</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// KDT建树，作者还没写</span></span><br></pre></td></tr></table></figure>
+
+
+    </div>
+    
+    <div class="reward" ontouchstart>
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            <span class="reward-type">
+                <img class="alipay" src="/img/Alipay.png"><b>支付宝打赏</b>
+            </span>
+            
+            
+            <span class="reward-type">
+                <img class="wechat" src="/img/Wepay.png"><b>微信打赏</b>
+            </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">
+        如果觉得好用请支持我
+    </p>
+</div>
+    
+    <div class="post-footer">
+        <div>
+            
+            转载声明：
+            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">言锡的小栈</a>
+            
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+    <a href="/2026/08/25/25%E4%BF%9D%E7%A0%94%E7%BB%8F%E9%AA%8C%E5%B8%96%20-%20CS211-%EF%BC%9E985/" class="pre-post btn btn-default" title='25保研经验帖 - CS211-＞985'>
+        <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+        <span class="hidden-xs">
+            25保研经验帖 - CS211-＞985</span>
+    </a>
+    
+    
+    <a href="/2026/08/25/%E7%82%B9%E4%BA%91%E7%9A%84%E4%BB%8B%E7%BB%8D/" class="next-post btn btn-default" title='点云的介绍'>
+        <span class="hidden-lg">下一篇</span>
+        <span class="hidden-xs">
+            点云的介绍</span><i class="fa fa-angle-right fa-fw"></i>
+    </a>
+    
+</div>
+
+<div id="comments">
+    
+<p>评论系统未开启，无法评论！</p>
+
+</div>
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            Table of Contents
+        </h3>
+        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#KDT%E4%BB%8B%E7%BB%8D"><span class="toc-text">KDT介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BA%94%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-text">应用场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E8%A7%A3%E6%9E%90"><span class="toc-text">算法解析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9E%84%E5%BB%BAKDT"><span class="toc-text">构建KDT</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%80%E8%BF%91%E9%82%BB%E6%90%9C%E7%B4%A2"><span class="toc-text">最近邻搜索</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%92%E5%85%A5%E6%96%B0%E8%8A%82%E7%82%B9"><span class="toc-text">插入新节点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%A5%E5%85%85%E8%AF%B4%E6%98%8E"><span class="toc-text">补充说明</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B6%85%E7%AB%8B%E6%96%B9%E4%BD%93"><span class="toc-text">超立方体</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%B4%E5%BA%A6%E9%80%89%E6%8B%A9"><span class="toc-text">维度选择</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%89%E4%B8%AD%E4%BD%8D%E6%95%B0"><span class="toc-text">选中位数</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%E6%A8%A1%E6%9D%BF"><span class="toc-text">代码模板</span></a></li></ol>
+        
+    </div>
+</aside>
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+<a id="back-to-top" class="icon-btn hide">
+    <i class="fa fa-chevron-up"></i>
+</a>
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+    Total:
+    <strong id="busuanzi_value_site_pv">
+        <i class="fa fa-spinner fa-spin"></i>
+    </strong>
+    &nbsp; | &nbsp;
+    Visitors:
+    <strong id="busuanzi_value_site_uv">
+        <i class="fa fa-spinner fa-spin"></i>
+    </strong>
+    
+</div>
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;
+                    2017
+                    
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash.js"></script>
+
+</body>
+</html>

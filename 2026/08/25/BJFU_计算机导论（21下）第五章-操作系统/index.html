@@ -1,0 +1,340 @@
+<!DOCTYPE HTML>
+<html lang="zh_CN">
+
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="言锡的小栈">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.3.0">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="https://cccp-lus.github.io">
+    <!--SEO-->
+
+<meta name="keywords" content="BJFU-CS" />
+
+
+<meta name="description" content="前言：计算机导论是笔者大学期间第一门结课的专业课，也是在这门课上笔者取得了大学生活中第一次满分。笔者近日整理文件发现笔记数十页，不忍抛弃，因稍加整理后发布于此。
+内容共八章，涵盖了计算机类专业学..." />
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+<title>
+    
+    BJFU|计算机导论（21下）第五章-操作系统 |
+    
+    言锡的小栈
+</title>
+
+<link rel="alternate" href="/atom.xml" title="言锡的小栈" type="application/atom+xml">
+
+
+<link rel="icon" href="/favicon.ico">
+
+    
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.7.0.css">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash.css">
+
+    
+<div class="hide">
+    <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</div>
+
+
+
+
+    
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+<body>
+    <header class="main-header"  style="background-image:url(
+    https://hexo-theme-snippet-1251680922.cos.ap-beijing.myqcloud.com/img/banner.jpg)"
+     >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='言锡'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+            <!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+            <h2>
+                让每一份努力都效率最大化
+            </h2>
+            
+        </div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                        <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://cccp-lus.github.io">
+                        言锡的小栈</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/"><i class="fa "></i>
+                                Home</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/桐铃集/"><i class="fa "></i>
+                                桐铃集</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/BFU-CS/"><i class="fa "></i>
+                                BJFU-CS</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/BUAA-IST/"><i class="fa "></i>
+                                BUAA-IST</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/学习资料/"><i class="fa "></i>
+                                学习资料</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/编程拾贝/"><i class="fa "></i>
+                                编程拾贝</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/踩坑记录/"><i class="fa "></i>
+                                踩坑记录</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/archives/"><i class="fa "></i>
+                                时间轴</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="BJFU|计算机导论（21下）第五章-操作系统">
+            
+            BJFU|计算机导论（21下）第五章-操作系统
+            
+        </h1>
+        <div class="post-meta">
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a class="category-link" href="/categories/BJFU-CS/">BJFU-CS</a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            <a class="tag-none-link" href="/tags/BJFU-CS/" rel="tag">BJFU-CS</a>
+            
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2026/08/25</span>
+    </span>
+    
+    <span class="fa-wrap">
+        <i class="fa fa-eye"></i>
+        <span id="busuanzi_value_page_pv"></span>
+    </span>
+    
+    
+</div>
+        
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <h3 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h3><p>计算机导论是笔者大学期间第一门结课的专业课，也是在这门课上笔者取得了大学生活中第一次满分。笔者近日整理文件发现笔记数十页，不忍抛弃，因稍加整理后发布于此。</p>
+<p>内容共八章，涵盖了计算机类专业学生的基础知识。**对于行业初学者，可以提供一个专业的视角以便后续选择进一步发展方向；对于业外人士，也可做科普性质文章对待。**需要注意的是，<strong>笔记并非考点</strong>，请校友（尤其是同门师弟师妹们）<strong>理性对待此资料，认真听讲，认真复习。</strong></p>
+<p>后续章节将会逐步更新，请各位读者静候。</p>
+<h3 id="考点整理："><a href="#考点整理：" class="headerlink" title="考点整理："></a>考点整理：</h3><p><strong>操作系统<strong><strong>OS</strong></strong>是计算机硬件和用户（程序和人）的一个接口，它使得其他程序更加方便地运行，并能有效地对计算机硬件和软件资源进行访问</strong>。它的主要设计目标是：有效地使用硬件、容易地使用资源。</p>
+<p>自举过程：使用ROM技术把操作系统加载入内存。计算机加电时，CPU执行自举程序，自举程序从硬盘读取操作系统，把启动计算机需要的那部分操作系统装入内存。再由CPU执行操作系统的代码，完成启动。</p>
+<p><strong>操作系统演化：批处理、分时、单用户（<strong><strong>DOS</strong></strong>）、并行、分布式、实时操作系统</strong>。<br>实时系统是指特定时间限制内完成任务。它们被用在实时应用程序中，从而来监控、响应或控制外部过程或环境。</p>
+<p>现代操作系统功能：存储管理、进程管理、设备管理、文件管理。<br>操作系统组成：用户界面、命令解释程序、存储管理器、进程管理器、设备管理器、文件管理器。<br>用户界面用来接收用户输入并向操作系统解释这些请求。<br>存储管理器作用：内存空间分配和回收、地址转换和内存保护、内存的虚拟存储器扩充。<br>进程管理器作用：负责在多个程序之间分配处理器时间，使每个程序都能高效而有序地执行。<br>设备管理器作用：统一管理各种已登入系统的外部设备并负责外设和主机之间的信息交换。<br>文件管理器作用：控制对文件的访问、管理文件的创建删除和修改、可以给文件命名、管理文件的存储、负责归档和备份。</p>
+<p>现代操作系统可以通过<strong>多任务、多线程、多重处理</strong>等技术保证处理器资源能够得到充分利用。<br>并发性是指若干事件在同一时间间隔发生。<br><img src="/img/cccplus/c998ec8eee89.png"></p>
+<p>线程是进程的实体，是进程的一条执行路径。<br><img src="/img/cccplus/65a88f00a943.png"><br><img src="/img/cccplus/25639c0db0f6.png"></p>
+<p>UNIX，1969，贝尔实验室<br>Linux，1991，芬兰，Linus<br>Windows， 20世纪80年代后期<br>国产操作系统红旗Linux，上世纪90年代<br>2008年，中国移动OMS系统<br>2010年联通沃Phone系统<br>深度操作系统是率先进入国际前十名的中国操作系统产品<br>中标麒麟操作系统</p>
+<p>研制操作系统的难点：<br>1.工作量巨大，需要深厚技术积累和持续迭代演进<br>2.高端技术人才相对匮乏，操作系统领域人才捉襟见肘<br>3.研发资金相对不足，趋利避害使企业避重就轻<br>4.有系统无应用，软件生态难构筑，市场推广难度大<br>研制操作系统的机遇：<br>1.国际环境变化和国内市场认知在发生改变<br>2.互联网时代红利<br>3.科技界技术革命机遇。</p>
+
+    </div>
+    
+    <div class="reward" ontouchstart>
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            <span class="reward-type">
+                <img class="alipay" src="/img/Alipay.png"><b>支付宝打赏</b>
+            </span>
+            
+            
+            <span class="reward-type">
+                <img class="wechat" src="/img/Wepay.png"><b>微信打赏</b>
+            </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">
+        如果觉得好用请支持我
+    </p>
+</div>
+    
+    <div class="post-footer">
+        <div>
+            
+            转载声明：
+            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">言锡的小栈</a>
+            
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+    <a href="/2026/08/25/BJFU_%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA%EF%BC%8821%E4%B8%8B%EF%BC%89%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="pre-post btn btn-default" title='BJFU|计算机导论（21下）第四章-数据结构与算法'>
+        <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+        <span class="hidden-xs">
+            BJFU|计算机导论（21下）第四章-数据结构与算法</span>
+    </a>
+    
+    
+    <a href="/2026/08/25/BJFU_%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA%EF%BC%8821%E4%B8%8B%EF%BC%89%E7%AC%AC%E5%85%AD%E7%AB%A0-%E6%95%B0%E6%8D%AE%E5%BA%93/" class="next-post btn btn-default" title='BJFU|计算机导论（21下）第六章-数据库'>
+        <span class="hidden-lg">下一篇</span>
+        <span class="hidden-xs">
+            BJFU|计算机导论（21下）第六章-数据库</span><i class="fa fa-angle-right fa-fw"></i>
+    </a>
+    
+</div>
+
+<div id="comments">
+    
+<p>评论系统未开启，无法评论！</p>
+
+</div>
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            Table of Contents
+        </h3>
+        
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E8%A8%80%EF%BC%9A"><span class="toc-text">前言：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%80%83%E7%82%B9%E6%95%B4%E7%90%86%EF%BC%9A"><span class="toc-text">考点整理：</span></a></li></ol>
+        
+    </div>
+</aside>
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+<a id="back-to-top" class="icon-btn hide">
+    <i class="fa fa-chevron-up"></i>
+</a>
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+    Total:
+    <strong id="busuanzi_value_site_pv">
+        <i class="fa fa-spinner fa-spin"></i>
+    </strong>
+    &nbsp; | &nbsp;
+    Visitors:
+    <strong id="busuanzi_value_site_uv">
+        <i class="fa fa-spinner fa-spin"></i>
+    </strong>
+    
+</div>
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;
+                    2017
+                    
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash.js"></script>
+
+</body>
+</html>

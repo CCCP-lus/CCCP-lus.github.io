@@ -1,0 +1,391 @@
+<!DOCTYPE HTML>
+<html lang="zh_CN">
+
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="言锡的小栈">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.3.0">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="https://cccp-lus.github.io">
+    <!--SEO-->
+
+<meta name="keywords" content="编程拾贝" />
+
+
+<meta name="description" content="例1代码：1234567891011121314#include&lt;iostream&gt;using namespace std;void fun(int i)&#123;	if (i &..." />
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+<title>
+    
+    递归训练九道题 |
+    
+    言锡的小栈
+</title>
+
+<link rel="alternate" href="/atom.xml" title="言锡的小栈" type="application/atom+xml">
+
+
+<link rel="icon" href="/favicon.ico">
+
+    
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.7.0.css">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash.css">
+
+    
+<div class="hide">
+    <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</div>
+
+
+
+
+    
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+<body>
+    <header class="main-header"  style="background-image:url(
+    https://hexo-theme-snippet-1251680922.cos.ap-beijing.myqcloud.com/img/banner.jpg)"
+     >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='言锡'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+            <!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+            <h2>
+                让每一份努力都效率最大化
+            </h2>
+            
+        </div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                        <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://cccp-lus.github.io">
+                        言锡的小栈</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/"><i class="fa "></i>
+                                Home</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/桐铃集/"><i class="fa "></i>
+                                桐铃集</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/BFU-CS/"><i class="fa "></i>
+                                BJFU-CS</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/BUAA-IST/"><i class="fa "></i>
+                                BUAA-IST</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/学习资料/"><i class="fa "></i>
+                                学习资料</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/编程拾贝/"><i class="fa "></i>
+                                编程拾贝</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/踩坑记录/"><i class="fa "></i>
+                                踩坑记录</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/archives/"><i class="fa "></i>
+                                时间轴</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="递归训练九道题">
+            
+            递归训练九道题
+            
+        </h1>
+        <div class="post-meta">
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a class="category-link" href="/categories/%E7%BC%96%E7%A8%8B%E6%8B%BE%E8%B4%9D/">编程拾贝</a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            <a class="tag-none-link" href="/tags/%E7%BC%96%E7%A8%8B%E6%8B%BE%E8%B4%9D/" rel="tag">编程拾贝</a>
+            
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2026/08/25</span>
+    </span>
+    
+    <span class="fa-wrap">
+        <i class="fa fa-eye"></i>
+        <span id="busuanzi_value_page_pv"></span>
+    </span>
+    
+    
+</div>
+        
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <h2 id="例1"><a href="#例1" class="headerlink" title="例1"></a>例1</h2><h3 id="代码："><a href="#代码：" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">fun</span><span class="params">(<span class="type">int</span> i)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (i &gt; <span class="number">0</span>) <span class="built_in">fun</span>(i / <span class="number">2</span>);</span><br><span class="line">	cout &lt;&lt; i &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">fun</span>(<span class="number">10</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="题解："><a href="#题解：" class="headerlink" title="题解："></a>题解：</h3><h4 id="运行结果："><a href="#运行结果：" class="headerlink" title="运行结果："></a>运行结果：</h4><blockquote>
+<p>0<br>1<br>2<br>5<br>10</p>
+</blockquote>
+<h4 id="递归分析："><a href="#递归分析：" class="headerlink" title="递归分析："></a>递归分析：</h4><blockquote>
+<p>1&gt; fun(10):<br>        i &#x3D; 5; fun(5);<br>        cout &lt;&lt; 10 &lt;&lt; endl;<br>2&gt; fun(5):<br>        i &#x3D; 2; fun(2);<br>        cout &lt;&lt; 5 &lt;&lt; endl;<br>3&gt; fun(2):<br>        i &#x3D; 1; fun(1);<br>        cout &lt;&lt; 2 &lt;&lt; endl;<br>4&gt; fun(1):<br>        i &#x3D; 0; fun(0);<br>        cout &lt;&lt; 1 &lt;&lt; endl;<br>5&gt;fun(0):<br>        cout &lt;&lt; 0 &lt;&lt; endl;</p>
+</blockquote>
+<h2 id="例2"><a href="#例2" class="headerlink" title="例2"></a>例2</h2><h3 id="代码：-1"><a href="#代码：-1" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">conversion</span><span class="params">(<span class="type">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (n == <span class="number">0</span>)	</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">	<span class="keyword">else</span> </span><br><span class="line">    &#123;</span><br><span class="line">		<span class="type">int</span> i = n % <span class="number">2</span>;	</span><br><span class="line">        <span class="built_in">conversion</span>(n / <span class="number">2</span>);</span><br><span class="line">		cout &lt;&lt; i;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">conversion</span>(<span class="number">13</span>); </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="题解：-1"><a href="#题解：-1" class="headerlink" title="题解："></a>题解：</h3><h4 id="运行结果：-1"><a href="#运行结果：-1" class="headerlink" title="运行结果："></a>运行结果：</h4><blockquote>
+<p>1101</p>
+</blockquote>
+<h4 id="递归分析：-1"><a href="#递归分析：-1" class="headerlink" title="递归分析："></a>递归分析：</h4><blockquote>
+<p>1&gt;conversion(13):<br>        i &#x3D; 1; conversion(6);<br>        cout &lt;&lt; 1;<br>2&gt;conversion(6):<br>        i &#x3D; 0; conversion(3);<br>        cout &lt;&lt; 0;<br>3&gt;conversion(3):<br>        i &#x3D; 1; conversion(1);<br>        cout &lt;&lt; 1;<br>4&gt;conversion(1):<br>        i &#x3D; 1; conversion(0);<br>        cout &lt;&lt; 1;<br>5&gt;conversion(0):<br>        return ;</p>
+</blockquote>
+<h2 id="例3"><a href="#例3" class="headerlink" title="例3"></a>例3</h2><h3 id="代码：-2"><a href="#代码：-2" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">conversion</span><span class="params">(<span class="type">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (n == <span class="number">0</span>)	</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		n = n / <span class="number">2</span>;	</span><br><span class="line">		<span class="built_in">conversion</span>(n);</span><br><span class="line">		cout &lt;&lt; n % <span class="number">2</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">conversion</span>(<span class="number">13</span>); </span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="题解：-2"><a href="#题解：-2" class="headerlink" title="题解："></a>题解：</h3><h4 id="运行结果：-2"><a href="#运行结果：-2" class="headerlink" title="运行结果："></a>运行结果：</h4><blockquote>
+<p>0110</p>
+</blockquote>
+<h4 id="递归分析：-2"><a href="#递归分析：-2" class="headerlink" title="递归分析："></a>递归分析：</h4><blockquote>
+<p>1&gt;conversion(13):<br>        n &#x3D; 6; conversion(6);<br>        cout &lt;&lt; 0;<br>2&gt;conversion(6):<br>        n &#x3D; 3; conversion(3);<br>        cout &lt;&lt; 1;<br>3&gt;conversion(3):<br>        n &#x3D; 1; conversion(1);<br>        cout &lt;&lt; 1;<br>4&gt;conversion(1):<br>        n &#x3D; 0; conversion(0);<br>        cout &lt;&lt; 0;<br>5&gt;conversion(0):<br>        return ;</p>
+</blockquote>
+<h2 id="例4"><a href="#例4" class="headerlink" title="例4"></a>例4</h2><h3 id="代码：-3"><a href="#代码：-3" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Display</span><span class="params">(<span class="type">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> i;</span><br><span class="line">	<span class="keyword">for</span> (i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">		cout &lt;&lt; <span class="string">&#x27; &#x27;</span> &lt;&lt; n;</span><br><span class="line">	cout &lt;&lt; endl;</span><br><span class="line">	<span class="keyword">if</span> (n &gt; <span class="number">0</span>) </span><br><span class="line">		<span class="built_in">Display</span>(n - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">Display</span>(<span class="number">4</span>); </span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="题解：-3"><a href="#题解：-3" class="headerlink" title="题解："></a>题解：</h3><h4 id="运行结果：-3"><a href="#运行结果：-3" class="headerlink" title="运行结果："></a>运行结果：</h4><blockquote>
+<p>4 4 4 4<br> 3 3 3<br> 2 2<br> 1</p>
+</blockquote>
+<h4 id="递归分析：-3"><a href="#递归分析：-3" class="headerlink" title="递归分析："></a>递归分析：</h4><blockquote>
+<p>1&gt;Display(4):<br>        for(i &#x3D; 1; i &lt;&#x3D; 4; i++)<br>                cout &lt;&lt; ‘ ‘ &lt;&lt; 4;<br>        Display(3);<br>2&gt;Display(3):<br>        for(i &#x3D; 1; i &lt;&#x3D; 3; i++)<br>                cout &lt;&lt; ‘ ‘ &lt;&lt; 3;<br>        Display(2);<br>3&gt;Display(2):<br>        for(i &#x3D; 1; i &lt;&#x3D; 2; i++)<br>                cout &lt;&lt; ‘ ‘ &lt;&lt; 2;<br>        Display(1);<br>4&gt;Display(1):<br>        for(i &#x3D; 1; i &lt;&#x3D; 1; i++)<br>                cout &lt;&lt; ‘ ‘ &lt;&lt; 1;<br>        Display(0);<br>5&gt;Display(0):<br>        cout &lt;&lt; endl;</p>
+</blockquote>
+<h2 id="例5"><a href="#例5" class="headerlink" title="例5"></a>例5</h2><h3 id="代码：-4"><a href="#代码：-4" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">float</span> <span class="title">f</span><span class="params">(<span class="type">int</span> A[], <span class="type">int</span> i)</span> </span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> m;</span><br><span class="line">	<span class="keyword">if</span> (i == <span class="number">0</span>)  </span><br><span class="line">		<span class="keyword">return</span> A[<span class="number">0</span>];</span><br><span class="line">	<span class="keyword">else</span> </span><br><span class="line">	&#123;</span><br><span class="line">		m = <span class="built_in">f</span>(A, i - <span class="number">1</span>);</span><br><span class="line">		<span class="keyword">if</span> (m &gt; A[i])  </span><br><span class="line">			<span class="keyword">return</span> A[i];</span><br><span class="line">		<span class="keyword">else</span> </span><br><span class="line">			<span class="keyword">return</span> m;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> A[<span class="number">5</span>] = &#123; <span class="number">5</span>,<span class="number">3</span>,<span class="number">1</span>,<span class="number">4</span>,<span class="number">2</span> &#125;;</span><br><span class="line">	cout &lt;&lt; <span class="built_in">f</span>(A, <span class="number">4</span>);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="题解：-4"><a href="#题解：-4" class="headerlink" title="题解："></a>题解：</h3><h4 id="运行结果：-4"><a href="#运行结果：-4" class="headerlink" title="运行结果："></a>运行结果：</h4><blockquote>
+<p>1</p>
+</blockquote>
+<h4 id="递归分析：-4"><a href="#递归分析：-4" class="headerlink" title="递归分析："></a>递归分析：</h4><blockquote>
+<p>1&gt;f(A, 4):<br>        m &#x3D; f(A, 3);<br>        return 1;<br>2&gt;f(A, 3):<br>        m &#x3D; f(A, 2);<br>        return 1;<br>3&gt;f(A, 2):<br>        m &#x3D; f(A, 1);<br>        return 1;<br>4&gt;f(A, 1):<br>        m &#x3D; f(A, 0);<br>        return m &#x3D; 3;<br>5&gt;f(A, 0):<br>        return 5;</p>
+</blockquote>
+<h2 id="例6"><a href="#例6" class="headerlink" title="例6"></a>例6</h2><h3 id="代码：-5"><a href="#代码：-5" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//假设链表已经创建，链表中有三个结点，数据域为整数，分别为：1、2 、3</span></span><br><span class="line"><span class="comment">//调用下面函数时，参数指针p指向首元结点 1，参数n为链表长度，即 3</span></span><br><span class="line"><span class="comment">//根据上述已知，给出此函数的递归执行过程和运行结果</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">double</span> <span class="title">GetAverage</span><span class="params">(LinkList p, <span class="type">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (!p-&gt;next)	</span><br><span class="line">		<span class="keyword">return</span> p-&gt;data;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="type">double</span> ave = <span class="built_in">GetAverage</span>(p-&gt;next, n - <span class="number">1</span>);</span><br><span class="line">		<span class="keyword">return</span> (ave * (n - <span class="number">1</span>) + p-&gt;data) / n;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="题解：-5"><a href="#题解：-5" class="headerlink" title="题解："></a>题解：</h3><h4 id="运行结果：-5"><a href="#运行结果：-5" class="headerlink" title="运行结果："></a>运行结果：</h4><blockquote>
+<p>2</p>
+</blockquote>
+<h4 id="递归分析：-5"><a href="#递归分析：-5" class="headerlink" title="递归分析："></a>递归分析：</h4><blockquote>
+<p>1&gt;GetAverage(P1, 3):<br>        ave &#x3D; GetAverage(P2, 2);<br>        return 2;<br>2&gt;GetAverage(P2, 2):<br>        ave &#x3D; GetAverage(P3, 1);<br>        return 2.5;<br>3&gt;GetAverage(P3, 1):<br>        return 3;</p>
+</blockquote>
+<h2 id="例7"><a href="#例7" class="headerlink" title="例7"></a>例7</h2><h3 id="代码：-6"><a href="#代码：-6" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//假设链表已经创建，链表中有三个结点，数据域为整数，分别为：1、2 、3</span></span><br><span class="line"><span class="comment">//调用下面函数时，参数指针p指向首元结点 1</span></span><br><span class="line"><span class="comment">// n为全局变量，初值为3</span></span><br><span class="line"><span class="comment">//根据上述已知，给出此函数的递归执行过程和运行结果</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">double</span> <span class="title">GetAverage</span><span class="params">(LinkList p)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span> (!p-&gt;next)	</span><br><span class="line">		<span class="keyword">return</span> p-&gt;data;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		n--;</span><br><span class="line">		<span class="type">double</span> ave = <span class="built_in">GetAverage</span>(p-&gt;next);</span><br><span class="line">		<span class="keyword">return</span> (ave * n + p-&gt;data) / (n + <span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="题解：-6"><a href="#题解：-6" class="headerlink" title="题解："></a>题解：</h3><h4 id="运行结果：-6"><a href="#运行结果：-6" class="headerlink" title="运行结果："></a>运行结果：</h4><blockquote>
+<p>1.75</p>
+</blockquote>
+<h4 id="递归分析：-6"><a href="#递归分析：-6" class="headerlink" title="递归分析："></a>递归分析：</h4><blockquote>
+<p>1&gt;GetAverage(P1):<br>        n &#x3D; 2;<br>        ave &#x3D; GetAverage(P2);<br>        return 1.75;<br>2&gt;GetAverage(P2):<br>        n &#x3D; 1;<br>        ave &#x3D; GetAverage(P3);<br>        return 2.5;<br>3&gt;GetAverage(P3):<br>        return 3;</p>
+</blockquote>
+<h2 id="例8"><a href="#例8" class="headerlink" title="例8"></a>例8</h2><h3 id="代码：-7"><a href="#代码：-7" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">fact</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">static</span> <span class="type">int</span> i = <span class="number">5</span>;</span><br><span class="line">    <span class="keyword">if</span> (i == <span class="number">0</span>)      </span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        i--;</span><br><span class="line">        <span class="keyword">return</span>(<span class="built_in">fact</span>() * (i + <span class="number">1</span>));</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;factor of 5!=%d\n&quot;</span>, <span class="built_in">fact</span>());</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="题解：-7"><a href="#题解：-7" class="headerlink" title="题解："></a>题解：</h3><h4 id="运行结果：-7"><a href="#运行结果：-7" class="headerlink" title="运行结果："></a>运行结果：</h4><blockquote>
+<p>factor of 5!&#x3D;1</p>
+</blockquote>
+<h4 id="递归分析：-7"><a href="#递归分析：-7" class="headerlink" title="递归分析："></a>递归分析：</h4><blockquote>
+<p>1&gt;fact():<br>        i &#x3D; 5; i &#x3D; 4;<br>        return 1;<br>2&gt;fact():<br>        i &#x3D; 3;<br>        return 1;<br>3&gt;fact():<br>        i &#x3D; 2;<br>        return 1;<br>4&gt;fact():<br>        i &#x3D; 1;<br>        return 1;<br>5&gt;fact():<br>        i &#x3D; 0;<br>        return 1;<br>6&gt;fact():<br>        return 1;</p>
+</blockquote>
+<h2 id="例9"><a href="#例9" class="headerlink" title="例9"></a>例9</h2><h3 id="代码：-8"><a href="#代码：-8" class="headerlink" title="代码："></a>代码：</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">fact</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="type">static</span> <span class="type">int</span> i = <span class="number">5</span>;</span><br><span class="line">    <span class="keyword">if</span> (i == <span class="number">0</span>)     </span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        i--;</span><br><span class="line">        <span class="keyword">return</span>((i + <span class="number">1</span>) * <span class="built_in">fact</span>());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;factor of 5!=%d\n&quot;</span>, <span class="built_in">fact</span>());</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="题解：-8"><a href="#题解：-8" class="headerlink" title="题解："></a>题解：</h3><h4 id="运行结果：-8"><a href="#运行结果：-8" class="headerlink" title="运行结果："></a>运行结果：</h4><blockquote>
+<p>factor of 5!&#x3D;120</p>
+</blockquote>
+<h4 id="递归分析：-8"><a href="#递归分析：-8" class="headerlink" title="递归分析："></a>递归分析：</h4><blockquote>
+<p>1&gt;fact():<br>        i &#x3D; 5; i &#x3D; 4;<br>        return 120;<br>2&gt;fact():<br>        i &#x3D; 3;<br>        return 24;<br>3&gt;fact():<br>        i &#x3D; 2;<br>        return 6;<br>4&gt;fact():<br>        i &#x3D; 1;<br>        return 2;<br>5&gt;fact():<br>        i &#x3D; 0;<br>        return 1;<br>6&gt;fact():<br>        return 1;</p>
+</blockquote>
+
+    </div>
+    
+    <div class="reward" ontouchstart>
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            <span class="reward-type">
+                <img class="alipay" src="/img/Alipay.png"><b>支付宝打赏</b>
+            </span>
+            
+            
+            <span class="reward-type">
+                <img class="wechat" src="/img/Wepay.png"><b>微信打赏</b>
+            </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">
+        如果觉得好用请支持我
+    </p>
+</div>
+    
+    <div class="post-footer">
+        <div>
+            
+            转载声明：
+            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">言锡的小栈</a>
+            
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+    <a href="/2026/08/25/BJFU_C++%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80%EF%BC%8822%E4%B8%8A%EF%BC%89%E5%AE%9E%E9%AA%8C7-%E6%96%87%E4%BB%B6%E6%B5%81/" class="pre-post btn btn-default" title='BJFU|C++程序设计基础（22上）实验7-文件流'>
+        <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+        <span class="hidden-xs">
+            BJFU|C++程序设计基础（22上）实验7-文件流</span>
+    </a>
+    
+    
+    <a href="/2026/08/25/%E9%A1%BA%E5%BA%8F%E3%80%81%E9%93%BE%E5%BC%8F%E7%BB%93%E6%9E%84%E7%9A%84%E4%B8%AA%E4%BA%BA%E4%B9%A6%E7%B1%8D%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%EF%BC%88C++%EF%BC%89/" class="next-post btn btn-default" title='顺序、链式结构的个人书籍管理系统（C++）'>
+        <span class="hidden-lg">下一篇</span>
+        <span class="hidden-xs">
+            顺序、链式结构的个人书籍管理系统（C++）</span><i class="fa fa-angle-right fa-fw"></i>
+    </a>
+    
+</div>
+
+<div id="comments">
+    
+<p>评论系统未开启，无法评论！</p>
+
+</div>
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            Table of Contents
+        </h3>
+        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%8B1"><span class="toc-text">例1</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%EF%BC%9A"><span class="toc-text">代码：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3%EF%BC%9A"><span class="toc-text">题解：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C%EF%BC%9A"><span class="toc-text">运行结果：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%92%E5%BD%92%E5%88%86%E6%9E%90%EF%BC%9A"><span class="toc-text">递归分析：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%8B2"><span class="toc-text">例2</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%EF%BC%9A-1"><span class="toc-text">代码：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3%EF%BC%9A-1"><span class="toc-text">题解：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C%EF%BC%9A-1"><span class="toc-text">运行结果：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%92%E5%BD%92%E5%88%86%E6%9E%90%EF%BC%9A-1"><span class="toc-text">递归分析：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%8B3"><span class="toc-text">例3</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%EF%BC%9A-2"><span class="toc-text">代码：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3%EF%BC%9A-2"><span class="toc-text">题解：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C%EF%BC%9A-2"><span class="toc-text">运行结果：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%92%E5%BD%92%E5%88%86%E6%9E%90%EF%BC%9A-2"><span class="toc-text">递归分析：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%8B4"><span class="toc-text">例4</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%EF%BC%9A-3"><span class="toc-text">代码：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3%EF%BC%9A-3"><span class="toc-text">题解：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C%EF%BC%9A-3"><span class="toc-text">运行结果：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%92%E5%BD%92%E5%88%86%E6%9E%90%EF%BC%9A-3"><span class="toc-text">递归分析：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%8B5"><span class="toc-text">例5</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%EF%BC%9A-4"><span class="toc-text">代码：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3%EF%BC%9A-4"><span class="toc-text">题解：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C%EF%BC%9A-4"><span class="toc-text">运行结果：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%92%E5%BD%92%E5%88%86%E6%9E%90%EF%BC%9A-4"><span class="toc-text">递归分析：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%8B6"><span class="toc-text">例6</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%EF%BC%9A-5"><span class="toc-text">代码：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3%EF%BC%9A-5"><span class="toc-text">题解：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C%EF%BC%9A-5"><span class="toc-text">运行结果：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%92%E5%BD%92%E5%88%86%E6%9E%90%EF%BC%9A-5"><span class="toc-text">递归分析：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%8B7"><span class="toc-text">例7</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%EF%BC%9A-6"><span class="toc-text">代码：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3%EF%BC%9A-6"><span class="toc-text">题解：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C%EF%BC%9A-6"><span class="toc-text">运行结果：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%92%E5%BD%92%E5%88%86%E6%9E%90%EF%BC%9A-6"><span class="toc-text">递归分析：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%8B8"><span class="toc-text">例8</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%EF%BC%9A-7"><span class="toc-text">代码：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3%EF%BC%9A-7"><span class="toc-text">题解：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C%EF%BC%9A-7"><span class="toc-text">运行结果：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%92%E5%BD%92%E5%88%86%E6%9E%90%EF%BC%9A-7"><span class="toc-text">递归分析：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%8B9"><span class="toc-text">例9</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81%EF%BC%9A-8"><span class="toc-text">代码：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E8%A7%A3%EF%BC%9A-8"><span class="toc-text">题解：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C%EF%BC%9A-8"><span class="toc-text">运行结果：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%80%92%E5%BD%92%E5%88%86%E6%9E%90%EF%BC%9A-8"><span class="toc-text">递归分析：</span></a></li></ol></li></ol></li></ol>
+        
+    </div>
+</aside>
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+<a id="back-to-top" class="icon-btn hide">
+    <i class="fa fa-chevron-up"></i>
+</a>
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+    Total:
+    <strong id="busuanzi_value_site_pv">
+        <i class="fa fa-spinner fa-spin"></i>
+    </strong>
+    &nbsp; | &nbsp;
+    Visitors:
+    <strong id="busuanzi_value_site_uv">
+        <i class="fa fa-spinner fa-spin"></i>
+    </strong>
+    
+</div>
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;
+                    2017
+                    
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash.js"></script>
+
+</body>
+</html>

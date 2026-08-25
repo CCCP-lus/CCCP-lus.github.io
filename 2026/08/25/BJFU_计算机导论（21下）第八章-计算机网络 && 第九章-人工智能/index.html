@@ -1,0 +1,393 @@
+<!DOCTYPE HTML>
+<html lang="zh_CN">
+
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="言锡的小栈">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.3.0">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="https://cccp-lus.github.io">
+    <!--SEO-->
+
+<meta name="keywords" content="BJFU-CS" />
+
+
+<meta name="description" content="前言：计算机导论是笔者大学期间第一门结课的专业课，也是在这门课上笔者取得了大学生活中第一次满分。笔者近日整理文件发现笔记数十页，不忍抛弃，因稍加整理后发布于此。
+内容共八章，涵盖了计算机类专业学..." />
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+<title>
+    
+    BJFU|计算机导论（21下）第八章-计算机网络 &amp;&amp; 第九章-人工智能 |
+    
+    言锡的小栈
+</title>
+
+<link rel="alternate" href="/atom.xml" title="言锡的小栈" type="application/atom+xml">
+
+
+<link rel="icon" href="/favicon.ico">
+
+    
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.7.0.css">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash.css">
+
+    
+<div class="hide">
+    <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</div>
+
+
+
+
+    
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+<body>
+    <header class="main-header"  style="background-image:url(
+    https://hexo-theme-snippet-1251680922.cos.ap-beijing.myqcloud.com/img/banner.jpg)"
+     >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='言锡'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+            <!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+            <h2>
+                让每一份努力都效率最大化
+            </h2>
+            
+        </div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                        <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://cccp-lus.github.io">
+                        言锡的小栈</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/"><i class="fa "></i>
+                                Home</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/桐铃集/"><i class="fa "></i>
+                                桐铃集</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/BFU-CS/"><i class="fa "></i>
+                                BJFU-CS</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/BUAA-IST/"><i class="fa "></i>
+                                BUAA-IST</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/学习资料/"><i class="fa "></i>
+                                学习资料</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/编程拾贝/"><i class="fa "></i>
+                                编程拾贝</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/踩坑记录/"><i class="fa "></i>
+                                踩坑记录</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/archives/"><i class="fa "></i>
+                                时间轴</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="BJFU|计算机导论（21下）第八章-计算机网络 &amp;&amp; 第九章-人工智能">
+            
+            BJFU|计算机导论（21下）第八章-计算机网络 &amp;&amp; 第九章-人工智能
+            
+        </h1>
+        <div class="post-meta">
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a class="category-link" href="/categories/BJFU-CS/">BJFU-CS</a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            <a class="tag-none-link" href="/tags/BJFU-CS/" rel="tag">BJFU-CS</a>
+            
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2026/08/25</span>
+    </span>
+    
+    <span class="fa-wrap">
+        <i class="fa fa-eye"></i>
+        <span id="busuanzi_value_page_pv"></span>
+    </span>
+    
+    
+</div>
+        
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <h3 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h3><p>计算机导论是笔者大学期间第一门结课的专业课，也是在这门课上笔者取得了大学生活中第一次满分。笔者近日整理文件发现笔记数十页，不忍抛弃，因稍加整理后发布于此。</p>
+<p>内容共八章，涵盖了计算机类专业学生的基础知识。**对于行业初学者，可以提供一个专业的视角以便后续选择进一步发展方向；对于业外人士，也可做科普性质文章对待。**需要注意的是，<strong>笔记并不等于确切的、已知的考点</strong>，请校友（尤其是同门师弟师妹们）<strong>理性对待此资料，认真听讲，认真复习。</strong></p>
+<p>后续章节将会逐步更新，请各位读者静候。</p>
+<h3 id="考点整理："><a href="#考点整理：" class="headerlink" title="考点整理："></a>考点整理：</h3><p>计算机网络（Computer Network）：将地理上分散的计算机（或其他智能设备）和设备用通信线路互联起来，实现互相通信、资源共享的复杂的集合。</p>
+<p>按照覆盖规模计算机网络可分为：局域网LAN、城域网MAN、广域网WAN。</p>
+<p>按照<strong>网络拓扑结构</strong>可分为：总线型、网状型、星型、环型、树型。</p>
+<p><strong>总线结构</strong>：所有的网络节点连接到一条公共电缆线上，这条公共电缆线称为网络的总线。</p>
+<p>优点：采用的线路长度较短，增删节点方便，工作可靠。方法简单，技术成熟，而且成本较低。</p>
+<p>特点：所有发出的消息向总线的两端传输，广播到整个网络。网络上的节点判断消息是不是发给自己，是则接收，否则置之不理。共享信道，每个时刻只允许一个节点发送数据。多用于局域网。</p>
+<p><strong>环型结构</strong>：网络上的所有设备彼此串行连接，构成了一个回路或环</p>
+<p>数据在环路上按统一方向单向传输数据，所有的传输都是按照规定的方向绕环一周</p>
+<p>节点检测经过的消息，如果是给自己的则接收，否则消息传到环上的下一个节点</p>
+<p>如果线路的某一段中断或者环上的节点发生故障都会影响整个网络的正常运作，不容易查找故障点。主要用于LAN。</p>
+<p><strong>星型结构</strong>：所有从一个节点到另一个节点的数据传输都必须经过中央节点。</p>
+<p>优点：采用中央集权的方式，有较好的控制性、容易查找故障点。</p>
+<p>缺点：若中央控制器出现故障，将使整个网络系统瘫痪。</p>
+<p><strong>网状结构</strong>：没有主控节点，网上的每个节点都有好几条路径与网络相连。因此即使一条线路出故障，可以通过迂回线路接续，网络仍能正常工作。必须对路径进行选择，通常用于广域网。</p>
+<p>优点：结构可靠性高，一个节点发生故障不会影响整个网络工作，一条路径发生故障，节点可以继续与网络交换信息。</p>
+<p>缺点：用线量大、网络控制和路由选择复杂，网络设计和网络管理困难。</p>
+<p><strong>树型结构</strong>：从总线结构演变而来，形状像一棵倒置的树，从顶端的根向下分支，每个分支可以延伸出多个子分支一直到叶。</p>
+<p>优点：配置简单，易于扩展，很容易增加新的节点。</p>
+<p><strong>物理层：负责在物理介质中传输位流</strong>。先将位编码解码成位组，接着把位流转化为信号送入物理介质网络。</p>
+<p><strong>数据链路层：<strong>将</strong>位组成帧（Frame）的逻辑单元</strong>，数据链路层将其上层网络层的信息通过加上报头和报尾为接收站或中间站定义帧；通常以双地址的形式，在数据中特别加入物理地址信息（两个相邻站点的网卡的物理地址）。它<strong>负责两个相邻站点间的点对点的传递</strong>。</p>
+<p><strong>网络层：负责源站点和目的站点之间的包（网络层处理的数据单元）的传送</strong>。具体做法就是对来自上层（传输层）的信息单元加上报头，报头中含有源地址和目的地址（IP地址也称逻辑地址，此地址就全球通信而言是唯一的）。注意：数据链路层加入的是相邻站点的网卡物理地址，随站点的变化而变化，但逻辑地址是始终不变的。</p>
+<p><strong>传输层：负责整个消息的源至目的地的传送（端到端）</strong>。传输层把消息看成是一个完整的实体，并确保它被正确地发送到目的地的传输层。</p>
+<p><strong>会话层：用于控制用户间的会话</strong>。它在通信系统间建立、保持和同步会话。同时会话层为防止系统或网络出错加入被称为同步点的节点，以进行备份传输。</p>
+<p><strong>表示层：最早定义这层是为了解决两个系统间交换的信息的语法（格式）和语义（不同体系可能用不同的编码）的问题；同时为了提高效率要进行压缩和解压缩，数据传输的安全性问题带来的加密解密问题等</strong>。</p>
+<p><strong>应用层：使用户很容易地在计算机上应用网络进行应用开发、访问网络等</strong>。</p>
+<p><img src="/img/cccplus/11bbbebaa1b8.png"></p>
+<p>为了数据能成功地传输，发送者和接收者必须遵守一组信息交换规则。计算机之间交换数据的规则叫做协议。</p>
+<p><strong>Internet<strong><strong>的标准协议是</strong></strong>TCP&#x2F;IP(Transmission Control Protocol&#x2F;Internet Protocol)****，称为传输控制协议**</strong>&#x2F;<strong><strong>网络互联协议</strong>。该协议的主要功能是**确认发送和接收设备的位置</strong>，对通过Internet传递的信息进行<strong>格式转换</strong>。协议采用了<strong>4层的层级结构（网络接口和硬件层、网络互连层、传输层、应用层）</strong>，每一层都呼叫它的下一层所提供的协议来完成自己的需求。</p>
+<p>Internet在1985年开始采用域名管理系统DNS方法，</p>
+<p>其域名类似于如下结构：<strong>计算机主机名</strong>**.<strong><strong>机构名</strong></strong>.<strong><strong>网络名</strong></strong>.**<strong>最高层域名</strong>。</p>
+<p><strong>URL</strong><strong>（<strong><strong>Uniform Resource Locators</strong></strong>，统一资源定位器）：<strong><strong>URL</strong></strong>是<strong><strong>WWW</strong></strong>页的地址，俗称****“<strong><strong>网址</strong></strong>”<strong><strong>。它指定了互联网上资源地址的标准方式，是</strong></strong>WWW**</strong>（<strong><strong>World Wide Web</strong></strong>）协议的一部分。**</p>
+<p><strong>URL由三个部分构成：协议名称、Web服务器域名、文件名，其中协议名与域名之间用:&#x2F;&#x2F;符号隔开，域名与文件名之间用&#x2F;符号隔开。</strong></p>
+<p>网络互连是指将不同的网络连接起来，以构成更大规模的网络系统，实现网络间的数据通信、资源共享和协同工作。</p>
+<p>网络互联设备是构成计算网络的重要组成部分。</p>
+<p><img src="/img/cccplus/c48165f92523.png"></p>
+<p>中继器（Repeater）</p>
+<p>适用于完全相同的两类网络的互连，主要功能是通过对数据信号的重新发送或者转发，来扩大网络传输的距离。</p>
+<p>中继器是对信号进行再生和还原的网络设备，*<em>运行在</em>***OSI **<strong>模型的第一层（物理层）</strong>。</p>
+<p>网关（Gateway）</p>
+<p>网关是充当协议转换器的连接设备。它<strong>可以理解不同的网络协议</strong>，实现不同协议网络之间的连接，能在两个网络间进行翻译。</p>
+<p>Internet应用：电子邮件、文件传输协议FTP（负责将文件从一台计算机传输到另一台计算机，并保证其传输的可靠性。）、Telnet（远程登录）、WWW(万维网)、搜索引擎（Search  Engine）、</p>
+<p>Internet的发展趋势：</p>
+<p>1）运营产业化</p>
+<p>2）应用商业化</p>
+<p>3）互联全球化</p>
+<p>4）互联宽带化</p>
+<p>5）多业务综合平台化、智能化</p>
+<p>TCP&#x2F;IP:</p>
+<p>数据链路层：ARP,RARP</p>
+<p>网络层：** IP**,ICMP,IGMP</p>
+<p>传输层：<strong>TCP ,UDP</strong>,UGP</p>
+<p>应用层：<strong>Telnet,FTP</strong>,SMTP,SNMP.</p>
+<p>OSI:</p>
+<p>物理层：EIA&#x2F;TIA-232, EIA&#x2F;TIA-499, V.35, V.24, RJ45, Ethernet, 802.3, 802.5, FDDI, NRZI, NRZ, B8ZS</p>
+<p>数据链路层：Frame Relay, HDLC, PPP, IEEE 802.3&#x2F;802.2, FDDI, ATM, IEEE 802.5&#x2F;802.2</p>
+<p>网络层：<strong>IP</strong>，IPX，AppleTalk DDP</p>
+<p>传输层：<strong>TCP</strong>，UDP，SPX</p>
+<p>会话层：RPC,<strong>SQL,NFS</strong>,NetBIOS,names,AppleTalk,ASP,DECnet,SCP</p>
+<p>表示层:TIFF,GIF,JPEG,PICT,ASCII,EBCDIC,encryption,MPEG,MIDI,<strong>HTML</strong></p>
+<p>应用层：<strong>FTP,WWW,Telnet</strong>,NFS,SMTP,Gateway,SNMP,<strong>HTTP</strong></p>
+<p><strong>作者注：第九章不做考试要求，但在上一届笔记当中发现了这一章</strong></p>
+
+    </div>
+    
+    <div class="reward" ontouchstart>
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            <span class="reward-type">
+                <img class="alipay" src="/img/Alipay.png"><b>支付宝打赏</b>
+            </span>
+            
+            
+            <span class="reward-type">
+                <img class="wechat" src="/img/Wepay.png"><b>微信打赏</b>
+            </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">
+        如果觉得好用请支持我
+    </p>
+</div>
+    
+    <div class="post-footer">
+        <div>
+            
+            转载声明：
+            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">言锡的小栈</a>
+            
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+    <a href="/2026/08/25/BJFU_%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA%EF%BC%8821%E4%B8%8B%EF%BC%89%E7%AC%AC%E4%B8%83%E7%AB%A0-%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/" class="pre-post btn btn-default" title='BJFU|计算机导论（21下）第七章-软件开发'>
+        <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+        <span class="hidden-xs">
+            BJFU|计算机导论（21下）第七章-软件开发</span>
+    </a>
+    
+    
+    <a href="/2026/08/25/%E4%B8%AA%E4%BA%BA%E4%B9%A6%E7%B1%8D%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%BC%96%E5%86%99%E3%80%81%E5%88%B6%E4%BD%9C%E4%B8%8E%E5%AE%9E%E7%8E%B0%EF%BC%88C%E8%AF%AD%E8%A8%80%EF%BC%89/" class="next-post btn btn-default" title='个人书籍管理系统的编写、制作与实现（C语言）'>
+        <span class="hidden-lg">下一篇</span>
+        <span class="hidden-xs">
+            个人书籍管理系统的编写、制作与实现（C语言）</span><i class="fa fa-angle-right fa-fw"></i>
+    </a>
+    
+</div>
+
+<div id="comments">
+    
+<p>评论系统未开启，无法评论！</p>
+
+</div>
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            Table of Contents
+        </h3>
+        
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E8%A8%80%EF%BC%9A"><span class="toc-text">前言：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%80%83%E7%82%B9%E6%95%B4%E7%90%86%EF%BC%9A"><span class="toc-text">考点整理：</span></a></li></ol>
+        
+    </div>
+</aside>
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+<a id="back-to-top" class="icon-btn hide">
+    <i class="fa fa-chevron-up"></i>
+</a>
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+    Total:
+    <strong id="busuanzi_value_site_pv">
+        <i class="fa fa-spinner fa-spin"></i>
+    </strong>
+    &nbsp; | &nbsp;
+    Visitors:
+    <strong id="busuanzi_value_site_uv">
+        <i class="fa fa-spinner fa-spin"></i>
+    </strong>
+    
+</div>
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;
+                    2017
+                    
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash.js"></script>
+
+</body>
+</html>

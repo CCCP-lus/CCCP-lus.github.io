@@ -1,0 +1,352 @@
+<!DOCTYPE HTML>
+<html lang="zh_CN">
+
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="言锡的小栈">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.3.0">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="https://cccp-lus.github.io">
+    <!--SEO-->
+
+<meta name="keywords" content="BJFU-CS" />
+
+
+<meta name="description" content="前言：计算机导论是笔者大学期间第一门结课的专业课，也是在这门课上笔者取得了大学生活中第一次满分。笔者近日整理文件发现笔记数十页，不忍抛弃，因稍加整理后发布于此。
+内容共八章，涵盖了计算机类专业学..." />
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+<title>
+    
+    BJFU|计算机导论（21下）第四章-数据结构与算法 |
+    
+    言锡的小栈
+</title>
+
+<link rel="alternate" href="/atom.xml" title="言锡的小栈" type="application/atom+xml">
+
+
+<link rel="icon" href="/favicon.ico">
+
+    
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.7.0.css">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash.css">
+
+    
+<div class="hide">
+    <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</div>
+
+
+
+
+    
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+<body>
+    <header class="main-header"  style="background-image:url(
+    https://hexo-theme-snippet-1251680922.cos.ap-beijing.myqcloud.com/img/banner.jpg)"
+     >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='言锡'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+            <!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+            <h2>
+                让每一份努力都效率最大化
+            </h2>
+            
+        </div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                        <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://cccp-lus.github.io">
+                        言锡的小栈</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/"><i class="fa "></i>
+                                Home</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/桐铃集/"><i class="fa "></i>
+                                桐铃集</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/BFU-CS/"><i class="fa "></i>
+                                BJFU-CS</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/BUAA-IST/"><i class="fa "></i>
+                                BUAA-IST</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/学习资料/"><i class="fa "></i>
+                                学习资料</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/编程拾贝/"><i class="fa "></i>
+                                编程拾贝</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/踩坑记录/"><i class="fa "></i>
+                                踩坑记录</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/archives/"><i class="fa "></i>
+                                时间轴</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="BJFU|计算机导论（21下）第四章-数据结构与算法">
+            
+            BJFU|计算机导论（21下）第四章-数据结构与算法
+            
+        </h1>
+        <div class="post-meta">
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a class="category-link" href="/categories/BJFU-CS/">BJFU-CS</a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            <a class="tag-none-link" href="/tags/BJFU-CS/" rel="tag">BJFU-CS</a>
+            
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2026/08/25</span>
+    </span>
+    
+    <span class="fa-wrap">
+        <i class="fa fa-eye"></i>
+        <span id="busuanzi_value_page_pv"></span>
+    </span>
+    
+    
+</div>
+        
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <h3 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h3><p>计算机导论是笔者大学期间第一门结课的专业课，也是在这门课上笔者取得了大学生活中第一次满分。笔者近日整理文件发现笔记数十页，不忍抛弃，因稍加整理后发布于此。</p>
+<p>内容共八章，涵盖了计算机类专业学生的基础知识。**对于行业初学者，可以提供一个专业的视角以便后续选择进一步发展方向；对于业外人士，也可做科普性质文章对待。**需要注意的是，<strong>笔记并不等于确切的、已知的考点</strong>，请校友（尤其是同门师弟师妹们）<strong>理性对待此资料，认真听讲，认真复习。</strong></p>
+<p>后续章节将会逐步更新，请各位读者静候。</p>
+<h3 id="考点整理："><a href="#考点整理：" class="headerlink" title="考点整理："></a>考点整理：</h3><p><strong>数据结构是相互之间存在一种或多种特定关系的数据元素的集合，而这些集合能够单独或作为一个整体被访问。一个数据结构代表了有特殊关系的数据的集合</strong>。数据结构是计算机存储、组织数据的方式。数据结构是研究算法的基础，分为<strong>逻辑结构和存储结构</strong>。</p>
+<p>数据元素之间的逻辑关系，也称为数据的逻辑结构，它可以看作是从具体问题抽象出来的数学模型。它分为线性结构和非线性结构两大类。</p>
+<p>数据的物理结构又称为存储结构，是数据在计算机中的表示（映像）和存储。一个逻辑数据结构可以有多种存储结构，且各种存储结构影响数据的处理效率。</p>
+<p>数组是元素的顺序集合，通常这些元素具有相同数据类型。数组属于物理结构。索引表示元素在数组中顺序号，从数组开始处计数，通过索引数组元素便有了独立地址。二维数组两种存储方式：行主序和列主序。数组可以进行：查找、插入、删除、检索和遍历。</p>
+<p>链表是一个数据的集合，其中每个元素（节点）包含下一个元素的地址；即每个元素包含两部分：数据和链。以空指针标记链表的结束。链表可以进行：查找、插入、删除、检索和遍历。</p>
+<p>数组和链表都能表示内存中的一组数据项，唯一的区别在于<strong>数据项连接在一起的方式</strong>。<strong>数组利用索引，支持随机访问；内存空间较为固定，不能灵活扩大或缩小；插入和删除效率很低，适合进行大量查找和检索。链表利用指针依次连接，不支持随机访问；内存空间动态，可灵活增加或删除节点；插入和删除效率很高，但查找和遍历比数组慢。</strong></p>
+<p>抽象数据类型ADT是与对该数据类型有意义的封装操作在一起的数据类型。是一种处于更高抽象层的数据类型，代表逻辑上的结构概念。包括：<strong>数据的定义、操作的定义、封装数据和操作</strong>。</p>
+<p><strong>栈（后进先出）是一种限制线性列表，它添加和删除元素只能在一段实现</strong>，称为栈顶。栈的基本操作：建栈、入栈、出栈、空。</p>
+<p><strong>队列（先进先出）是一种限制线性列表，它只能在尾部一端插入数据，头部一端删除</strong>。队列的基本操作：建队列、入列、出列、空。</p>
+<p><strong>广义线性表是插入和删除可以在任何地方进行的表</strong>。特点：元素具有相同类型、顺序排列、按一定规则排序。广义线性表基本操作：建表、插入、删除、检索、遍历和空。</p>
+<p>树包括一组有限的元素称为节点，同时包括一组有限的有向线段用来连接节点，称为弧。树的最大层次称为树的深度。</p>
+<p>图：由一组顶点和顶点之间的连线构成。</p>
+<p><strong>算法：一组明确步骤的有序集合，它产生结果并在有限的时间内终止</strong>。一种非正式的定义：一种逐步解决问题或完成任务的方法。要求是<strong>定义良好、明确步骤、产生结果、在有限的时间内终止</strong>。其特征是<strong>确定性、可行性、有穷性、拥有足够的情报</strong>。表示方法有：自然语言、流程图、伪代码等。</p>
+<p>算法的三种结构：<strong>顺序、选择、循环</strong>。<img src="/img/cccplus/66f70e512ea3.png"></p>
+<p>伪代码：在编写算法时，为了更好地表示算法本身，不在一些小的细节上纠缠，而采用类似于自然语言表示算法的算法表示方法。<br><img src="/img/cccplus/cc4b6a897cff.png"><br><img src="/img/cccplus/17282b4fd389.png"></p>
+<p>在结构化编程时使用模块化或分单元的办法来构成程序，这些被分成的小单元称之为子算法。优点：使程序更容易理解；可以在主算法中不同的地方调用，无需重写。</p>
+<p>常见基本算法：求和、乘积、最大&#x2F;最小、排序、查找。</p>
+<p>排序(sort)：根据数据的值对它们进行排列。</p>
+<p>查找(Search)：是一种在(有序的&#x2F;无序的)数据元素中，确定目标所在位置的算法。</p>
+<p><img src="/img/cccplus/95590686833a.png"><br><img src="/img/cccplus/e86fe6a964f1.png"><br> <img src="/img/cccplus/eff3a97f6039.png"><br><img src="/img/cccplus/fe3b2749811a.png"><br> <img src="/img/cccplus/079d5f0a3df6.png"><br><strong>递归：算法中包含了对算法自身调用的算法</strong>。<br>迭代：重复反馈过程的活动，目的通常是为了逼近所需目标或结果。如果算法定义不涉及算法本身，则算法迭代。</p>
+
+    </div>
+    
+    <div class="reward" ontouchstart>
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            <span class="reward-type">
+                <img class="alipay" src="/img/Alipay.png"><b>支付宝打赏</b>
+            </span>
+            
+            
+            <span class="reward-type">
+                <img class="wechat" src="/img/Wepay.png"><b>微信打赏</b>
+            </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">
+        如果觉得好用请支持我
+    </p>
+</div>
+    
+    <div class="post-footer">
+        <div>
+            
+            转载声明：
+            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">言锡的小栈</a>
+            
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+    <a href="/2026/08/25/BJFU_%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA%EF%BC%8821%E4%B8%8B%EF%BC%89%E7%AC%AC%E4%B8%89%E7%AB%A0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" class="pre-post btn btn-default" title='BJFU|计算机导论（21下）第三章-计算机组成原理'>
+        <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+        <span class="hidden-xs">
+            BJFU|计算机导论（21下）第三章-计算机组成原理</span>
+    </a>
+    
+    
+    <a href="/2026/08/25/BJFU_%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA%EF%BC%8821%E4%B8%8B%EF%BC%89%E7%AC%AC%E4%BA%94%E7%AB%A0-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" class="next-post btn btn-default" title='BJFU|计算机导论（21下）第五章-操作系统'>
+        <span class="hidden-lg">下一篇</span>
+        <span class="hidden-xs">
+            BJFU|计算机导论（21下）第五章-操作系统</span><i class="fa fa-angle-right fa-fw"></i>
+    </a>
+    
+</div>
+
+<div id="comments">
+    
+<p>评论系统未开启，无法评论！</p>
+
+</div>
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            Table of Contents
+        </h3>
+        
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E8%A8%80%EF%BC%9A"><span class="toc-text">前言：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%80%83%E7%82%B9%E6%95%B4%E7%90%86%EF%BC%9A"><span class="toc-text">考点整理：</span></a></li></ol>
+        
+    </div>
+</aside>
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+<a id="back-to-top" class="icon-btn hide">
+    <i class="fa fa-chevron-up"></i>
+</a>
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+    Total:
+    <strong id="busuanzi_value_site_pv">
+        <i class="fa fa-spinner fa-spin"></i>
+    </strong>
+    &nbsp; | &nbsp;
+    Visitors:
+    <strong id="busuanzi_value_site_uv">
+        <i class="fa fa-spinner fa-spin"></i>
+    </strong>
+    
+</div>
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;
+                    2017
+                    
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash.js"></script>
+
+</body>
+</html>

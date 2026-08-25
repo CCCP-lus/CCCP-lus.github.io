@@ -1,0 +1,388 @@
+<!DOCTYPE HTML>
+<html lang="zh_CN">
+
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="言锡的小栈">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.3.0">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="https://cccp-lus.github.io">
+    <!--SEO-->
+
+<meta name="keywords" content="BJFU-CS" />
+
+
+<meta name="description" content="仅供课外学习使用，任何个人与机构不得利用此文章进行任何形式的作弊。A:计算圆面积题目：描述：编写一个圆类Circle，实现半径的输入、面积的计算和输出。要求在类中分别写3个函数实现输入半径、计算..." />
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+<title>
+    
+    BJFU|C++程序设计基础（22上）实验1-类和对象 |
+    
+    言锡的小栈
+</title>
+
+<link rel="alternate" href="/atom.xml" title="言锡的小栈" type="application/atom+xml">
+
+
+<link rel="icon" href="/favicon.ico">
+
+    
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.7.0.css">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash.css">
+
+    
+<div class="hide">
+    <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</div>
+
+
+
+
+    
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+<body>
+    <header class="main-header"  style="background-image:url(
+    https://hexo-theme-snippet-1251680922.cos.ap-beijing.myqcloud.com/img/banner.jpg)"
+     >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='言锡'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+            <!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+            <h2>
+                让每一份努力都效率最大化
+            </h2>
+            
+        </div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                        <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://cccp-lus.github.io">
+                        言锡的小栈</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/"><i class="fa "></i>
+                                Home</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/桐铃集/"><i class="fa "></i>
+                                桐铃集</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/BFU-CS/"><i class="fa "></i>
+                                BJFU-CS</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/BUAA-IST/"><i class="fa "></i>
+                                BUAA-IST</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/学习资料/"><i class="fa "></i>
+                                学习资料</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/编程拾贝/"><i class="fa "></i>
+                                编程拾贝</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/踩坑记录/"><i class="fa "></i>
+                                踩坑记录</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/archives/"><i class="fa "></i>
+                                时间轴</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="BJFU|C++程序设计基础（22上）实验1-类和对象">
+            
+            BJFU|C++程序设计基础（22上）实验1-类和对象
+            
+        </h1>
+        <div class="post-meta">
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a class="category-link" href="/categories/BJFU-CS/">BJFU-CS</a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            <a class="tag-none-link" href="/tags/BJFU-CS/" rel="tag">BJFU-CS</a>
+            
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2026/08/25</span>
+    </span>
+    
+    <span class="fa-wrap">
+        <i class="fa fa-eye"></i>
+        <span id="busuanzi_value_page_pv"></span>
+    </span>
+    
+    
+</div>
+        
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <h2 id="仅供课外学习使用，任何个人与机构不得利用此文章进行任何形式的作弊。"><a href="#仅供课外学习使用，任何个人与机构不得利用此文章进行任何形式的作弊。" class="headerlink" title="仅供课外学习使用，任何个人与机构不得利用此文章进行任何形式的作弊。"></a><strong>仅供课外学习使用，任何个人与机构不得利用此文章进行任何形式的作弊。</strong></h2><h2 id="A-计算圆面积"><a href="#A-计算圆面积" class="headerlink" title="A:计算圆面积"></a>A:计算圆面积</h2><h3 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h3><h4 id="描述："><a href="#描述：" class="headerlink" title="描述："></a>描述：</h4><p>编写一个圆类Circle，实现半径的输入、面积的计算和输出。要求在类中分别写3个函数实现输入半径、计算面积、输出面积。</p>
+<h4 id="输入："><a href="#输入：" class="headerlink" title="输入："></a>输入：</h4><p>输入一行，输入圆的半径(double类型)。</p>
+<h4 id="输出："><a href="#输出：" class="headerlink" title="输出："></a>输出：</h4><p>输出一行，输出圆的面积(保留小数点后两位)。</p>
+<h4 id="输入样例1："><a href="#输入样例1：" class="headerlink" title="输入样例1："></a>输入样例1：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3</span><br></pre></td></tr></table></figure>
+<h4 id="输出样例1："><a href="#输出样例1：" class="headerlink" title="输出样例1："></a>输出样例1：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">28.27</span><br></pre></td></tr></table></figure>
+<h4 id="提示："><a href="#提示：" class="headerlink" title="提示："></a>提示：</h4><p>1、在输出面积前使用如下语句：cout&lt;&lt;setiosflags(ios::fixed)&lt;&lt;setprecision(2);来设置输出格式，因此需要包含iomanip头文件</p>
+<p>2、使用acos(-1.0)来得到圆周率的值，可将其设置为常量，因此：const double PI&#x3D;acos（-1.0）；需要包含cmath头文件</p>
+<h4 id="实例："><a href="#实例：" class="headerlink" title="实例："></a>实例：</h4><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">double</span> PI = <span class="built_in">acos</span>(<span class="number">-1.0</span>);<span class="comment">//定义PI </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Circle</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="type">double</span> r;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="built_in">Circle</span>(<span class="type">double</span>);<span class="comment">//输入半径</span></span><br><span class="line">	<span class="function"><span class="type">double</span> <span class="title">area</span><span class="params">()</span></span>;<span class="comment">//计算面积</span></span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">outarea</span><span class="params">()</span></span>;<span class="comment">//输出面积</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Circle::<span class="built_in">Circle</span>(<span class="type">double</span> R)<span class="comment">//输入半径</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">this</span> -&gt;r = R;<span class="comment">//对R赋值</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">double</span> <span class="title">Circle::area</span><span class="params">()</span><span class="comment">//计算面积</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> r * r * PI;<span class="comment">//圆的面积公式</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Circle::outarea</span><span class="params">()</span><span class="comment">//输出面积</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cout &lt;&lt; <span class="built_in">setiosflags</span>(ios::fixed) &lt;&lt; <span class="built_in">setprecision</span>(<span class="number">2</span>) &lt;&lt; <span class="built_in">area</span>();<span class="comment">//按格式输出</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">double</span> r; cin &gt;&gt; r;</span><br><span class="line">	<span class="function">Circle <span class="title">c1</span><span class="params">(r)</span></span>;</span><br><span class="line">	c<span class="number">1.</span><span class="built_in">outarea</span>();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="B-图书类"><a href="#B-图书类" class="headerlink" title="B:图书类"></a>B:图书类</h2><h3 id="题目：-1"><a href="#题目：-1" class="headerlink" title="题目："></a>题目：</h3><h4 id="描述：-1"><a href="#描述：-1" class="headerlink" title="描述："></a>描述：</h4><p>以下是图书类Book的声明，缺少实现部分，请实现成员函数并编写main函数测试Book类。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Book</span></span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line"></span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line"></span><br><span class="line"><span class="type">char</span> *name; <span class="comment">//书名</span></span><br><span class="line"></span><br><span class="line"><span class="type">char</span> *author; <span class="comment">//作者</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> sale; <span class="comment">//销售量</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line"></span><br><span class="line"><span class="built_in">Book</span>(); <span class="comment">//无参构造函数</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Book</span>(<span class="type">char</span>* _name, <span class="type">char</span>* _author, <span class="type">int</span> _sale); <span class="comment">//有参构造函数</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Book</span>(<span class="type">const</span> Book &amp;); <span class="comment">//拷贝构造函数</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">print</span><span class="params">()</span></span>; <span class="comment">//显示数据</span></span><br><span class="line"></span><br><span class="line">~<span class="built_in">Book</span>(); <span class="comment">//析构函数</span></span><br><span class="line"></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h4 id="输入：-1"><a href="#输入：-1" class="headerlink" title="输入："></a>输入：</h4><p>在main函数中，我们输入三行数据，第一行是书的名称(长度不超过100，可能含有空格)，第二行是作者的名字(长度不超过100，可能含有空格),第三行是销量(整数类型)。  </p>
+<p>类中有三个对应的成员变量，分别为name,author和sale，利用题目中所给的构造函数来实例化对象。  </p>
+<p>需要注意的是，题目中有三个构造函数，分别是有参构造函数和无参构造函数还有拷贝构造函数，在此我们特别声明，当输入的name,author和sale都为-1的时候，请使用无参构造函数来实例化对象，此时我们将name的默认值设置为”No name”,author的默认值设置为”No author”,sale的默认值设置为0。当输入都为0的时候，我们使用拷贝构造函数来处理，这种情况具体在main函数中的实现是这样的：Book bk1;Book bk2(bk1);bk2.print();其他情况下一律用有参数的构造函数来构造对象。</p>
+<h4 id="输出：-1"><a href="#输出：-1" class="headerlink" title="输出："></a>输出：</h4><p>使用类中的void print()方法来输出一定格式的字符串，详见样例。</p>
+<p>输入样例1：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">The Art of Computer Programming</span><br><span class="line">Donald Ervin Knuth</span><br><span class="line">1000</span><br></pre></td></tr></table></figure>
+<p>输出样例1：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Name: The Art of Computer Programming Author: Donald Ervin Knuth Sale: 1000</span><br></pre></td></tr></table></figure>
+<h4 id="提示：-1"><a href="#提示：-1" class="headerlink" title="提示："></a>提示：</h4><p>1、注意输出格式，每个图书的信息占一行，信息的项目之间用\t分隔，最后以\n换行。Name:，Author:，Sale:后面都有一个空格</p>
+<p>2、输入书名和作者时，会含有空格，可以用gets()或getline()函数</p>
+<p>请注意，必须要用类（class）来实现代码，否则不得分</p>
+<h3 id="实例：-1"><a href="#实例：-1" class="headerlink" title="实例："></a>实例：</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Book</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">    <span class="type">char</span> *name;    <span class="comment">//书名</span></span><br><span class="line">    <span class="type">char</span> *author;  <span class="comment">//作者</span></span><br><span class="line">    <span class="type">int</span> sale;      <span class="comment">//销售量</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">Book</span>(); <span class="comment">//无参构造函数</span></span><br><span class="line">    <span class="built_in">Book</span>(<span class="type">const</span> <span class="type">char</span> *, <span class="type">const</span> <span class="type">char</span> *, <span class="type">int</span>);<span class="comment">//有参构造函数</span></span><br><span class="line">    <span class="built_in">Book</span>(<span class="type">const</span> Book &amp;); <span class="comment">//拷贝构造函数</span></span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">Print</span><span class="params">()</span></span>; <span class="comment">//显示数据</span></span><br><span class="line">    ~<span class="built_in">Book</span>(); <span class="comment">//析构函数</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Book::<span class="built_in">Book</span>()<span class="comment">//无参构造函数</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">this</span> -&gt;name = <span class="keyword">new</span> <span class="type">char</span>[<span class="number">128</span>];</span><br><span class="line">	<span class="type">const</span> <span class="type">char</span>* a = <span class="string">&quot;No name&quot;</span>;</span><br><span class="line">	<span class="built_in">strcpy</span>(<span class="keyword">this</span> -&gt;name, a);</span><br><span class="line">	<span class="keyword">this</span> -&gt;author = <span class="keyword">new</span> <span class="type">char</span>[<span class="number">128</span>];</span><br><span class="line">	<span class="type">const</span> <span class="type">char</span>* b = <span class="string">&quot;No author&quot;</span>;</span><br><span class="line">	<span class="built_in">strcpy</span>(<span class="keyword">this</span> -&gt;author, b);</span><br><span class="line">	sale = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Book::<span class="built_in">Book</span>(<span class="type">const</span> <span class="type">char</span> *_name, <span class="type">const</span> <span class="type">char</span> *_author, <span class="type">int</span> _sale)<span class="comment">//有参构造函数</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">this</span> -&gt;name = <span class="keyword">new</span> <span class="type">char</span>[<span class="number">128</span>];</span><br><span class="line">	<span class="built_in">strcpy</span>(<span class="keyword">this</span> -&gt;name, _name);</span><br><span class="line">	<span class="keyword">this</span> -&gt;author = <span class="keyword">new</span> <span class="type">char</span>[<span class="number">128</span>];</span><br><span class="line">	<span class="built_in">strcpy</span>(<span class="keyword">this</span> -&gt;author, _author);</span><br><span class="line">	sale = _sale;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Book::<span class="built_in">Book</span>(<span class="type">const</span> Book &amp;x)<span class="comment">//拷贝构造函数</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">this</span> -&gt;name = <span class="keyword">new</span> <span class="type">char</span>[<span class="number">128</span>];</span><br><span class="line">	<span class="built_in">strcpy</span>(<span class="keyword">this</span> -&gt;name, x.name);</span><br><span class="line">	<span class="keyword">this</span> -&gt;author = <span class="keyword">new</span> <span class="type">char</span>[<span class="number">128</span>];</span><br><span class="line">	<span class="built_in">strcpy</span>(<span class="keyword">this</span> -&gt;author, x.author);</span><br><span class="line">	sale = x.sale;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Book::Print</span><span class="params">()</span><span class="comment">//显示数据</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;Name: &quot;</span> &lt;&lt; name;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;\tAuthor: &quot;</span> &lt;&lt; author;</span><br><span class="line">	cout &lt;&lt; <span class="string">&quot;\tSale: &quot;</span> &lt;&lt; sale &lt;&lt; endl;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Book::~<span class="built_in">Book</span>()<span class="comment">//析构函数</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">delete</span>[] name;</span><br><span class="line">	<span class="keyword">delete</span>[] author;</span><br><span class="line">	<span class="comment">//随时删除好习惯 </span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">char</span> name[<span class="number">128</span>], author[<span class="number">128</span>]; </span><br><span class="line">    cin.<span class="built_in">getline</span>(name, <span class="number">128</span>);</span><br><span class="line">    cin.<span class="built_in">getline</span>(author, <span class="number">128</span>);</span><br><span class="line">    <span class="type">int</span> sale; cin &gt;&gt; sale;</span><br><span class="line">    <span class="keyword">if</span> (<span class="built_in">strcmp</span>(name, <span class="string">&quot;-1&quot;</span>) == <span class="number">0</span> &amp;&amp; <span class="built_in">strcmp</span>(author, <span class="string">&quot;-1&quot;</span>) == <span class="number">0</span> &amp;&amp; sale == <span class="number">-1</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        Book bk1;</span><br><span class="line">        bk<span class="number">1.</span><span class="built_in">Print</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (<span class="built_in">strcmp</span>(name, <span class="string">&quot;0&quot;</span>) == <span class="number">0</span> &amp;&amp; <span class="built_in">strcmp</span>(author, <span class="string">&quot;0&quot;</span>) == <span class="number">0</span> &amp;&amp; sale == <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        Book bk1;</span><br><span class="line">        Book bk2 = <span class="built_in">Book</span>(bk1);</span><br><span class="line">        bk<span class="number">2.</span><span class="built_in">Print</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        Book <span class="built_in">bk3</span>(name, author, sale);</span><br><span class="line">        bk<span class="number">3.</span><span class="built_in">Print</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="C-过道和栅栏的造价"><a href="#C-过道和栅栏的造价" class="headerlink" title="C:过道和栅栏的造价"></a>C:过道和栅栏的造价</h2><h3 id="题目：-2"><a href="#题目：-2" class="headerlink" title="题目："></a>题目：</h3><h4 id="描述：-2"><a href="#描述：-2" class="headerlink" title="描述："></a>描述：</h4><p>一矩形体育场如下图所示，现在需在其周围建一矩形过道，并在四周围安上栅栏。栅栏价格为50元&#x2F;米，过道造价为240元&#x2F;平方米。过道宽为1.5米，体育场的长宽由键盘输入。</p>
+<p><img src="/img/cccplus/148fee0c5eb5.png"></p>
+<p>体育场和矩形过道都是如下Rectangle的对象，请实现以下Rectagnle类，编写main函数计算并输出过道和栅栏的造价。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Rectangle</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">  <span class="type">double</span> length; <span class="comment">//长</span></span><br><span class="line"></span><br><span class="line">  <span class="type">double</span> width; <span class="comment">//宽</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">  <span class="built_in">Rectangle</span>(<span class="type">double</span> Length=<span class="number">10.</span>,<span class="type">double</span> Width=<span class="number">5.</span>);</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="type">double</span> <span class="title">Area</span><span class="params">()</span></span>; <span class="comment">//获取面积</span></span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="type">double</span> <span class="title">Perimeter</span><span class="params">()</span></span>;<span class="comment">//获取周长</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h4 id="输入：-2"><a href="#输入：-2" class="headerlink" title="输入："></a>输入：</h4><p>体育场的长和宽</p>
+<h4 id="输出：-2"><a href="#输出：-2" class="headerlink" title="输出："></a>输出：</h4><p>输出2行</p>
+<p>第一行是栅栏的造价</p>
+<p>第二行是过道的造价</p>
+<h4 id="输入样例1：-1"><a href="#输入样例1：-1" class="headerlink" title="输入样例1："></a>输入样例1：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2.4 1.2</span><br></pre></td></tr></table></figure>
+<h4 id="输出样例1：-1"><a href="#输出样例1：-1" class="headerlink" title="输出样例1："></a>输出样例1：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">960</span><br><span class="line">4752</span><br></pre></td></tr></table></figure>
+<h4 id="输入样例2："><a href="#输入样例2：" class="headerlink" title="输入样例2："></a>输入样例2：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2 1</span><br></pre></td></tr></table></figure>
+<h4 id="输出样例2："><a href="#输出样例2：" class="headerlink" title="输出样例2："></a>输出样例2：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">900</span><br><span class="line">4320</span><br></pre></td></tr></table></figure>
+<h4 id="提示：-2"><a href="#提示：-2" class="headerlink" title="提示："></a>提示：</h4><p>体育场用对象 rect1(x, y)来表示的话，过道外的矩形就用对象 rect2(x + 3, y + 3)表示</p>
+<h3 id="实例：-2"><a href="#实例：-2" class="headerlink" title="实例："></a>实例：</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="comment">//其实使用一个就可以搞定 </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Rectangle</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">private</span>:</span><br><span class="line">	<span class="type">double</span> length;<span class="comment">//长 </span></span><br><span class="line">	<span class="type">double</span> width;<span class="comment">//宽 </span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="built_in">Rectangle</span>(<span class="type">double</span> Length = <span class="number">10.</span>, <span class="type">double</span> Width = <span class="number">5.</span>);</span><br><span class="line">	<span class="function"><span class="type">double</span> <span class="title">Area</span><span class="params">()</span></span>;<span class="comment">//获取面积 </span></span><br><span class="line">	<span class="function"><span class="type">double</span> <span class="title">Perimeter</span><span class="params">()</span></span>;<span class="comment">//获取周长 </span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Rectangle::<span class="built_in">Rectangle</span>(<span class="type">double</span> Length, <span class="type">double</span> Width)<span class="comment">//有参构造函数 </span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">this</span> -&gt;length = Length;<span class="comment">//对长赋值 </span></span><br><span class="line">	<span class="keyword">this</span> -&gt;width = Width; <span class="comment">//对宽赋值 </span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">double</span> <span class="title">Rectangle::Area</span><span class="params">()</span><span class="comment">//获取面积 </span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> <span class="keyword">this</span> -&gt;length * <span class="keyword">this</span> -&gt;width;<span class="comment">//面积计算公式 </span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">double</span> <span class="title">Rectangle::Perimeter</span><span class="params">()</span><span class="comment">//计算周长 </span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> (<span class="number">2</span> * (<span class="keyword">this</span> -&gt;width + <span class="keyword">this</span> -&gt;length) );<span class="comment">//周长计算公式 </span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">double</span> l, w;</span><br><span class="line">	cin &gt;&gt; l &gt;&gt; w;</span><br><span class="line">	<span class="function">Rectangle <span class="title">s1</span><span class="params">(l, w)</span></span>;</span><br><span class="line">	<span class="function">Rectangle <span class="title">s2</span><span class="params">(l + <span class="number">3</span>, w + <span class="number">3</span>)</span></span>;</span><br><span class="line">	cout &lt;&lt; <span class="number">50</span> * s<span class="number">2.</span><span class="built_in">Perimeter</span>() &lt;&lt; endl &lt;&lt; <span class="number">240</span> * (s<span class="number">2.</span><span class="built_in">Area</span>() - s<span class="number">1.</span><span class="built_in">Area</span>());</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="D-评分程序"><a href="#D-评分程序" class="headerlink" title="D:评分程序"></a>D:评分程序</h2><h3 id="题目：-3"><a href="#题目：-3" class="headerlink" title="题目："></a>题目：</h3><h4 id="描述：-3"><a href="#描述：-3" class="headerlink" title="描述："></a>描述：</h4><p>为一门课写一个评分程序，评分原则如下：</p>
+<p>（1）有两次随堂考试，每次满分50分；</p>
+<p>（2）有一次期中考试和一次期末考试，每次满分100分；</p>
+<p>（3）期末考试占总评成绩的50%，期中考试占总评成绩的25%，两次随堂考试总共占25%;</p>
+<p>（4）总评成绩90<del>100分为A，80</del>89分为B，70<del>79分为C，60</del>69分为D，低于60分为E；</p>
+<p>设计一个Socre类，数据成员如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">string name;<span class="comment">//记录学生姓名</span></span><br><span class="line"><span class="type">double</span> s[<span class="number">4</span>];<span class="comment">//存储4次成绩，s[0]和s[1]存储2次随堂考试，s[2]存储期中考试，s[3]存储期末考试</span></span><br><span class="line"><span class="type">double</span> total;<span class="comment">//记录总评成绩</span></span><br><span class="line"><span class="type">char</span> grade;  <span class="comment">//记录对应的等级</span></span><br></pre></td></tr></table></figure>
+<p>学生信息由键盘录入，默认总评成绩的等级为B，其他数据项无默认值。计算总评成绩并给出等级，输出某个同学的全部信息。</p>
+<p>主函数如下：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Score *s1=<span class="keyword">new</span> Score;</span><br><span class="line">    s1-&gt;<span class="built_in">Input</span>();</span><br><span class="line">    s1-&gt;<span class="built_in">Evalauate</span>();</span><br><span class="line">    s1-&gt;<span class="built_in">Output</span>();</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="输入：-3"><a href="#输入：-3" class="headerlink" title="输入："></a>输入：</h4><p>输入5行</p>
+<p>第1行是学生姓名</p>
+<p>第2和3行是两次随堂考试成绩</p>
+<p>第4行是期中考试成绩</p>
+<p>第5行是期末考试成绩</p>
+<h4 id="输出：-3"><a href="#输出：-3" class="headerlink" title="输出："></a>输出：</h4><p>如果输入的成绩超出了范围，则显示：error</p>
+<p>如果输入的成绩在题目要求的范围内，则显示：姓名，总分和等级，详见样例</p>
+<h4 id="输入样例1：-2"><a href="#输入样例1：-2" class="headerlink" title="输入样例1："></a>输入样例1：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Jack</span><br><span class="line">90</span><br><span class="line">90</span><br><span class="line">100</span><br><span class="line">100</span><br></pre></td></tr></table></figure>
+<h4 id="输出样例1：-2"><a href="#输出样例1：-2" class="headerlink" title="输出样例1："></a>输出样例1：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">error</span><br></pre></td></tr></table></figure>
+<h4 id="输入样例2：-1"><a href="#输入样例2：-1" class="headerlink" title="输入样例2："></a>输入样例2：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Mary</span><br><span class="line">50</span><br><span class="line">50</span><br><span class="line">90</span><br><span class="line">100</span><br></pre></td></tr></table></figure>
+<h4 id="输出样例2：-1"><a href="#输出样例2：-1" class="headerlink" title="输出样例2："></a>输出样例2：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">name: Mary, total: 97.5, grade: A</span><br></pre></td></tr></table></figure>
+<h4 id="提示：-3"><a href="#提示：-3" class="headerlink" title="提示："></a>提示：</h4><p>冒号和逗号后各有一个空格</p>
+<h3 id="实例：-3"><a href="#实例：-3" class="headerlink" title="实例："></a>实例：</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Score</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">private</span>:	</span><br><span class="line">	string name;</span><br><span class="line">	<span class="type">double</span> s[<span class="number">4</span>];</span><br><span class="line">	<span class="type">double</span> total;</span><br><span class="line">	<span class="type">char</span> grade;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">Input</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">Evaluate</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="type">void</span> <span class="title">Output</span><span class="params">()</span></span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Score::Input</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	cin &gt;&gt; name;</span><br><span class="line">	<span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; <span class="number">4</span>; i++)</span><br><span class="line">		cin &gt;&gt; s[i];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Score::Evaluate</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	total = <span class="number">0.25</span> * (s[<span class="number">0</span>] + s[<span class="number">1</span>]) + <span class="number">0.25</span> * s[<span class="number">2</span>] + <span class="number">0.5</span> * s[<span class="number">3</span>];</span><br><span class="line">	<span class="keyword">if</span> (total &gt;= <span class="number">90</span>) grade = <span class="string">&#x27;A&#x27;</span>;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (total &lt; <span class="number">90</span> &amp;&amp; total &gt;= <span class="number">80</span>) grade = <span class="string">&#x27;B&#x27;</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (total &lt; <span class="number">80</span> &amp;&amp; total &gt;= <span class="number">70</span>) grade = <span class="string">&#x27;C&#x27;</span>;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (total &lt; <span class="number">70</span> &amp;&amp; total &gt;= <span class="number">60</span>) grade = <span class="string">&#x27;D&#x27;</span>;</span><br><span class="line">    <span class="keyword">else</span> grade = <span class="string">&#x27;E&#x27;</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Score::Output</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(s[<span class="number">0</span>] &lt; <span class="number">0</span> || s[<span class="number">0</span>] &gt; <span class="number">50</span> || s[<span class="number">1</span>] &lt; <span class="number">0</span> || s[<span class="number">1</span>] &gt; <span class="number">50</span> || s[<span class="number">2</span>] &lt; <span class="number">0</span> || s[<span class="number">2</span>] &gt; <span class="number">100</span> || s[<span class="number">3</span>] &lt; <span class="number">0</span> || s[<span class="number">3</span>] &gt;<span class="number">100</span>)</span><br><span class="line">			cout &lt;&lt; <span class="string">&quot;error&quot;</span>;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">			cout &lt;&lt; <span class="string">&quot;name: &quot;</span> &lt;&lt; name &lt;&lt; <span class="string">&quot;, total: &quot;</span> &lt;&lt; total &lt;&lt; <span class="string">&quot;, grade: &quot;</span> &lt;&lt; grade; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	Score *s1 = <span class="keyword">new</span> Score;</span><br><span class="line">	s1 -&gt; <span class="built_in">Input</span>();</span><br><span class="line">	s1 -&gt; <span class="built_in">Evaluate</span>();</span><br><span class="line">	s1 -&gt; <span class="built_in">Output</span>();</span><br><span class="line">	<span class="keyword">delete</span> s1;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+    
+    <div class="reward" ontouchstart>
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            <span class="reward-type">
+                <img class="alipay" src="/img/Alipay.png"><b>支付宝打赏</b>
+            </span>
+            
+            
+            <span class="reward-type">
+                <img class="wechat" src="/img/Wepay.png"><b>微信打赏</b>
+            </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">
+        如果觉得好用请支持我
+    </p>
+</div>
+    
+    <div class="post-footer">
+        <div>
+            
+            转载声明：
+            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">言锡的小栈</a>
+            
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+    <a href="/2026/08/25/BJFU_C++%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80%EF%BC%8822%E4%B8%8A%EF%BC%89%E5%AE%9E%E9%AA%8C0-C%E8%AF%AD%E8%A8%80%E5%9B%9E%E9%A1%BE/" class="pre-post btn btn-default" title='BJFU|C++程序设计基础（22上）实验0-C语言回顾'>
+        <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+        <span class="hidden-xs">
+            BJFU|C++程序设计基础（22上）实验0-C语言回顾</span>
+    </a>
+    
+    
+    <a href="/2026/08/25/BJFU_C++%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80%EF%BC%8822%E4%B8%8A%EF%BC%89%E5%AE%9E%E9%AA%8C2-%E7%BB%A7%E6%89%BF%E5%92%8C%E5%A4%9A%E6%80%81/" class="next-post btn btn-default" title='BJFU|C++程序设计基础（22上）实验2-继承和多态'>
+        <span class="hidden-lg">下一篇</span>
+        <span class="hidden-xs">
+            BJFU|C++程序设计基础（22上）实验2-继承和多态</span><i class="fa fa-angle-right fa-fw"></i>
+    </a>
+    
+</div>
+
+<div id="comments">
+    
+<p>评论系统未开启，无法评论！</p>
+
+</div>
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            Table of Contents
+        </h3>
+        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%85%E4%BE%9B%E8%AF%BE%E5%A4%96%E5%AD%A6%E4%B9%A0%E4%BD%BF%E7%94%A8%EF%BC%8C%E4%BB%BB%E4%BD%95%E4%B8%AA%E4%BA%BA%E4%B8%8E%E6%9C%BA%E6%9E%84%E4%B8%8D%E5%BE%97%E5%88%A9%E7%94%A8%E6%AD%A4%E6%96%87%E7%AB%A0%E8%BF%9B%E8%A1%8C%E4%BB%BB%E4%BD%95%E5%BD%A2%E5%BC%8F%E7%9A%84%E4%BD%9C%E5%BC%8A%E3%80%82"><span class="toc-text">仅供课外学习使用，任何个人与机构不得利用此文章进行任何形式的作弊。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#A-%E8%AE%A1%E7%AE%97%E5%9C%86%E9%9D%A2%E7%A7%AF"><span class="toc-text">A:计算圆面积</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%EF%BC%9A"><span class="toc-text">题目：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%8F%E8%BF%B0%EF%BC%9A"><span class="toc-text">描述：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%EF%BC%9A"><span class="toc-text">输入：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%EF%BC%9A"><span class="toc-text">输出：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%A0%B7%E4%BE%8B1%EF%BC%9A"><span class="toc-text">输入样例1：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%A0%B7%E4%BE%8B1%EF%BC%9A"><span class="toc-text">输出样例1：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%90%E7%A4%BA%EF%BC%9A"><span class="toc-text">提示：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B%EF%BC%9A"><span class="toc-text">实例：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#B-%E5%9B%BE%E4%B9%A6%E7%B1%BB"><span class="toc-text">B:图书类</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%EF%BC%9A-1"><span class="toc-text">题目：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%8F%E8%BF%B0%EF%BC%9A-1"><span class="toc-text">描述：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%EF%BC%9A-1"><span class="toc-text">输入：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%EF%BC%9A-1"><span class="toc-text">输出：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%90%E7%A4%BA%EF%BC%9A-1"><span class="toc-text">提示：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B%EF%BC%9A-1"><span class="toc-text">实例：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C-%E8%BF%87%E9%81%93%E5%92%8C%E6%A0%85%E6%A0%8F%E7%9A%84%E9%80%A0%E4%BB%B7"><span class="toc-text">C:过道和栅栏的造价</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%EF%BC%9A-2"><span class="toc-text">题目：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%8F%E8%BF%B0%EF%BC%9A-2"><span class="toc-text">描述：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%EF%BC%9A-2"><span class="toc-text">输入：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%EF%BC%9A-2"><span class="toc-text">输出：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%A0%B7%E4%BE%8B1%EF%BC%9A-1"><span class="toc-text">输入样例1：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%A0%B7%E4%BE%8B1%EF%BC%9A-1"><span class="toc-text">输出样例1：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%A0%B7%E4%BE%8B2%EF%BC%9A"><span class="toc-text">输入样例2：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%A0%B7%E4%BE%8B2%EF%BC%9A"><span class="toc-text">输出样例2：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%90%E7%A4%BA%EF%BC%9A-2"><span class="toc-text">提示：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B%EF%BC%9A-2"><span class="toc-text">实例：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#D-%E8%AF%84%E5%88%86%E7%A8%8B%E5%BA%8F"><span class="toc-text">D:评分程序</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%EF%BC%9A-3"><span class="toc-text">题目：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%8F%E8%BF%B0%EF%BC%9A-3"><span class="toc-text">描述：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%EF%BC%9A-3"><span class="toc-text">输入：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%EF%BC%9A-3"><span class="toc-text">输出：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%A0%B7%E4%BE%8B1%EF%BC%9A-2"><span class="toc-text">输入样例1：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%A0%B7%E4%BE%8B1%EF%BC%9A-2"><span class="toc-text">输出样例1：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%A0%B7%E4%BE%8B2%EF%BC%9A-1"><span class="toc-text">输入样例2：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%A0%B7%E4%BE%8B2%EF%BC%9A-1"><span class="toc-text">输出样例2：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%90%E7%A4%BA%EF%BC%9A-3"><span class="toc-text">提示：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B%EF%BC%9A-3"><span class="toc-text">实例：</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+<a id="back-to-top" class="icon-btn hide">
+    <i class="fa fa-chevron-up"></i>
+</a>
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+    Total:
+    <strong id="busuanzi_value_site_pv">
+        <i class="fa fa-spinner fa-spin"></i>
+    </strong>
+    &nbsp; | &nbsp;
+    Visitors:
+    <strong id="busuanzi_value_site_uv">
+        <i class="fa fa-spinner fa-spin"></i>
+    </strong>
+    
+</div>
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;
+                    2017
+                    
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,384 @@
+<!DOCTYPE HTML>
+<html lang="zh_CN">
+
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="言锡的小栈">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.3.0">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="https://cccp-lus.github.io">
+    <!--SEO-->
+
+<meta name="keywords" content="BJFU-CS" />
+
+
+<meta name="description" content="整理了一些重要名词的定义与概念，适合在考前几个小时过几次加深印象，可以更好应对选填与简答的题型。
+**互联网的定义：**广义观点-远程信息处理+进一步达到资源共享；资源共享观点-以相互共享资源的..." />
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+<title>
+    
+    BJFU|计算机网络期末复习考前速记 |
+    
+    言锡的小栈
+</title>
+
+<link rel="alternate" href="/atom.xml" title="言锡的小栈" type="application/atom+xml">
+
+
+<link rel="icon" href="/favicon.ico">
+
+    
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.7.0.css">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash.css">
+
+    
+<div class="hide">
+    <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</div>
+
+
+
+
+    
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+<body>
+    <header class="main-header"  style="background-image:url(
+    https://hexo-theme-snippet-1251680922.cos.ap-beijing.myqcloud.com/img/banner.jpg)"
+     >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='言锡'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+            <!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+            <h2>
+                让每一份努力都效率最大化
+            </h2>
+            
+        </div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                        <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://cccp-lus.github.io">
+                        言锡的小栈</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/"><i class="fa "></i>
+                                Home</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/桐铃集/"><i class="fa "></i>
+                                桐铃集</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/BFU-CS/"><i class="fa "></i>
+                                BJFU-CS</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/BUAA-IST/"><i class="fa "></i>
+                                BUAA-IST</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/学习资料/"><i class="fa "></i>
+                                学习资料</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/编程拾贝/"><i class="fa "></i>
+                                编程拾贝</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/踩坑记录/"><i class="fa "></i>
+                                踩坑记录</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/archives/"><i class="fa "></i>
+                                时间轴</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="BJFU|计算机网络期末复习考前速记">
+            
+            BJFU|计算机网络期末复习考前速记
+            
+        </h1>
+        <div class="post-meta">
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a class="category-link" href="/categories/BJFU-CS/">BJFU-CS</a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            <a class="tag-none-link" href="/tags/BJFU-CS/" rel="tag">BJFU-CS</a>
+            
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2026/08/25</span>
+    </span>
+    
+    <span class="fa-wrap">
+        <i class="fa fa-eye"></i>
+        <span id="busuanzi_value_page_pv"></span>
+    </span>
+    
+    
+</div>
+        
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <p><strong>整理了一些重要名词的定义与概念，适合在考前几个小时过几次加深印象，可以更好应对选填与简答的题型。</strong></p>
+<p>**互联网的定义：**广义观点-远程信息处理+进一步达到资源共享；资源共享观点-以相互共享资源的方式互联起来的自治计算机系统的集合；用户透明性观点-存在一个网络操作系统，是一个分布式系统。</p>
+<p>**协议protocol：**定义了在两个或者多个通信实体之间交换的报文的格式和顺序，以及报文发送和接收一条报文或其他事件所采取的动作。</p>
+<p>**网络边缘（Network edge）：**主机（host）：容纳应用程序、接入网（access network）：将主机连到其边缘路由器的网络、物理媒体（physical media）：分导引型和非导引型</p>
+<p>**网络核心（Network core）：**分组交换（packet switching）：存储转发传输，时延等、电路交换（circuit switching）：频分复用FDM，时分复用TDM、网络结构</p>
+<p>**协议层次：**五层因特网协议栈：物理，链路，网络，运输，应用、七层ISO OSI参考模型：物理、链路、网络、运输、会话、表示、应用</p>
+<p>**网络发展历史：**1961-1972：分组交换、1972-1980专用网络与网络互联、1980-1990：网络的激增、20世纪90年代：网络的爆炸</p>
+<p>**网络应用程序体系结构：**CS结构与P2P结构</p>
+<p>**进程通信：**通过交换报文的方式，有一个套接字接口socket（应用层与运输层之间的接口）</p>
+<p>**运输服务：**TCP服务-面向连接且可靠，UDP服务-无连接且不保证的</p>
+<p>**应用层协议：**交换的报文类型、各种报文类型的语法、字段的语义、发送报文及报文响应</p>
+<p>*<em>Web</em>***与HTTP：**Web页面是由对象组成的，HTTP定义了Web客户向Web服务器请求Web页面的方式和发送的方式。HTTP采用TCP方式。</p>
+<p>**非持续与持续连接：**每个请求&#x2F;响应对由单独的TCP发送——非持续连接；所有的请求及其响应经相同的TCP连接发送——持续连接</p>
+<p>**报文格式：**请求报文：请求行、首部行、实体体；响应报文：状态行、首部行、实体体</p>
+<p><strong>Cookie</strong>**：**服务器发送到浏览器的数据</p>
+<p>*<em>Web</em>***缓存：**代表初始Web服务器来满足HTTP请求的网络实体</p>
+<p>**电子邮件：**SMTP：简单邮件传输协议，利用TCP、邮件报文格式、邮件访问协议POP3&#x2F;IMAP&#x2F;HTTP</p>
+<p><strong>DNS</strong>**：**提供服务：主机名到IP地址转换、机理概述（递归与迭代）、记录与报文</p>
+<p>*<em>P2P</em>***基本概念：**每个节点都同时具有下载和上传的功能，权利与义务是大体对等的。</p>
+<p>套接字编程</p>
+<p>**概述和运输层服务：**运输层协议为运行在不同主机上的应用进程之间提供了逻辑通信功能。端到端的协议。单位是报文段。</p>
+<p>**多路复用与多路分解：**将运输层报文段中的数据交付到正确的套接字的工作称为多路分解；源主机中从不同套接字收集数据块并为每个数据块封装上首部信息从而生成报文段，然后将报文段传递到网络层叫多路复用。</p>
+<p>**无连接运输：UDP（报文段结构与校验和）**16位源端口号，16位目的端口号，16位长度与16位校验和。</p>
+<p>可靠数据传输原理（ARQ协议、停等协议、序号、定时器、流水线协议、回退N步、选择重传）</p>
+<p>面向连接的运输：TCP（TCP连接、报文段结构、可靠数据传输、流量控制、连接管理）</p>
+<p>**拥塞控制理念（基本概念）：**防止过多的数据注入网络，保证网络中的路由器或者链路不至于过载。</p>
+<p>TCP拥塞控制（经典TCP拥塞控制）</p>
+<p>**网络层概述：**向上提供简单灵活的、无连接的、尽最大努力交付的数据报服务。</p>
+<p>**路由器工作原理（基本概念，最长前缀匹配）：**路由器主要完成路由选择与分组转发</p>
+<p>网际协议：IPV4、寻址、IPV6、（IPV4数据报格式、IPV4编址、子网掩码、DHCP、NAT、IPV6）</p>
+<p>泛化转发与SDN（基本概念、例子）</p>
+<p>中间盒（基本概念）</p>
+<p>网络层：控制平面概述</p>
+<p>路由选择算法（链路状态算法与距离向量算法）</p>
+<p>**因特网自治系统内部路由选择OSPF：**维护一个链路状态数据库，使用迪杰斯特拉算法构建新的路由表。（只存下一跳）OSPF划分区域</p>
+<p>ISP之间的路由选择：BGP（BGP的作用、通告BGP路由信息、确定好的路由、路由选择策略、拼装）</p>
+<p>SDN控制平面的概念</p>
+<p>ICMP：因特网控制报文协议</p>
+<p>网络管理框架与SNMP基本概念</p>
+<p>链路层概述：</p>
+<p>差错检测与纠正技术（奇偶校验、检验和与CRC）</p>
+<p>多路访问链路和协议（信道划分、随机接入、轮流协议）</p>
+<p>交换局域网（链路层寻址、ARP、以太网、交换机、虚拟局域网）</p>
+<p><strong>Web****请求页面的历程（P326）</strong></p>
+<p>无线网络与移动网络的概述</p>
+<p>无线链路和网络特征</p>
+<p>WIFI：802.11无线局域网</p>
+<p>蜂窝网络：4、5G的基本概念</p>
+<p>移动性管理原理（基本概念、直接与间接路由）</p>
+<p>**网络安全的概述：**机密性、报文完整性、端点鉴别、运行安全性</p>
+<p>密码学原理（对称密钥、公开密钥）</p>
+<p>报文完整性与数字签名（哈希、散列函数、数字签名）</p>
+<p>端点鉴别</p>
+<p>安全电子邮件概述</p>
+<p>TLS基本概念</p>
+
+    </div>
+    
+    <div class="reward" ontouchstart>
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            <span class="reward-type">
+                <img class="alipay" src="/img/Alipay.png"><b>支付宝打赏</b>
+            </span>
+            
+            
+            <span class="reward-type">
+                <img class="wechat" src="/img/Wepay.png"><b>微信打赏</b>
+            </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">
+        如果觉得好用请支持我
+    </p>
+</div>
+    
+    <div class="post-footer">
+        <div>
+            
+            转载声明：
+            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">言锡的小栈</a>
+            
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+    <a href="/2026/08/25/Python%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E4%B8%BB%E6%9C%BA-%E8%B7%AF%E7%94%B1%E5%99%A8%E7%BB%93%E6%9E%84%EF%BC%88%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%EF%BC%89/" class="pre-post btn btn-default" title='Python实现一个简单的主机-路由器结构（计算机网络）'>
+        <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+        <span class="hidden-xs">
+            Python实现一个简单的主机-路由器结构（计算机网络）</span>
+    </a>
+    
+    
+    <a href="/2026/08/25/BJFU_%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%BC%A9%E5%86%99%E5%AF%B9%E7%85%A7%E8%A1%A8/" class="next-post btn btn-default" title='BJFU|计算机网络缩写对照表'>
+        <span class="hidden-lg">下一篇</span>
+        <span class="hidden-xs">
+            BJFU|计算机网络缩写对照表</span><i class="fa fa-angle-right fa-fw"></i>
+    </a>
+    
+</div>
+
+<div id="comments">
+    
+<p>评论系统未开启，无法评论！</p>
+
+</div>
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            Table of Contents
+        </h3>
+        
+        <p>暂无目录</p>
+        
+    </div>
+</aside>
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+<a id="back-to-top" class="icon-btn hide">
+    <i class="fa fa-chevron-up"></i>
+</a>
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+    Total:
+    <strong id="busuanzi_value_site_pv">
+        <i class="fa fa-spinner fa-spin"></i>
+    </strong>
+    &nbsp; | &nbsp;
+    Visitors:
+    <strong id="busuanzi_value_site_uv">
+        <i class="fa fa-spinner fa-spin"></i>
+    </strong>
+    
+</div>
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;
+                    2017
+                    
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash.js"></script>
+
+</body>
+</html>

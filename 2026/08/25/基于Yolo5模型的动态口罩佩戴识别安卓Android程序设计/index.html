@@ -1,0 +1,374 @@
+<!DOCTYPE HTML>
+<html lang="zh_CN">
+
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="言锡的小栈">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.3.0">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="https://cccp-lus.github.io">
+    <!--SEO-->
+
+<meta name="keywords" content="编程拾贝" />
+
+
+<meta name="description" content="禁止完全抄袭，引用注明出处。
+下载地址前排提醒：文件还没过CSDN审核，GitHub也没上传完毕，目前只有模型的.pt文件可以下载。我会尽快更新。
+所使用.ptl文件
+基于Yolo5的动态口罩佩..." />
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+<title>
+    
+    基于Yolo5模型的动态口罩佩戴识别安卓Android程序设计 |
+    
+    言锡的小栈
+</title>
+
+<link rel="alternate" href="/atom.xml" title="言锡的小栈" type="application/atom+xml">
+
+
+<link rel="icon" href="/favicon.ico">
+
+    
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.7.0.css">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash.css">
+
+    
+<div class="hide">
+    <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</div>
+
+
+
+
+    
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+<body>
+    <header class="main-header"  style="background-image:url(
+    https://hexo-theme-snippet-1251680922.cos.ap-beijing.myqcloud.com/img/banner.jpg)"
+     >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='言锡'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+            <!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+            <h2>
+                让每一份努力都效率最大化
+            </h2>
+            
+        </div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                        <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://cccp-lus.github.io">
+                        言锡的小栈</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/"><i class="fa "></i>
+                                Home</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/桐铃集/"><i class="fa "></i>
+                                桐铃集</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/BFU-CS/"><i class="fa "></i>
+                                BJFU-CS</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/BUAA-IST/"><i class="fa "></i>
+                                BUAA-IST</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/学习资料/"><i class="fa "></i>
+                                学习资料</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/编程拾贝/"><i class="fa "></i>
+                                编程拾贝</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/踩坑记录/"><i class="fa "></i>
+                                踩坑记录</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/archives/"><i class="fa "></i>
+                                时间轴</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="基于Yolo5模型的动态口罩佩戴识别安卓Android程序设计">
+            
+            基于Yolo5模型的动态口罩佩戴识别安卓Android程序设计
+            
+        </h1>
+        <div class="post-meta">
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a class="category-link" href="/categories/%E7%BC%96%E7%A8%8B%E6%8B%BE%E8%B4%9D/">编程拾贝</a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            <a class="tag-none-link" href="/tags/%E7%BC%96%E7%A8%8B%E6%8B%BE%E8%B4%9D/" rel="tag">编程拾贝</a>
+            
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2026/08/25</span>
+    </span>
+    
+    <span class="fa-wrap">
+        <i class="fa fa-eye"></i>
+        <span id="busuanzi_value_page_pv"></span>
+    </span>
+    
+    
+</div>
+        
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <p><strong>禁止完全抄袭，引用注明出处。</strong></p>
+<h2 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h2><p>前排提醒：文件还没过CSDN审核，GitHub也没上传完毕，目前只有模型的.pt文件可以下载。我会尽快更新。</p>
+<p>所使用.ptl文件</p>
+<p><a target="_blank" rel="noopener" href="https://download.csdn.net/download/CCCP_lus/88923463">基于Yolo5的动态口罩佩戴识别模型的pt文件资源-CSDN文库</a></p>
+<p>项目完整文件（还未更新完）</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/CCCP-lus/BFU-CS/tree/main/MaskRecognition">BFU-CS&#x2F;MaskRecognition at main · CCCP-lus&#x2F;BFU-CS (github.com)</a></p>
+<h2 id="程序演示"><a href="#程序演示" class="headerlink" title="程序演示"></a>程序演示</h2><p><img src="/img/cccplus/387da8e094c2.png"></p>
+<h2 id="开发环境"><a href="#开发环境" class="headerlink" title="开发环境"></a>开发环境</h2><p>项目使用的开发环境：Android Studio Giraffe | 2022.3.1 Patch 2、Kotlin 1.9.20、 JDK1.8、cameraX 1.0.0-beta07、 pytorch 2.1.0</p>
+<h2 id="设计思路"><a href="#设计思路" class="headerlink" title="设计思路"></a>设计思路</h2><h3 id="（1）需求分析"><a href="#（1）需求分析" class="headerlink" title="（1）需求分析"></a>（1）需求分析</h3><p>无论是新冠等全球传染病，还是一直蛰伏在身边的换季流感，都是人类健康的威胁因素。佩戴口罩可以有效阻断传染途径，是公共场所传染病防治最简洁有效的手段。针对以上需求，开发一款基于Yolo5的智能口罩识别安卓应用程序。</p>
+<p><strong>其主要实现三个任务：A.保存照片 B.实时显示人脸个数 C.识别人脸并判定口罩佩戴情况</strong></p>
+<h3 id="（2）模型训练"><a href="#（2）模型训练" class="headerlink" title="（2）模型训练"></a>（2）模型训练</h3><p>①数据集：Kaggle上的口罩照片数据集[1]，其中包含了853张进行过预打标的图片，包括戴口罩、未戴口罩、未正确戴口罩三类样本。</p>
+<p>②训练模型：采用yolov5s模型[2]，epoch值为300，batch-size取4。使用一张RTX4060显卡重复训练四次，得到的最优准确率和召回曲线如下图所示。</p>
+<p><img src="/img/cccplus/6ec96c4e06ca.png"></p>
+<p>图1 模型训练的准确率与召回曲线</p>
+<h3 id="（3）架构设计"><a href="#（3）架构设计" class="headerlink" title="（3）架构设计"></a>（3）架构设计</h3><p>如下图所示，项目采用了MVVM架构。</p>
+<p><img src="/img/cccplus/6c25a5a22c2f.png"></p>
+<p>图2 架构示意图</p>
+<p>布局（View）文件包括资源包 layout 文件夹下放置的布局配置文件： activity_main.xml 与 texture_view.xml，它们定义了主活动的界面。然后再通过 data binding 和 ViewModel 对象 CameraTool.java 进行绑定，以实现拍照功能为例，负责绑定的相关代码如下。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//正向绑定</span></span><br><span class="line">cameraBinding = DataBindingUtil.setContentView(<span class="built_in">this</span>, R.layout.activity_main);</span><br><span class="line">cameraBinding.setViewModel(cameraTool);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 反向绑定</span></span><br><span class="line">&lt;Button</span><br><span class="line">    android:id=<span class="string">&quot;@+id/camera_capture_button&quot;</span></span><br><span class="line">    android:layout_width=<span class="string">&quot;wrap_content&quot;</span></span><br><span class="line">    android:layout_height=<span class="string">&quot;wrap_content&quot;</span></span><br><span class="line">    android:layout_marginBottom=<span class="string">&quot;50dp&quot;</span></span><br><span class="line">    android:elevation=<span class="string">&quot;2dp&quot;</span></span><br><span class="line">    android:scaleType=<span class="string">&quot;fitCenter&quot;</span></span><br><span class="line">    android:text=<span class="string">&quot;Take Photo&quot;</span></span><br><span class="line">    android:onClick=<span class="string">&quot;@&#123;()-&gt;viewModel.capturePhoto2()&#125;&quot;</span></span><br><span class="line">    app:layout_constraintBottom_toBottomOf=<span class="string">&quot;parent&quot;</span></span><br><span class="line">    app:layout_constraintHorizontal_bias=<span class="string">&quot;0.498&quot;</span></span><br><span class="line">    app:layout_constraintLeft_toLeftOf=<span class="string">&quot;parent&quot;</span></span><br><span class="line">    app:layout_constraintRight_toRightOf=<span class="string">&quot;parent&quot;</span> /&gt;</span><br></pre></td></tr></table></figure>
+<p>Model 部分包括获取相机权限、图片处理、拍照等活动。这样就实现了一个 MVVM 架构，它的特点是以数据为中心，由数据来驱动，ViewModel 帮助 Activity 分担一部分或者所有的工作，可以降低代码之间的耦合度。</p>
+<p>项目的功能结构如下图所示。该项目的主要功能为实现屏幕中人脸识别并按照口罩佩戴情况的分类功能。在界面中用户可以实时查看到识别到的人脸位置、分类结果、数量统计，也可以点击拍照按钮抓拍照片。</p>
+<p><img src="/img/cccplus/e07bae4169e9.png"></p>
+<p>图3 功能结构图</p>
+<h2 id="模型训练"><a href="#模型训练" class="headerlink" title="模型训练"></a>模型训练</h2><p>我的过程还在整理，这篇就写的很好，可以先参照下。但是使用的数据集不一样，所以结果、性能等也不一定一样，请读者知悉。</p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/kushe123/article/details/113702225">利用yolov5实现口罩佩戴检测算法(非常详细)_基于yolov5的口罩识别-CSDN博客</a></p>
+<h2 id="程序编写"><a href="#程序编写" class="headerlink" title="程序编写"></a>程序编写</h2><h3 id="（1）代码结构分析"><a href="#（1）代码结构分析" class="headerlink" title="（1）代码结构分析"></a>（1）代码结构分析</h3><h4 id="资源文件"><a href="#资源文件" class="headerlink" title="资源文件"></a>资源文件</h4><p>资源包 assets 文件夹下放置一些静态资源，包括用于保存和加载完整的 PyTorch 模型结构和参数等信息的 best.torchscript.ptl 文件，以及存放此模型对应类别标签的 classes.txt 文件。</p>
+<h4 id="布局文件"><a href="#布局文件" class="headerlink" title="布局文件"></a>布局文件</h4><p>资源包 layout 文件夹下放置布局配置文件 activity_main.xml 与 texture_view.xml，它们定义了主活动的界面。</p>
+<h4 id="任务A"><a href="#任务A" class="headerlink" title="任务A"></a>任务A</h4><p>A任务中，点击按钮存储照片的功能是在上述功能的基础上，定义了一个按钮侦听器负责调用拍照函数。该函数通过调用 CameraX 库中的方法拍照，并传入 OutputFileOptions 对象、执行器对象和回调函数。在回调函数中显示 Toast 提示用户文件成功保存。</p>
+<h4 id="任务B"><a href="#任务B" class="headerlink" title="任务B"></a>任务B</h4><p>B任务中，计算并输出检测到的⼈脸的个数功能是模型运算结果的中间产物，通过调取将模型输出 outputs 转换而成的结果列表 Array，求其长度即可得到检测到的⼈脸个数。</p>
+<h4 id="任务C"><a href="#任务C" class="headerlink" title="任务C"></a>任务C</h4><p>C任务的主要目标可以简化为在拍摄过程中寻找人脸，并根据人脸的面部特征进行分类。这个过程可以大致分为三步：</p>
+<p>首先程序会判断权限是否已经获得，如果已经获得就会启动相机。相机启动后会捕获图像用于后续操作（分析、保存等）。</p>
+<p>然后，需要对原始数据进行处理。通过创建 ImageAnalysis 实例的方式，完成包括旋转角度、镜像等操作，其目的是让在屏幕上显示的照片符合人眼观看方向。</p>
+<p>最后模型返回一个 Result 类型的结果数组，包括每个矩形的位置，类别和属于这个类别的概率。通过调用分析图像方法将分析结果应用于UI线程，这个过程的更新间隔非常短，使用户可以视觉上认为这是实时分析的结果。</p>
+<h3 id="（2）测试结果"><a href="#（2）测试结果" class="headerlink" title="（2）测试结果"></a>（2）测试结果</h3><h4 id="模型准确度测试"><a href="#模型准确度测试" class="headerlink" title="模型准确度测试"></a>模型准确度测试</h4><p>更换新的数据集Object_Dete_Masking[3]，充分模拟了视角变化、遮挡物、多目标等不同情境。再次进行预测，准确率曲线和部分测试结果如下图所示。这个结果表示有充分理由认为模型的训练结果是可以接受的。</p>
+<p><img src="/img/cccplus/8f287a6e9de5.png"></p>
+<p>图4 新数据集测试结果</p>
+<p><img src="/img/cccplus/925d4e8922b3.png"></p>
+<p>图5 新数据集测试结果（部分）</p>
+<h4 id="模型鲁棒性测试"><a href="#模型鲁棒性测试" class="headerlink" title="模型鲁棒性测试"></a>模型鲁棒性测试</h4><p>针对连续按键、过量目标等非正常情况进行了程序的鲁棒性测试。测试结果发现，系统能够在各种复杂环境下保持稳定的性能，并且对于异常输入和各种干扰情况都有较好的处理能力。可以认为鲁棒性测试通过。</p>
+<h2 id="存在问题"><a href="#存在问题" class="headerlink" title="存在问题"></a>存在问题</h2><p>口罩佩戴不正确的训练样本过少，导致这种临界情况不能被有效识别。后续可以通过增大这部分样本重新训练的方式解决此问题。另外模型有时会将中景里模糊的白色物体（测试中是一个路由器）识别为口罩从而造成误判。后续可以通过增加训练样本、减小敏感度参数的方式解决此问题。</p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>[1] Face Mask Detection[OL].2020.<a target="_blank" rel="noopener" href="https://www.kaggle.com/datasets/andrewmvd/face-mask-detection">https://www.kaggle.com/datasets/andrewmvd/face-mask-detection</a></p>
+<p>[2] Glenn Jocher: yolov5: v3.1 - Bug Fixes and Performance Improvements[J].2020.10. Zenodo</p>
+<p>[3] Object_Dete_Masking[OL].2020.<a target="_blank" rel="noopener" href="https://github.com/huzixuan1/Object_Dete_Masking">https://github.com/huzixuan1/Object_Dete_Masking</a></p>
+
+    </div>
+    
+    <div class="reward" ontouchstart>
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            <span class="reward-type">
+                <img class="alipay" src="/img/Alipay.png"><b>支付宝打赏</b>
+            </span>
+            
+            
+            <span class="reward-type">
+                <img class="wechat" src="/img/Wepay.png"><b>微信打赏</b>
+            </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">
+        如果觉得好用请支持我
+    </p>
+</div>
+    
+    <div class="post-footer">
+        <div>
+            
+            转载声明：
+            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">言锡的小栈</a>
+            
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+    <a href="/2026/08/25/BJFU_%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E8%80%83%E8%AF%95%E5%A4%8D%E4%B9%A0%E7%BA%B2%E8%A6%81%EF%BC%88%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE%E7%89%88%EF%BC%89/" class="pre-post btn btn-default" title='BJFU|操作系统考试复习纲要（思维导图版）'>
+        <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+        <span class="hidden-xs">
+            BJFU|操作系统考试复习纲要（思维导图版）</span>
+    </a>
+    
+    
+    <a href="/2026/08/25/BJFU_%E5%8A%9B%E6%89%A3%E7%99%BE%E9%A2%98%EF%BC%88%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%88%86%E6%9E%90%E5%A4%87%E8%80%83%EF%BC%89%EF%BC%88%E6%9B%B4%E6%96%B0%E4%B8%AD%EF%BC%89/" class="next-post btn btn-default" title='BJFU|力扣百题（算法设计与分析备考）（更新中）'>
+        <span class="hidden-lg">下一篇</span>
+        <span class="hidden-xs">
+            BJFU|力扣百题（算法设计与分析备考）（更新中）</span><i class="fa fa-angle-right fa-fw"></i>
+    </a>
+    
+</div>
+
+<div id="comments">
+    
+<p>评论系统未开启，无法评论！</p>
+
+</div>
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            Table of Contents
+        </h3>
+        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80"><span class="toc-text">下载地址</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%E6%BC%94%E7%A4%BA"><span class="toc-text">程序演示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83"><span class="toc-text">开发环境</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF"><span class="toc-text">设计思路</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%881%EF%BC%89%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90"><span class="toc-text">（1）需求分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%882%EF%BC%89%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83"><span class="toc-text">（2）模型训练</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%883%EF%BC%89%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1"><span class="toc-text">（3）架构设计</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83"><span class="toc-text">模型训练</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%E7%BC%96%E5%86%99"><span class="toc-text">程序编写</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%881%EF%BC%89%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84%E5%88%86%E6%9E%90"><span class="toc-text">（1）代码结构分析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B5%84%E6%BA%90%E6%96%87%E4%BB%B6"><span class="toc-text">资源文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%83%E5%B1%80%E6%96%87%E4%BB%B6"><span class="toc-text">布局文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%BB%E5%8A%A1A"><span class="toc-text">任务A</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%BB%E5%8A%A1B"><span class="toc-text">任务B</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BB%BB%E5%8A%A1C"><span class="toc-text">任务C</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%882%EF%BC%89%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C"><span class="toc-text">（2）测试结果</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B%E5%87%86%E7%A1%AE%E5%BA%A6%E6%B5%8B%E8%AF%95"><span class="toc-text">模型准确度测试</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B%E9%B2%81%E6%A3%92%E6%80%A7%E6%B5%8B%E8%AF%95"><span class="toc-text">模型鲁棒性测试</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AD%98%E5%9C%A8%E9%97%AE%E9%A2%98"><span class="toc-text">存在问题</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="toc-text">参考文献</span></a></li></ol>
+        
+    </div>
+</aside>
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+<a id="back-to-top" class="icon-btn hide">
+    <i class="fa fa-chevron-up"></i>
+</a>
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+    Total:
+    <strong id="busuanzi_value_site_pv">
+        <i class="fa fa-spinner fa-spin"></i>
+    </strong>
+    &nbsp; | &nbsp;
+    Visitors:
+    <strong id="busuanzi_value_site_uv">
+        <i class="fa fa-spinner fa-spin"></i>
+    </strong>
+    
+</div>
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;
+                    2017
+                    
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash.js"></script>
+
+</body>
+</html>

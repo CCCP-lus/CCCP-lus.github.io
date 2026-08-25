@@ -1,0 +1,334 @@
+<!DOCTYPE HTML>
+<html lang="zh_CN">
+
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="言锡的小栈">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.3.0">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="https://cccp-lus.github.io">
+    <!--SEO-->
+
+<meta name="keywords" content="编程拾贝" />
+
+
+<meta name="description" content="说明本系统模拟实现了一个路由器与两个主机节点。该路由器将接收原始以太网帧，并像真正的路由器一样处理它们：将它们转发到正确的传出接口，处理以太网帧，处理 IPv4 分组，处理 ARP分组，处理 I..." />
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+<title>
+    
+    Python实现一个简单的主机-路由器结构（计算机网络） |
+    
+    言锡的小栈
+</title>
+
+<link rel="alternate" href="/atom.xml" title="言锡的小栈" type="application/atom+xml">
+
+
+<link rel="icon" href="/favicon.ico">
+
+    
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.7.0.css">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash.css">
+
+    
+<div class="hide">
+    <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</div>
+
+
+
+
+    
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+<body>
+    <header class="main-header"  style="background-image:url(
+    https://hexo-theme-snippet-1251680922.cos.ap-beijing.myqcloud.com/img/banner.jpg)"
+     >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='言锡'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+            <!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+            <h2>
+                让每一份努力都效率最大化
+            </h2>
+            
+        </div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                        <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://cccp-lus.github.io">
+                        言锡的小栈</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/"><i class="fa "></i>
+                                Home</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/桐铃集/"><i class="fa "></i>
+                                桐铃集</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/BFU-CS/"><i class="fa "></i>
+                                BJFU-CS</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/BUAA-IST/"><i class="fa "></i>
+                                BUAA-IST</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/学习资料/"><i class="fa "></i>
+                                学习资料</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/编程拾贝/"><i class="fa "></i>
+                                编程拾贝</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/踩坑记录/"><i class="fa "></i>
+                                踩坑记录</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/archives/"><i class="fa "></i>
+                                时间轴</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="Python实现一个简单的主机-路由器结构（计算机网络）">
+            
+            Python实现一个简单的主机-路由器结构（计算机网络）
+            
+        </h1>
+        <div class="post-meta">
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a class="category-link" href="/categories/%E7%BC%96%E7%A8%8B%E6%8B%BE%E8%B4%9D/">编程拾贝</a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            <a class="tag-none-link" href="/tags/%E7%BC%96%E7%A8%8B%E6%8B%BE%E8%B4%9D/" rel="tag">编程拾贝</a>
+            
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2026/08/25</span>
+    </span>
+    
+    <span class="fa-wrap">
+        <i class="fa fa-eye"></i>
+        <span id="busuanzi_value_page_pv"></span>
+    </span>
+    
+    
+</div>
+        
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <h2 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h2><p>本系统模拟实现了一个路由器与两个主机节点。该路由器将接收原始以太网帧，并像真正的路由器一样处理它们：将它们转发到正确的传出接口，处理以太网帧，处理 IPv4 分组，处理 ARP分组，处理 ICMP 分组，创建新帧等。这个路由器将模拟实现路由器处理主机节点发送的以太网帧的操作。</p>
+<h2 id="运行展示"><a href="#运行展示" class="headerlink" title="运行展示"></a>运行展示</h2><p><img src="/img/cccplus/9e7f8e5e781b.png"></p>
+<p><img src="/img/cccplus/0c6022d8c619.png"></p>
+<p><img src="/img/cccplus/8a316f1df284.png"></p>
+<h2 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> queue</span><br><span class="line"><span class="keyword">import</span> threading</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"><span class="keyword">import</span> uuid</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">dec_to_bin_str</span>(<span class="params">num</span>):</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">str</span>(<span class="built_in">bin</span>(num))[<span class="number">2</span>:]</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">bin_to_dec_str</span>(<span class="params">binary</span>):</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">str</span>(<span class="built_in">int</span>(binary, <span class="number">2</span>))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">ipv4_to_binary</span>(<span class="params">ipv4</span>):</span><br><span class="line">    binary_list = [<span class="string">&#x27;&#123;0:08b&#125;&#x27;</span>.<span class="built_in">format</span>(<span class="built_in">int</span>(num)) <span class="keyword">for</span> num <span class="keyword">in</span> ipv4.split(<span class="string">&#x27;.&#x27;</span>)]</span><br><span class="line">    <span class="keyword">return</span> <span class="string">&#x27;&#x27;</span>.join(binary_list)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">binary_to_ipv4</span>(<span class="params">binary_str</span>):</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(binary_str) != <span class="number">32</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;Invalid binary string&quot;</span></span><br><span class="line">    segments = [binary_str[i:i+<span class="number">8</span>] <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="number">32</span>, <span class="number">8</span>)]</span><br><span class="line">    ipv4_address = <span class="string">&quot;.&quot;</span>.join(<span class="built_in">str</span>(<span class="built_in">int</span>(segment, <span class="number">2</span>)) <span class="keyword">for</span> segment <span class="keyword">in</span> segments)</span><br><span class="line">    <span class="keyword">return</span> ipv4_address</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">validate_ip_checksum</span>(<span class="params">data</span>):</span><br><span class="line">    <span class="comment"># 初始化总合为0</span></span><br><span class="line">    total = <span class="number">0</span></span><br><span class="line">    <span class="comment"># 每16位为单位进行遍历</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(data), <span class="number">16</span>):</span><br><span class="line">        word = <span class="built_in">int</span>(data[i:i + <span class="number">16</span>], <span class="number">2</span>)</span><br><span class="line">        total += word</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 按位与操作和右移操作，在总和的低16位中和高16位中分别加上结果</span></span><br><span class="line">    total = (total &amp; <span class="number">0xffff</span>) + (total &gt;&gt; <span class="number">16</span>)</span><br><span class="line">    <span class="comment"># 再次按位与操作和右移操作，对结果再次进行相加</span></span><br><span class="line">    total = (total + (total &gt;&gt; <span class="number">16</span>)) &amp; <span class="number">0xffff</span></span><br><span class="line">    <span class="comment"># 将总和与0xffff进行异或运算，并将结果转换为16位二进制数</span></span><br><span class="line">    checksum = <span class="string">&#x27;&#123;:016b&#125;&#x27;</span>.<span class="built_in">format</span>(total ^ <span class="number">0xffff</span>)</span><br><span class="line">    <span class="keyword">return</span> checksum</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">IPv4Message</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, version, header_length, service, total_length, identification, flags, fragment_offset, ttl, protocol, checksum, source_address, destination_address, data</span>):</span><br><span class="line">        <span class="variable language_">self</span>.version = version                              <span class="comment"># 版本</span></span><br><span class="line">        <span class="variable language_">self</span>.header_length = header_length                  <span class="comment"># 首部长度</span></span><br><span class="line">        <span class="variable language_">self</span>.service = service                              <span class="comment"># 区分服务</span></span><br><span class="line">        <span class="variable language_">self</span>.total_length = total_length                    <span class="comment"># 总长度</span></span><br><span class="line">        <span class="variable language_">self</span>.identification = identification                <span class="comment"># 标识</span></span><br><span class="line">        <span class="variable language_">self</span>.flags = flags                                  <span class="comment"># 标志</span></span><br><span class="line">        <span class="variable language_">self</span>.fragment_offset = fragment_offset              <span class="comment"># 片偏移</span></span><br><span class="line">        <span class="variable language_">self</span>.ttl = ttl                                      <span class="comment"># 生存时间</span></span><br><span class="line">        <span class="variable language_">self</span>.protocol = protocol                            <span class="comment"># 协议</span></span><br><span class="line">        <span class="variable language_">self</span>.checksum = checksum                            <span class="comment"># 校验和</span></span><br><span class="line">        <span class="variable language_">self</span>.source_address = source_address                <span class="comment"># 源地址</span></span><br><span class="line">        <span class="variable language_">self</span>.destination_address = destination_address      <span class="comment"># 目的地址</span></span><br><span class="line">        <span class="variable language_">self</span>.data = data                                    <span class="comment"># 数据</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">MACMessage</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, mac_destination, mac_source, protocol_type, data</span>):</span><br><span class="line">        <span class="variable language_">self</span>.mac_destination = mac_destination</span><br><span class="line">        <span class="variable language_">self</span>.mac_source = mac_source</span><br><span class="line">        <span class="variable language_">self</span>.protocol_type = protocol_type    <span class="comment"># 为IPv4</span></span><br><span class="line">        <span class="variable language_">self</span>.data = data</span><br><span class="line">     </span><br><span class="line">     </span><br><span class="line"><span class="keyword">class</span> <span class="title class_">ICMPError</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, message_type, checksum, data</span>):</span><br><span class="line">        <span class="variable language_">self</span>.<span class="built_in">type</span> = message_type   <span class="comment"># 1-主机不可达</span></span><br><span class="line">        <span class="variable language_">self</span>.checksum = checksum</span><br><span class="line">        <span class="variable language_">self</span>.data = data</span><br><span class="line">        </span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">ICMPMessage</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, message_type, checksum, data</span>):</span><br><span class="line">        <span class="variable language_">self</span>.<span class="built_in">type</span> = message_type    <span class="comment"># 类型字段，8-请求，0-回答</span></span><br><span class="line">        <span class="variable language_">self</span>.checksum = checksum</span><br><span class="line">        <span class="variable language_">self</span>.data = data</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">ARPBroadcast</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="variable language_">self</span>.mac = <span class="string">&quot;FF:FF:FF:FF:FF:FF&quot;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">my_ip = socket.gethostbyname(socket.gethostname())</span><br><span class="line">my_mac = <span class="string">&#x27;:&#x27;</span>.join([<span class="string">&#x27;&#123;:02x&#125;&#x27;</span>.<span class="built_in">format</span>((uuid.getnode() &gt;&gt; elements) &amp; <span class="number">0xff</span>) <span class="keyword">for</span> elements <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="number">2</span> * <span class="number">6</span>, <span class="number">2</span>)][::-<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line">arp_table = &#123;my_ip: my_mac, <span class="string">&#x27;172.26.213.121&#x27;</span>: <span class="string">&#x27;00:11:22:33:44:55&#x27;</span>, <span class="string">&#x27;172.26.213.64&#x27;</span>: <span class="string">&#x27;00:aa:bb:cc:dd:ee&#x27;</span>&#125;</span><br><span class="line"></span><br><span class="line">route_table = &#123;my_ip: <span class="string">&#x27;direct&#x27;</span>, <span class="string">&#x27;172.26.213.121&#x27;</span>: <span class="string">&#x27;direct&#x27;</span>, <span class="string">&#x27;0.0.0.0&#x27;</span>: <span class="string">&#x27;172.26.213.64&#x27;</span>&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Router</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="variable language_">self</span>.ip = my_ip</span><br><span class="line">        <span class="variable language_">self</span>.mac = my_mac</span><br><span class="line">        <span class="variable language_">self</span>.arp_table = arp_table</span><br><span class="line">        <span class="variable language_">self</span>.routing_table = route_table</span><br><span class="line">        <span class="variable language_">self</span>.frame_queue = queue.Queue()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">route</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">            <span class="comment"># 拆开frame获取IP数据报</span></span><br><span class="line">            frame_message = <span class="variable language_">self</span>.frame_queue.get()</span><br><span class="line">            <span class="keyword">if</span> frame_message == <span class="string">&quot;&quot;</span>:</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            ip_message = frame_message.split(<span class="string">&quot;@&quot;</span>)[-<span class="number">1</span>]</span><br><span class="line">            ip_header = ip_message[<span class="number">0</span>:<span class="number">160</span>]</span><br><span class="line"></span><br><span class="line">            <span class="comment"># 计算校验和</span></span><br><span class="line">            checksum = ip_header[<span class="number">80</span>:<span class="number">96</span>]</span><br><span class="line">            rest = ip_header[-<span class="number">64</span>:]</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;路由器：计算的校验和为：&quot;</span> + checksum)</span><br><span class="line">            ip_message_t = ip_header[<span class="number">0</span>:<span class="number">80</span>]</span><br><span class="line">            ip_message_t += <span class="string">&quot;0000000000000000&quot;</span></span><br><span class="line">            ip_message_t += rest</span><br><span class="line">            <span class="keyword">if</span> <span class="keyword">not</span> checksum == validate_ip_checksum(ip_message_t):</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">&quot;路由器：校验和验证失败&quot;</span>)</span><br><span class="line">                <span class="comment"># 发送一个ICMP响应报文</span></span><br><span class="line">                <span class="built_in">print</span>(<span class="string">&quot;路由器：发送一个ICMP响应报文告知主机&quot;</span>)</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;路由器：校验和验证成功&quot;</span>)</span><br><span class="line"></span><br><span class="line">            <span class="comment"># 验证TTL合法性</span></span><br><span class="line">            ttl = <span class="built_in">int</span>(bin_to_dec_str(ip_header[<span class="number">64</span>:<span class="number">72</span>]))</span><br><span class="line">            <span class="keyword">if</span> ttl &lt;= <span class="number">0</span>:</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">&quot;TTL值不合法&quot;</span>)</span><br><span class="line">                <span class="comment"># 发送一个ICMP响应报文</span></span><br><span class="line">                <span class="built_in">print</span>(<span class="string">&quot;路由器：发送一个ICMP响应报文告知主机&quot;</span>)</span><br><span class="line">                <span class="keyword">continue</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                <span class="comment"># 自减</span></span><br><span class="line">                ttl -= <span class="number">1</span></span><br><span class="line"></span><br><span class="line">            <span class="comment"># 拆解IP首部</span></span><br><span class="line">            ip_source = binary_to_ipv4((ip_message[<span class="number">0</span>:<span class="number">160</span>])[-<span class="number">64</span>:-<span class="number">32</span>])</span><br><span class="line">            ip_destination = binary_to_ipv4((ip_message[<span class="number">0</span>:<span class="number">160</span>])[-<span class="number">32</span>:])</span><br><span class="line">            <span class="built_in">print</span>(<span class="string">&quot;路由器：源IP：&quot;</span> + ip_source + <span class="string">&quot;，目的IP：&quot;</span> + ip_destination)</span><br><span class="line"></span><br><span class="line">            <span class="comment"># 转发的frame</span></span><br><span class="line">            new_frame_message = <span class="string">&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">            <span class="comment"># 根据路由表查目的IP地址</span></span><br><span class="line">            <span class="keyword">for</span> ip, move <span class="keyword">in</span> route_table.items():</span><br><span class="line">                <span class="keyword">if</span> ip == ip_destination:</span><br><span class="line">                    <span class="comment"># 修改IP头部，源地址改变但目的地址不变</span></span><br><span class="line">                    <span class="keyword">if</span> move == <span class="string">&quot;direct&quot;</span>:</span><br><span class="line">                        <span class="built_in">print</span>(<span class="string">&quot;路由器：目标可直达，直接转发&quot;</span>)</span><br><span class="line">                    <span class="keyword">elif</span> move == <span class="string">&quot;upper&quot;</span>:</span><br><span class="line">                        <span class="built_in">print</span>(<span class="string">&quot;路由器：目标为本身，交付上层&quot;</span>)</span><br><span class="line">                    <span class="keyword">break</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                ip_header = ip_header[<span class="number">0</span>:-<span class="number">32</span>]</span><br><span class="line">                ip_header += ipv4_to_binary(route_table[<span class="string">&quot;0.0.0.0&quot;</span>])</span><br><span class="line">                <span class="built_in">print</span>(<span class="string">&quot;路由器：新的IP数据报已生成，下一跳IP地址为：&quot;</span> + route_table[<span class="string">&quot;0.0.0.0&quot;</span>])</span><br><span class="line"></span><br><span class="line">                <span class="comment"># 根据ARP表获取下一跳MAC，封装成帧，转发</span></span><br><span class="line">                mac_source = <span class="variable language_">self</span>.mac</span><br><span class="line">                <span class="keyword">for</span> m_ip, mac <span class="keyword">in</span> arp_table.items():</span><br><span class="line">                    <span class="keyword">if</span> ip_header[-<span class="number">32</span>:] == ipv4_to_binary(m_ip):</span><br><span class="line">                        mac_destination = mac</span><br><span class="line">                        new_frame_message += mac_destination + <span class="string">&quot;@&quot;</span> + mac_source + <span class="string">&quot;@IPv4@&quot;</span> + ip_message</span><br><span class="line">                        <span class="built_in">print</span>(<span class="string">&quot;路由器：路由器已转发，下一跳MAC为：&quot;</span>, mac)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Host</span>:</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, ip, mac</span>):</span><br><span class="line">        <span class="variable language_">self</span>.ip = ip</span><br><span class="line">        <span class="variable language_">self</span>.mac = mac</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 获取目的MAC地址(广播ARP请求分组并接收ARP响应分组)</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">get_dest_mac</span>(<span class="params">self, dest_ip</span>):</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;主机：正在进行ARP广播&quot;</span>)</span><br><span class="line">        dest_mac = <span class="string">&quot;FF:FF:FF:FF:FF:FF&quot;</span></span><br><span class="line">        <span class="keyword">for</span> ip, mac <span class="keyword">in</span> arp_table.items():</span><br><span class="line">            <span class="keyword">if</span> ip == dest_ip:</span><br><span class="line">                dest_mac = my_mac</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;主机：目标MAC已获取&quot;</span> + dest_mac)</span><br><span class="line">        <span class="keyword">return</span> dest_mac</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 初始化校验和</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">make_checksum</span>(<span class="params">self, ip_header, dest_ip</span>):</span><br><span class="line">        ip_header += <span class="string">&quot;0000000000000000&quot;</span></span><br><span class="line">        ip_header += ipv4_to_binary(<span class="variable language_">self</span>.ip) + ipv4_to_binary(dest_ip)</span><br><span class="line">        data = ip_header</span><br><span class="line">        total = <span class="number">0</span></span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(data), <span class="number">16</span>):</span><br><span class="line">            word = <span class="built_in">int</span>(data[i:i + <span class="number">16</span>], <span class="number">2</span>)</span><br><span class="line">            total += word</span><br><span class="line"></span><br><span class="line">        total = (total &amp; <span class="number">0xffff</span>) + (total &gt;&gt; <span class="number">16</span>)</span><br><span class="line">        total = (total + (total &gt;&gt; <span class="number">16</span>)) &amp; <span class="number">0xffff</span></span><br><span class="line">        checksum = <span class="string">&#x27;&#123;:016b&#125;&#x27;</span>.<span class="built_in">format</span>(total ^ <span class="number">0xffff</span>)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;主机：生成的校验和为：&quot;</span> + checksum)</span><br><span class="line">        <span class="keyword">return</span> checksum</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 发送数据帧</span></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">send_frame</span>(<span class="params">self, dest_ip, data</span>):</span><br><span class="line">        <span class="comment"># 组装IP数据报</span></span><br><span class="line">        ip_header = <span class="string">&quot;0100&quot;</span>                                      <span class="comment"># 版本号为4</span></span><br><span class="line">        ip_header += <span class="string">&quot;0101&quot;</span>                                     <span class="comment"># 首部长度20B</span></span><br><span class="line">        ip_header += <span class="string">&quot;00000000&quot;</span>                                 <span class="comment"># 区分服务</span></span><br><span class="line">        ip_header += dec_to_bin_str(<span class="built_in">len</span>(data) + <span class="number">20</span>).zfill(<span class="number">16</span>)   <span class="comment"># 总长度</span></span><br><span class="line">        ip_header += <span class="string">&quot;0000000000000000&quot;</span>                         <span class="comment"># 标识</span></span><br><span class="line">        ip_header += <span class="string">&quot;000&quot;</span>                                      <span class="comment"># 标志</span></span><br><span class="line">        ip_header += <span class="string">&quot;0000000000000&quot;</span>                            <span class="comment"># 片偏移</span></span><br><span class="line">        ip_header += <span class="string">&quot;00000000&quot;</span>                                 <span class="comment"># 生存时间</span></span><br><span class="line">        ip_header += <span class="string">&quot;00000000&quot;</span>                                 <span class="comment"># 协议</span></span><br><span class="line">        ip_header += <span class="variable language_">self</span>.make_checksum(ip_header, dest_ip)     <span class="comment"># 校验和</span></span><br><span class="line">        ip_header += ipv4_to_binary(<span class="variable language_">self</span>.ip)                    <span class="comment"># 源地址</span></span><br><span class="line">        ip_header += ipv4_to_binary(dest_ip)                    <span class="comment"># 目的地址</span></span><br><span class="line"></span><br><span class="line">        ip_message = ip_header + data                           <span class="comment"># 组装成IP数据报</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 组装数据帧</span></span><br><span class="line">        frame_head = <span class="variable language_">self</span>.get_dest_mac(dest_ip)</span><br><span class="line">        frame_head += <span class="string">&quot;@&quot;</span> + <span class="variable language_">self</span>.mac + <span class="string">&quot;@IPv4@&quot;</span></span><br><span class="line">        frame_message = frame_head + ip_message</span><br><span class="line"></span><br><span class="line">        <span class="comment"># 发送给路由器</span></span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;主机：数据帧发送完毕&quot;</span>)</span><br><span class="line">        my_router.frame_queue.put(frame_message)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">my_router = Router()</span><br><span class="line">my_host1 = Host(<span class="string">&quot;172.26.213.121&quot;</span>, <span class="string">&quot;00:11:22:33:44:55&quot;</span>)</span><br><span class="line">my_host2 = Host(<span class="string">&quot;172.26.213.122&quot;</span>, <span class="string">&quot;00:11:22:33:44:55&quot;</span>)</span><br><span class="line"></span><br><span class="line">router_thread = threading.Thread(target=my_router.route)</span><br><span class="line">router_thread.start()</span><br><span class="line"></span><br><span class="line">flag = <span class="literal">True</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;本机IP：&quot;</span> + my_ip + <span class="string">&quot; 本机MAC：&quot;</span> + my_mac)</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    message = <span class="built_in">input</span>(<span class="string">&quot;主机：请输入要发送的消息：&quot;</span>)</span><br><span class="line">    <span class="keyword">if</span> message == <span class="string">&quot;exit&quot;</span>:</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;主机已关闭&quot;</span>)</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">if</span> message == <span class="string">&quot;shift&quot;</span>:</span><br><span class="line">        flag = <span class="keyword">not</span> flag</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">    <span class="keyword">if</span> flag:</span><br><span class="line">        my_host1.send_frame(my_ip, message)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        my_host2.send_frame(<span class="string">&quot;172.26.21.12&quot;</span>, message)</span><br><span class="line">    time.sleep(<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">router_thread.join()</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+    
+    <div class="reward" ontouchstart>
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            <span class="reward-type">
+                <img class="alipay" src="/img/Alipay.png"><b>支付宝打赏</b>
+            </span>
+            
+            
+            <span class="reward-type">
+                <img class="wechat" src="/img/Wepay.png"><b>微信打赏</b>
+            </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">
+        如果觉得好用请支持我
+    </p>
+</div>
+    
+    <div class="post-footer">
+        <div>
+            
+            转载声明：
+            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">言锡的小栈</a>
+            
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+    <a href="/2026/08/25/%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95C++%E7%9A%84BDOH%E8%BF%9B%E5%88%B6%E7%9B%B8%E4%BA%92%E8%BD%AC%E6%8D%A2%E4%BB%A3%E7%A0%81%EF%BC%88%E9%80%92%E5%BD%92%E7%89%88%EF%BC%89/" class="pre-post btn btn-default" title='一个简单C++的BDOH进制相互转换代码（递归版）'>
+        <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+        <span class="hidden-xs">
+            一个简单C++的BDOH进制相互转换代码（递归版）</span>
+    </a>
+    
+    
+    <a href="/2026/08/25/BJFU_%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%9C%9F%E6%9C%AB%E5%A4%8D%E4%B9%A0%E8%80%83%E5%89%8D%E9%80%9F%E8%AE%B0/" class="next-post btn btn-default" title='BJFU|计算机网络期末复习考前速记'>
+        <span class="hidden-lg">下一篇</span>
+        <span class="hidden-xs">
+            BJFU|计算机网络期末复习考前速记</span><i class="fa fa-angle-right fa-fw"></i>
+    </a>
+    
+</div>
+
+<div id="comments">
+    
+<p>评论系统未开启，无法评论！</p>
+
+</div>
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            Table of Contents
+        </h3>
+        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%B4%E6%98%8E"><span class="toc-text">说明</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%90%E8%A1%8C%E5%B1%95%E7%A4%BA"><span class="toc-text">运行展示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BA%90%E4%BB%A3%E7%A0%81"><span class="toc-text">源代码</span></a></li></ol>
+        
+    </div>
+</aside>
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+<a id="back-to-top" class="icon-btn hide">
+    <i class="fa fa-chevron-up"></i>
+</a>
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+    Total:
+    <strong id="busuanzi_value_site_pv">
+        <i class="fa fa-spinner fa-spin"></i>
+    </strong>
+    &nbsp; | &nbsp;
+    Visitors:
+    <strong id="busuanzi_value_site_uv">
+        <i class="fa fa-spinner fa-spin"></i>
+    </strong>
+    
+</div>
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;
+                    2017
+                    
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash.js"></script>
+
+</body>
+</html>

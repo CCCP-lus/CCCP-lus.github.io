@@ -1,0 +1,381 @@
+<!DOCTYPE HTML>
+<html lang="zh_CN">
+
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="言锡的小栈">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.3.0">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="https://cccp-lus.github.io">
+    <!--SEO-->
+
+<meta name="keywords" content="BJFU-CS" />
+
+
+<meta name="description" content="仅供课外学习使用，任何个人与机构不得利用此文章进行任何形式的作弊。A:A + B题目：描述：帅气的3C哥参加了一场考试，已知考试共五科，现知道他每科的成绩，求3C哥的总成绩。
+输入：输入一行，输..." />
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+<title>
+    
+    BJFU|C++程序设计基础（22上）实验0-C语言回顾 |
+    
+    言锡的小栈
+</title>
+
+<link rel="alternate" href="/atom.xml" title="言锡的小栈" type="application/atom+xml">
+
+
+<link rel="icon" href="/favicon.ico">
+
+    
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.7.0.css">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash.css">
+
+    
+<div class="hide">
+    <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</div>
+
+
+
+
+    
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+<body>
+    <header class="main-header"  style="background-image:url(
+    https://hexo-theme-snippet-1251680922.cos.ap-beijing.myqcloud.com/img/banner.jpg)"
+     >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='言锡'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+            <!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+            <h2>
+                让每一份努力都效率最大化
+            </h2>
+            
+        </div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                        <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://cccp-lus.github.io">
+                        言锡的小栈</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/"><i class="fa "></i>
+                                Home</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/桐铃集/"><i class="fa "></i>
+                                桐铃集</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/BFU-CS/"><i class="fa "></i>
+                                BJFU-CS</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/BUAA-IST/"><i class="fa "></i>
+                                BUAA-IST</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/学习资料/"><i class="fa "></i>
+                                学习资料</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/编程拾贝/"><i class="fa "></i>
+                                编程拾贝</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/踩坑记录/"><i class="fa "></i>
+                                踩坑记录</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/archives/"><i class="fa "></i>
+                                时间轴</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="BJFU|C++程序设计基础（22上）实验0-C语言回顾">
+            
+            BJFU|C++程序设计基础（22上）实验0-C语言回顾
+            
+        </h1>
+        <div class="post-meta">
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a class="category-link" href="/categories/BJFU-CS/">BJFU-CS</a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            <a class="tag-none-link" href="/tags/BJFU-CS/" rel="tag">BJFU-CS</a>
+            
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2026/08/25</span>
+    </span>
+    
+    <span class="fa-wrap">
+        <i class="fa fa-eye"></i>
+        <span id="busuanzi_value_page_pv"></span>
+    </span>
+    
+    
+</div>
+        
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <h2 id="仅供课外学习使用，任何个人与机构不得利用此文章进行任何形式的作弊。"><a href="#仅供课外学习使用，任何个人与机构不得利用此文章进行任何形式的作弊。" class="headerlink" title="仅供课外学习使用，任何个人与机构不得利用此文章进行任何形式的作弊。"></a><strong>仅供课外学习使用，任何个人与机构不得利用此文章进行任何形式的作弊。</strong></h2><h2 id="A-A-B"><a href="#A-A-B" class="headerlink" title="A:A + B"></a>A:A + B</h2><h3 id="题目："><a href="#题目：" class="headerlink" title="题目："></a>题目：</h3><h4 id="描述："><a href="#描述：" class="headerlink" title="描述："></a>描述：</h4><p>帅气的3C哥参加了一场考试，已知考试共五科，现知道他每科的成绩，求3C哥的总成绩。</p>
+<h4 id="输入："><a href="#输入：" class="headerlink" title="输入："></a>输入：</h4><p>输入一行，输入5个整数，表示3C哥每科成绩，范围在[0, 100]内。</p>
+<h4 id="输出："><a href="#输出：" class="headerlink" title="输出："></a>输出：</h4><p>输出一行，输出1个整数，表示3C哥的总成绩</p>
+<h4 id="输入样例1："><a href="#输入样例1：" class="headerlink" title="输入样例1："></a>输入样例1：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">98 95 87 100 90</span><br></pre></td></tr></table></figure>
+<h4 id="输出样例1："><a href="#输出样例1：" class="headerlink" title="输出样例1："></a>输出样例1：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">470</span><br></pre></td></tr></table></figure>
+<h3 id="实例："><a href="#实例：" class="headerlink" title="实例："></a>实例：</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;windows.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> a[<span class="number">5</span>];</span><br><span class="line">	<span class="type">int</span> i,sum=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">5</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;a[i]);</span><br><span class="line">		sum+=a[i];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,sum);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="B-3n-1问题"><a href="#B-3n-1问题" class="headerlink" title="B:3n + 1问题"></a>B:3n + 1问题</h2><h3 id="题目：-1"><a href="#题目：-1" class="headerlink" title="题目："></a>题目：</h3><h4 id="描述：-1"><a href="#描述：-1" class="headerlink" title="描述："></a>描述：</h4><p>对于任意大于1的自然数n，若n为奇数，则将n变为3n+1，否则变为n的一半；经过若干次这样的变换，一定会使n变为1。比如：  </p>
+<p>3-&gt;10-&gt;5-&gt;16-&gt;8-&gt;4-&gt;2-&gt;1</p>
+<h4 id="要求："><a href="#要求：" class="headerlink" title="要求："></a>要求：</h4><p>输入n，输出变换的次数。</p>
+<h4 id="输入：-1"><a href="#输入：-1" class="headerlink" title="输入："></a>输入：</h4><p>输入一行，输入一个正整数n，1 &lt;&#x3D; n &lt;&#x3D; 100。</p>
+<h4 id="输出：-1"><a href="#输出：-1" class="headerlink" title="输出："></a>输出：</h4><p>输出一行，输出一个正整数，表示变换的次数。</p>
+<h4 id="输入样例1：-1"><a href="#输入样例1：-1" class="headerlink" title="输入样例1："></a>输入样例1：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">3</span><br></pre></td></tr></table></figure>
+<h4 id="输出样例1：-1"><a href="#输出样例1：-1" class="headerlink" title="输出样例1："></a>输出样例1：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">7</span><br></pre></td></tr></table></figure>
+<h3 id="实例：-1"><a href="#实例：-1" class="headerlink" title="实例："></a>实例：</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;windows.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> n,cnt=<span class="number">0</span>;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">	<span class="keyword">for</span>(;n!=<span class="number">1</span>;)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(n%<span class="number">2</span>==<span class="number">1</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			n = <span class="number">3</span>*n<span class="number">+1</span>;</span><br><span class="line">			cnt++;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			n = n/<span class="number">2</span>;</span><br><span class="line">			cnt++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,cnt);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="C-稀疏矩阵"><a href="#C-稀疏矩阵" class="headerlink" title="C:稀疏矩阵"></a>C:稀疏矩阵</h2><h3 id="题目：-2"><a href="#题目：-2" class="headerlink" title="题目："></a>题目：</h3><h4 id="描述：-2"><a href="#描述：-2" class="headerlink" title="描述："></a>描述：</h4><p>大部分元素为0的矩阵称为稀疏矩阵。假设有k个非0元素，则可把稀疏矩阵用k*3的矩阵简记之，其中第一列为行号，第二列为列号，第三列是该行、该列下的非0元素的值。</p>
+<h4 id="输入：-2"><a href="#输入：-2" class="headerlink" title="输入："></a>输入：</h4><p>首先输入一行，输入两个正整数，表示稀疏矩阵的行号和列号，再输入一个稀疏矩阵，行和列不超过100。</p>
+<h4 id="输出：-2"><a href="#输出：-2" class="headerlink" title="输出："></a>输出：</h4><p>输出它的简记形式，按从上到下，从左到右的顺序依次输出。每一行输出3个整数，每两个整数之间一个空格，最后一个整数后面没有空格。</p>
+<h4 id="输入样例1：-2"><a href="#输入样例1：-2" class="headerlink" title="输入样例1："></a>输入样例1：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">3 4</span><br><span class="line">0 0 0 5</span><br><span class="line">0 2 0 0</span><br><span class="line">0 1 0 0</span><br></pre></td></tr></table></figure>
+<h4 id="输出样例1：-2"><a href="#输出样例1：-2" class="headerlink" title="输出样例1："></a>输出样例1：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1 4 5 </span><br><span class="line">2 2 2  </span><br><span class="line">3 2 1</span><br></pre></td></tr></table></figure>
+<h3 id="实例：-2"><a href="#实例：-2" class="headerlink" title="实例："></a>实例：</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;windows.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> m,n;</span><br><span class="line">	<span class="type">int</span> i,k;</span><br><span class="line">	<span class="type">int</span> cnt[<span class="number">100</span>][<span class="number">100</span>],ret[<span class="number">100</span>][<span class="number">100</span>],t[<span class="number">100</span>][<span class="number">100</span>];</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">100</span>;i++)</span><br><span class="line">	<span class="keyword">for</span>(k=<span class="number">0</span>;k&lt;<span class="number">100</span>;k++)</span><br><span class="line">	&#123;	</span><br><span class="line">		cnt[i][k]=<span class="number">0</span>;</span><br><span class="line">		t[i][k]=<span class="number">0</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;m,&amp;n);</span><br><span class="line">	<span class="type">int</span> a[<span class="number">100</span>][<span class="number">100</span>];</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;m;i++)</span><br><span class="line">		<span class="keyword">for</span>(k=<span class="number">0</span>;k&lt;n;k++)</span><br><span class="line">			<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;a[i][k]);</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;m;i++)</span><br><span class="line">	&#123;	</span><br><span class="line">		<span class="type">int</span> temp = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(k=<span class="number">0</span>;k&lt;n;k++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(a[i][k]==<span class="number">0</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				cnt[i][temp]++;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">			&#123;</span><br><span class="line">				cnt[i][temp]++;</span><br><span class="line">				<span class="built_in">printf</span>(<span class="string">&quot;%d %d %d\n&quot;</span>,i<span class="number">+1</span>,cnt[i][temp],a[i][k]);</span><br><span class="line">				temp++;</span><br><span class="line">				cnt[i][temp] = cnt[i][temp<span class="number">-1</span>];</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="D-开灯问题"><a href="#D-开灯问题" class="headerlink" title="D:开灯问题"></a>D:开灯问题</h2><h3 id="题目：-3"><a href="#题目：-3" class="headerlink" title="题目："></a>题目：</h3><h4 id="描述：-3"><a href="#描述：-3" class="headerlink" title="描述："></a>描述：</h4><p>有n盏灯，编号为1~n。第1个人把所有灯打开，第2个人按下所有编号为2的倍数的开关（这些灯将被关掉），第3个人按下所有编号为3的倍数的开关（其中关掉的灯将被打开，开着的灯将被关闭），以此类推。一共有k个人，问最后有哪些灯开着？</p>
+<h4 id="输入：-3"><a href="#输入：-3" class="headerlink" title="输入："></a>输入：</h4><p>输入一行，输入两个正整数n和k。(k&lt;&#x3D;n&lt;&#x3D;1000）</p>
+<h4 id="输出：-3"><a href="#输出：-3" class="headerlink" title="输出："></a>输出：</h4><p>输出一行，输出所有开着的灯的编号，每个编号后面跟一个空格。</p>
+<h4 id="输入样例1：-3"><a href="#输入样例1：-3" class="headerlink" title="输入样例1："></a>输入样例1：</h4><p>7 3</p>
+<h4 id="输出样例1：-3"><a href="#输出样例1：-3" class="headerlink" title="输出样例1："></a>输出样例1：</h4><p>1 5 6 7</p>
+<h4 id="提示："><a href="#提示：" class="headerlink" title="提示："></a>提示：</h4><p>可先使用string.h里的memset函数将数组全部置0；使用C语言的逻辑非(!)操作符</p>
+<h3 id="实例：-3"><a href="#实例：-3" class="headerlink" title="实例："></a>实例：</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;windows.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//没有用提示，但不扣分 </span></span><br><span class="line">	<span class="type">int</span> n,k;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;n,&amp;k);</span><br><span class="line">	<span class="type">int</span> a[<span class="number">1000</span>],b[<span class="number">1000</span>];</span><br><span class="line">	<span class="type">int</span> i,m,t=<span class="number">2</span>;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		a[i] = <span class="number">0</span>;</span><br><span class="line">		b[i] = i<span class="number">+1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;k<span class="number">-1</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>(m=<span class="number">0</span>;m&lt;n;m++)</span><br><span class="line">		<span class="keyword">if</span>(b[m]%t==<span class="number">0</span>)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(a[m]==<span class="number">1</span>)</span><br><span class="line">				a[m]=<span class="number">0</span>;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">				a[m]=<span class="number">1</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		t++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">		<span class="keyword">if</span>(a[i]!=<span class="number">1</span>)</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>,b[i]);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="E-还是一个不妖艳的问题"><a href="#E-还是一个不妖艳的问题" class="headerlink" title="E:还是一个不妖艳的问题"></a>E:还是一个不妖艳的问题</h2><h3 id="题目：-4"><a href="#题目：-4" class="headerlink" title="题目："></a>题目：</h3><h4 id="描述：-4"><a href="#描述：-4" class="headerlink" title="描述："></a>描述：</h4><p>U君与S君想测试下双方的缘分，测试规则是两人各想一个数字，如果两个数字互质则代表有缘分。</p>
+<h4 id="输入：-4"><a href="#输入：-4" class="headerlink" title="输入："></a>输入：</h4><p>多组测试,每组测试输入两个数字m和n(m和n均不超过int取值范围)，空格隔开。</p>
+<h4 id="输出：-4"><a href="#输出：-4" class="headerlink" title="输出："></a>输出：</h4><p>对于每组，如果有缘分的话，输出“Yes”；否则，输出“No”</p>
+<h4 id="输入样例1：-4"><a href="#输入样例1：-4" class="headerlink" title="输入样例1："></a>输入样例1：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">10 5</span><br><span class="line">17 13</span><br></pre></td></tr></table></figure>
+<h4 id="输出样例1：-4"><a href="#输出样例1：-4" class="headerlink" title="输出样例1："></a>输出样例1：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">No</span><br><span class="line">Yes</span><br></pre></td></tr></table></figure>
+<h4 id="提示：-1"><a href="#提示：-1" class="headerlink" title="提示："></a>提示：</h4><p>可使用 while (scanf(“%d%d”, &amp;n, &amp;m) !&#x3D; EOF) 完成多组输入</p>
+<h3 id="实例：-4"><a href="#实例：-4" class="headerlink" title="实例："></a>实例：</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;windows.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">gcd</span><span class="params">(<span class="type">int</span> m,<span class="type">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(n^=m^=n^=m%=n);</span><br><span class="line">	<span class="keyword">return</span> m;</span><br><span class="line">&#125;</span><br><span class="line"> </span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> m,n;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,&amp;m,&amp;n)!=EOF)</span><br><span class="line">	&#123;</span><br><span class="line">	<span class="keyword">if</span>(m&lt;n)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="type">int</span> temp = m;</span><br><span class="line">		m = n;</span><br><span class="line">		n = temp;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="type">int</span> t=<span class="built_in">gcd</span>(m,n);</span><br><span class="line">	<span class="keyword">if</span>(t==<span class="number">1</span>)</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;Yes\n&quot;</span>);</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;No\n&quot;</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"> </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="F-回文串的排序"><a href="#F-回文串的排序" class="headerlink" title="F:回文串的排序"></a>F:回文串的排序</h2><h3 id="题目：-5"><a href="#题目：-5" class="headerlink" title="题目："></a>题目：</h3><h4 id="描述：-5"><a href="#描述：-5" class="headerlink" title="描述："></a>描述：</h4><p>输入n个字符串，将其中是回文串的字符串，按照长度从小到大的顺序输出，如果长度相同，则按照输入的顺序输出即可。  </p>
+<p>回文的含义是：正着看和倒着看相同，如abba和yyxyy。</p>
+<h4 id="输入：-5"><a href="#输入：-5" class="headerlink" title="输入："></a>输入：</h4><p>第一行首先是一个整数n（n&lt;50），表示有n个字符串（每个字符串的都长度小于100）。接下来有n行，每行输入一个字符串。</p>
+<h4 id="输出：-5"><a href="#输出：-5" class="headerlink" title="输出："></a>输出：</h4><p>按照长度从小到大的顺序输出其中的回文串，如果长度相同，则按照输入的顺序输出。</p>
+<h4 id="输入样例1：-5"><a href="#输入样例1：-5" class="headerlink" title="输入样例1："></a>输入样例1：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">4</span><br><span class="line">abbb</span><br><span class="line">abccba</span><br><span class="line">abba</span><br><span class="line">acca</span><br></pre></td></tr></table></figure>
+<h4 id="输出样例1：-5"><a href="#输出样例1：-5" class="headerlink" title="输出样例1："></a>输出样例1：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">abba</span><br><span class="line">acca</span><br><span class="line">abccba</span><br></pre></td></tr></table></figure>
+<h3 id="实例：-5"><a href="#实例：-5" class="headerlink" title="实例："></a>实例：</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;windows.h&gt;</span></span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">huiwen</span></span><br><span class="line">&#123;</span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">	<span class="type">char</span> a[<span class="number">100</span>];</span><br><span class="line">&#125;store[<span class="number">50</span>];</span><br><span class="line">  </span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> n,i,k,cnt=<span class="number">0</span>;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n);</span><br><span class="line">	<span class="type">char</span> temp[<span class="number">100</span>];</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="type">int</span> ret = <span class="number">0</span>;</span><br><span class="line">		<span class="type">int</span> k;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%s&quot;</span>,temp);</span><br><span class="line">		<span class="type">int</span> left = <span class="number">0</span>;</span><br><span class="line">		<span class="type">int</span> right = <span class="built_in">strlen</span>(temp)<span class="number">-1</span>;</span><br><span class="line">		<span class="keyword">for</span>(;;left++)</span><br><span class="line">		&#123;</span><br><span class="line">		</span><br><span class="line">			<span class="keyword">if</span>(temp[left]!=temp[right])</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">				ret++;</span><br><span class="line">			<span class="keyword">if</span>(ret==(<span class="built_in">strlen</span>(temp)/<span class="number">2</span>))</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">strcpy</span>(store[cnt].a,temp);</span><br><span class="line">				cnt++;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span>(right%<span class="number">2</span>==<span class="number">0</span>)</span><br><span class="line">				<span class="keyword">if</span>(right-left==<span class="number">1</span>)</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">			<span class="keyword">if</span>(right%<span class="number">2</span>!=<span class="number">0</span>)</span><br><span class="line">				<span class="keyword">if</span>(right==left)</span><br><span class="line">					<span class="keyword">break</span>;</span><br><span class="line">			right--;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line"> </span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;cnt;i++)</span><br><span class="line">		<span class="keyword">for</span>(k=<span class="number">0</span>;k&lt;cnt-i<span class="number">-1</span>;k++)</span><br><span class="line">			<span class="keyword">if</span>(<span class="built_in">strlen</span>(store[k].a)&gt;<span class="built_in">strlen</span>(store[k<span class="number">+1</span>].a))</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="type">char</span> s[<span class="number">100</span>];</span><br><span class="line">				<span class="built_in">strcpy</span>(s,store[k].a);</span><br><span class="line">				<span class="built_in">strcpy</span>(store[k].a,store[k<span class="number">+1</span>].a);</span><br><span class="line">				<span class="built_in">strcpy</span>(store[k<span class="number">+1</span>].a,s);</span><br><span class="line">			&#125;</span><br><span class="line">			</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;cnt;i++)</span><br><span class="line">		<span class="built_in">puts</span>(store[i].a);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="G-蛇形填数"><a href="#G-蛇形填数" class="headerlink" title="G:蛇形填数"></a>G:蛇形填数</h2><h3 id="题目：-6"><a href="#题目：-6" class="headerlink" title="题目："></a>题目：</h3><h4 id="描述：-6"><a href="#描述：-6" class="headerlink" title="描述："></a>描述：</h4><p>在n<em>n方阵里填入1,2,…,n</em>n，要求填成蛇形。例如n&#x3D;4时方阵为：  </p>
+<p>10 11 12 1  </p>
+<p>9 16 13 2  </p>
+<p>8 15 14 3  </p>
+<p>7 6 5 4</p>
+<h4 id="输入：-6"><a href="#输入：-6" class="headerlink" title="输入："></a>输入：</h4><p>本题为多组输入。每组数据输入一行，输入一个正整数n。n&lt;&#x3D;8。</p>
+<h4 id="输出：-6"><a href="#输出：-6" class="headerlink" title="输出："></a>输出：</h4><p>输出n*n的蛇形矩阵，每行中每两个数之间用一个空格隔开，每行最后一个数后面没有空格。</p>
+<h4 id="输入样例1：-6"><a href="#输入样例1：-6" class="headerlink" title="输入样例1："></a>输入样例1：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4</span><br></pre></td></tr></table></figure>
+<h4 id="输出样例1：-6"><a href="#输出样例1：-6" class="headerlink" title="输出样例1："></a>输出样例1：</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">10 11 12 1</span><br><span class="line">9 16 13 2</span><br><span class="line">8 15 14 3</span><br><span class="line">7 6 5 4</span><br></pre></td></tr></table></figure>
+<h3 id="实例：-6"><a href="#实例：-6" class="headerlink" title="实例："></a>实例：</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;math.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;string.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span><span class="string">&lt;windows.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="type">int</span> n;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>,&amp;n)!=EOF)</span><br><span class="line">	&#123;</span><br><span class="line">	</span><br><span class="line">	<span class="type">int</span> count=<span class="number">1</span>;</span><br><span class="line">	<span class="type">int</span> a[<span class="number">8</span>][<span class="number">8</span>];</span><br><span class="line">	<span class="type">int</span> i,j,t=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(count&lt;=n*n)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>(i=n<span class="number">-1</span>-t,j=<span class="number">0</span>+t;j&lt;n<span class="number">-1</span>-t;j++)</span><br><span class="line">			a[j][i] = count++;</span><br><span class="line">		<span class="keyword">if</span>(count&gt;=n*n) <span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">for</span>(i=n<span class="number">-1</span>-t,j=n<span class="number">-1</span>-t;i&gt;<span class="number">0</span>+t;i--)</span><br><span class="line">			a[j][i] = count++;</span><br><span class="line">		<span class="keyword">if</span>(count&gt;=n*n) <span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">0</span>+t,j=n<span class="number">-1</span>-t;j&gt;<span class="number">0</span>+t;j--)</span><br><span class="line">			a[j][i] = count++;</span><br><span class="line">		<span class="keyword">if</span>(count&gt;=n*n) <span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">0</span>+t,j=<span class="number">0</span>+t;i&lt;n<span class="number">-1</span>-t;i++)</span><br><span class="line">			a[j][i] = count++; </span><br><span class="line">		<span class="keyword">if</span>(count&gt;=n*n) <span class="keyword">break</span>;</span><br><span class="line">		t++;</span><br><span class="line">	&#125;</span><br><span class="line"> </span><br><span class="line">	a[(n<span class="number">-1</span>)/<span class="number">2</span>][(n<span class="number">-1</span>)/<span class="number">2</span>] = n*n;</span><br><span class="line">	<span class="type">int</span> x,y;</span><br><span class="line">	<span class="keyword">for</span>(x = <span class="number">0</span>; x &lt; n; x++)</span><br><span class="line">  &#123;</span><br><span class="line">     <span class="keyword">for</span>(y = <span class="number">0</span>; y &lt; n; y++)</span><br><span class="line">     &#123;</span><br><span class="line">	 <span class="keyword">if</span>(y!=n<span class="number">-1</span>)</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, a[x][y]);</span><br><span class="line">     <span class="keyword">else</span></span><br><span class="line">     	<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, a[x][y]);</span><br><span class="line">     &#125;</span><br><span class="line">     <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+
+    </div>
+    
+    <div class="reward" ontouchstart>
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            <span class="reward-type">
+                <img class="alipay" src="/img/Alipay.png"><b>支付宝打赏</b>
+            </span>
+            
+            
+            <span class="reward-type">
+                <img class="wechat" src="/img/Wepay.png"><b>微信打赏</b>
+            </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">
+        如果觉得好用请支持我
+    </p>
+</div>
+    
+    <div class="post-footer">
+        <div>
+            
+            转载声明：
+            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">言锡的小栈</a>
+            
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+    <a href="/2026/08/25/%E4%B8%AA%E4%BA%BA%E4%B9%A6%E7%B1%8D%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%BC%96%E5%86%99%E3%80%81%E5%88%B6%E4%BD%9C%E4%B8%8E%E5%AE%9E%E7%8E%B0%EF%BC%88C%E8%AF%AD%E8%A8%80%EF%BC%89/" class="pre-post btn btn-default" title='个人书籍管理系统的编写、制作与实现（C语言）'>
+        <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+        <span class="hidden-xs">
+            个人书籍管理系统的编写、制作与实现（C语言）</span>
+    </a>
+    
+    
+    <a href="/2026/08/25/BJFU_C++%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80%EF%BC%8822%E4%B8%8A%EF%BC%89%E5%AE%9E%E9%AA%8C1-%E7%B1%BB%E5%92%8C%E5%AF%B9%E8%B1%A1/" class="next-post btn btn-default" title='BJFU|C++程序设计基础（22上）实验1-类和对象'>
+        <span class="hidden-lg">下一篇</span>
+        <span class="hidden-xs">
+            BJFU|C++程序设计基础（22上）实验1-类和对象</span><i class="fa fa-angle-right fa-fw"></i>
+    </a>
+    
+</div>
+
+<div id="comments">
+    
+<p>评论系统未开启，无法评论！</p>
+
+</div>
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            Table of Contents
+        </h3>
+        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%85%E4%BE%9B%E8%AF%BE%E5%A4%96%E5%AD%A6%E4%B9%A0%E4%BD%BF%E7%94%A8%EF%BC%8C%E4%BB%BB%E4%BD%95%E4%B8%AA%E4%BA%BA%E4%B8%8E%E6%9C%BA%E6%9E%84%E4%B8%8D%E5%BE%97%E5%88%A9%E7%94%A8%E6%AD%A4%E6%96%87%E7%AB%A0%E8%BF%9B%E8%A1%8C%E4%BB%BB%E4%BD%95%E5%BD%A2%E5%BC%8F%E7%9A%84%E4%BD%9C%E5%BC%8A%E3%80%82"><span class="toc-text">仅供课外学习使用，任何个人与机构不得利用此文章进行任何形式的作弊。</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#A-A-B"><span class="toc-text">A:A + B</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%EF%BC%9A"><span class="toc-text">题目：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%8F%E8%BF%B0%EF%BC%9A"><span class="toc-text">描述：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%EF%BC%9A"><span class="toc-text">输入：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%EF%BC%9A"><span class="toc-text">输出：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%A0%B7%E4%BE%8B1%EF%BC%9A"><span class="toc-text">输入样例1：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%A0%B7%E4%BE%8B1%EF%BC%9A"><span class="toc-text">输出样例1：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B%EF%BC%9A"><span class="toc-text">实例：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#B-3n-1%E9%97%AE%E9%A2%98"><span class="toc-text">B:3n + 1问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%EF%BC%9A-1"><span class="toc-text">题目：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%8F%E8%BF%B0%EF%BC%9A-1"><span class="toc-text">描述：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A6%81%E6%B1%82%EF%BC%9A"><span class="toc-text">要求：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%EF%BC%9A-1"><span class="toc-text">输入：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%EF%BC%9A-1"><span class="toc-text">输出：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%A0%B7%E4%BE%8B1%EF%BC%9A-1"><span class="toc-text">输入样例1：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%A0%B7%E4%BE%8B1%EF%BC%9A-1"><span class="toc-text">输出样例1：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B%EF%BC%9A-1"><span class="toc-text">实例：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#C-%E7%A8%80%E7%96%8F%E7%9F%A9%E9%98%B5"><span class="toc-text">C:稀疏矩阵</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%EF%BC%9A-2"><span class="toc-text">题目：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%8F%E8%BF%B0%EF%BC%9A-2"><span class="toc-text">描述：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%EF%BC%9A-2"><span class="toc-text">输入：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%EF%BC%9A-2"><span class="toc-text">输出：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%A0%B7%E4%BE%8B1%EF%BC%9A-2"><span class="toc-text">输入样例1：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%A0%B7%E4%BE%8B1%EF%BC%9A-2"><span class="toc-text">输出样例1：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B%EF%BC%9A-2"><span class="toc-text">实例：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#D-%E5%BC%80%E7%81%AF%E9%97%AE%E9%A2%98"><span class="toc-text">D:开灯问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%EF%BC%9A-3"><span class="toc-text">题目：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%8F%E8%BF%B0%EF%BC%9A-3"><span class="toc-text">描述：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%EF%BC%9A-3"><span class="toc-text">输入：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%EF%BC%9A-3"><span class="toc-text">输出：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%A0%B7%E4%BE%8B1%EF%BC%9A-3"><span class="toc-text">输入样例1：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%A0%B7%E4%BE%8B1%EF%BC%9A-3"><span class="toc-text">输出样例1：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%90%E7%A4%BA%EF%BC%9A"><span class="toc-text">提示：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B%EF%BC%9A-3"><span class="toc-text">实例：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#E-%E8%BF%98%E6%98%AF%E4%B8%80%E4%B8%AA%E4%B8%8D%E5%A6%96%E8%89%B3%E7%9A%84%E9%97%AE%E9%A2%98"><span class="toc-text">E:还是一个不妖艳的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%EF%BC%9A-4"><span class="toc-text">题目：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%8F%E8%BF%B0%EF%BC%9A-4"><span class="toc-text">描述：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%EF%BC%9A-4"><span class="toc-text">输入：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%EF%BC%9A-4"><span class="toc-text">输出：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%A0%B7%E4%BE%8B1%EF%BC%9A-4"><span class="toc-text">输入样例1：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%A0%B7%E4%BE%8B1%EF%BC%9A-4"><span class="toc-text">输出样例1：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%90%E7%A4%BA%EF%BC%9A-1"><span class="toc-text">提示：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B%EF%BC%9A-4"><span class="toc-text">实例：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#F-%E5%9B%9E%E6%96%87%E4%B8%B2%E7%9A%84%E6%8E%92%E5%BA%8F"><span class="toc-text">F:回文串的排序</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%EF%BC%9A-5"><span class="toc-text">题目：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%8F%E8%BF%B0%EF%BC%9A-5"><span class="toc-text">描述：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%EF%BC%9A-5"><span class="toc-text">输入：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%EF%BC%9A-5"><span class="toc-text">输出：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%A0%B7%E4%BE%8B1%EF%BC%9A-5"><span class="toc-text">输入样例1：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%A0%B7%E4%BE%8B1%EF%BC%9A-5"><span class="toc-text">输出样例1：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B%EF%BC%9A-5"><span class="toc-text">实例：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#G-%E8%9B%87%E5%BD%A2%E5%A1%AB%E6%95%B0"><span class="toc-text">G:蛇形填数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%EF%BC%9A-6"><span class="toc-text">题目：</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8F%8F%E8%BF%B0%EF%BC%9A-6"><span class="toc-text">描述：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%EF%BC%9A-6"><span class="toc-text">输入：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%EF%BC%9A-6"><span class="toc-text">输出：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%85%A5%E6%A0%B7%E4%BE%8B1%EF%BC%9A-6"><span class="toc-text">输入样例1：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BE%93%E5%87%BA%E6%A0%B7%E4%BE%8B1%EF%BC%9A-6"><span class="toc-text">输出样例1：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E4%BE%8B%EF%BC%9A-6"><span class="toc-text">实例：</span></a></li></ol></li></ol>
+        
+    </div>
+</aside>
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+<a id="back-to-top" class="icon-btn hide">
+    <i class="fa fa-chevron-up"></i>
+</a>
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+    Total:
+    <strong id="busuanzi_value_site_pv">
+        <i class="fa fa-spinner fa-spin"></i>
+    </strong>
+    &nbsp; | &nbsp;
+    Visitors:
+    <strong id="busuanzi_value_site_uv">
+        <i class="fa fa-spinner fa-spin"></i>
+    </strong>
+    
+</div>
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;
+                    2017
+                    
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash.js"></script>
+
+</body>
+</html>

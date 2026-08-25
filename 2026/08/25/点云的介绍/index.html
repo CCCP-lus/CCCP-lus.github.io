@@ -1,0 +1,393 @@
+<!DOCTYPE HTML>
+<html lang="zh_CN">
+
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="言锡的小栈">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.3.0">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="https://cccp-lus.github.io">
+    <!--SEO-->
+
+<meta name="keywords" content="编程拾贝" />
+
+
+<meta name="description" content="点云定义点云是一种三维数据表示方法，它通过大量的三维坐标点来描述物体或场景的表面。这些点通常通过对实际物体或场景表面进行离散采样获得，因此，点云可以被视为场景表面在给定坐标系下的离散表示。
+点云..." />
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+<title>
+    
+    点云的介绍 |
+    
+    言锡的小栈
+</title>
+
+<link rel="alternate" href="/atom.xml" title="言锡的小栈" type="application/atom+xml">
+
+
+<link rel="icon" href="/favicon.ico">
+
+    
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.7.0.css">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash.css">
+
+    
+<div class="hide">
+    <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</div>
+
+
+
+
+    
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+<body>
+    <header class="main-header"  style="background-image:url(
+    https://hexo-theme-snippet-1251680922.cos.ap-beijing.myqcloud.com/img/banner.jpg)"
+     >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='言锡'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+            <!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+            <h2>
+                让每一份努力都效率最大化
+            </h2>
+            
+        </div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                        <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://cccp-lus.github.io">
+                        言锡的小栈</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/"><i class="fa "></i>
+                                Home</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/桐铃集/"><i class="fa "></i>
+                                桐铃集</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/BFU-CS/"><i class="fa "></i>
+                                BJFU-CS</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/BUAA-IST/"><i class="fa "></i>
+                                BUAA-IST</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/学习资料/"><i class="fa "></i>
+                                学习资料</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/编程拾贝/"><i class="fa "></i>
+                                编程拾贝</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/踩坑记录/"><i class="fa "></i>
+                                踩坑记录</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/archives/"><i class="fa "></i>
+                                时间轴</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="点云的介绍">
+            
+            点云的介绍
+            
+        </h1>
+        <div class="post-meta">
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a class="category-link" href="/categories/%E7%BC%96%E7%A8%8B%E6%8B%BE%E8%B4%9D/">编程拾贝</a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            <a class="tag-none-link" href="/tags/%E7%BC%96%E7%A8%8B%E6%8B%BE%E8%B4%9D/" rel="tag">编程拾贝</a>
+            
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2026/08/25</span>
+    </span>
+    
+    <span class="fa-wrap">
+        <i class="fa fa-eye"></i>
+        <span id="busuanzi_value_page_pv"></span>
+    </span>
+    
+    
+</div>
+        
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <h2 id="点云定义"><a href="#点云定义" class="headerlink" title="点云定义"></a>点云定义</h2><p>点云是一种三维数据表示方法，它通过大量的三维坐标点来描述物体或场景的表面。这些点通常通过对实际物体或场景表面进行离散采样获得，因此，点云可以被视为场景表面在给定坐标系下的离散表示。</p>
+<h2 id="点云组成"><a href="#点云组成" class="headerlink" title="点云组成"></a>点云组成</h2><p>点云可以看作是某个坐标系下，点的数据集。其由三维坐标点（X, Y, Z）和附加信息组成。分别描述了点的空间位置和诸如颜色信息（RGB）、激光反射强度（Intensity）等其他属性。</p>
+<p>一般来说，采集到的点云都是无序的，在存储中相邻的点不一定在实际上物理相邻。</p>
+<h2 id="点云属性"><a href="#点云属性" class="headerlink" title="点云属性"></a>点云属性</h2><p>点云可以表达物体的空间轮廓和具体位置，受空间分辨率、点位精度和表面法向量影响。</p>
+<p>点云本身和视角的选取无关，只要在同一坐标系下，不同的点云可以融合。</p>
+<h2 id="点云特点"><a href="#点云特点" class="headerlink" title="点云特点"></a>点云特点</h2><p>优点：保留了三维空间中原始的几何信息，不进行离散化</p>
+<p>缺点：高维数据，计算复杂，没有固定的排列格式</p>
+<p>这也导致了三个问题：</p>
+<ol>
+<li>如何从稀疏点云找到高精度信息表示</li>
+<li>如何构建一个满足资源限制的网络</li>
+<li>如何以较低的时间和计算资源消耗来处理大量数据</li>
+</ol>
+<h2 id="点云获取"><a href="#点云获取" class="headerlink" title="点云获取"></a>点云获取</h2><p>一般使用三维成像传感器获得。</p>
+<ol>
+<li>激光雷达（LiDAR）：通过发送激光脉冲并测量其返回时间来计算距离，适用于自动驾驶、地形测绘等领域。</li>
+<li>立体视觉（Stereo Vision）：使用两个或多个相机从不同角度捕捉场景，然后通过匹配相应的图像点来重建三维结构。</li>
+<li>结构光（Structured Light）：投射一系列已知模式的光线到场景中，然后通过观察这些模式如何变形来重建三维结构。</li>
+</ol>
+<h2 id="点云表示"><a href="#点云表示" class="headerlink" title="点云表示"></a>点云表示</h2><p>三维点云的表示有几种思路，比如将无序的空间点转变为规则的数据排列，或者将其看做图数据处理（增加连接关系）。</p>
+<h3 id="原始点集"><a href="#原始点集" class="headerlink" title="原始点集"></a>原始点集</h3><ul>
+<li>无序点集表示法：每个点只包含其三维坐标（X, Y, Z），点之间没有特定的顺序。</li>
+<li>有序点集表示法：点按照特定的顺序排列，例如按照扫描的顺序。</li>
+</ul>
+<h3 id="多边形网格"><a href="#多边形网格" class="headerlink" title="多边形网格"></a>多边形网格</h3><ul>
+<li>三角网格：通过连接点云中的点形成三角形，这种表示方法可以用于渲染和几何分析。</li>
+<li>多边形网格：使用多边形表示，常用于CAD和3D建模。</li>
+</ul>
+<h3 id="体素栅格"><a href="#体素栅格" class="headerlink" title="体素栅格"></a>体素栅格</h3><ul>
+<li>将空间划分为小立方体（体素），每个体素记录其是否被点云占据。这种表示方法适用于空间划分和体积计算。</li>
+</ul>
+<h3 id="参数化曲面"><a href="#参数化曲面" class="headerlink" title="参数化曲面"></a>参数化曲面</h3><ul>
+<li>隐式曲面：使用数学方程来定义点云所代表的曲面，如球面、圆柱面等。</li>
+<li>显式曲面：使用参数方程来描述曲面，如贝塞尔曲面、NURBS（非均匀有理B样条）曲面等。</li>
+</ul>
+<h3 id="深度图像"><a href="#深度图像" class="headerlink" title="深度图像"></a>深度图像</h3><ul>
+<li>将点云投影到二维平面上，每个像素值表示该点到相机的距离。这种表示方法常用于深度感知和3D重建。</li>
+</ul>
+<h3 id="八叉树"><a href="#八叉树" class="headerlink" title="八叉树"></a>八叉树</h3><ul>
+<li>一种树形数据结构，用于将三维空间递归划分为八个子空间。每个节点代表一个空间区域，可以用来有效地表示和管理稀疏点云。</li>
+</ul>
+<h3 id="K-D-Tree"><a href="#K-D-Tree" class="headerlink" title="K-D Tree"></a>K-D Tree</h3><ul>
+<li>一种多维空间的数据结构，用于组织点云数据，以便进行快速搜索和邻域查询。</li>
+<li>更多介绍可以参考笔者的另一篇博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/CCCP_lus/article/details/143330803">简单介绍一下KDT&#x2F;K-D Tree-CSDN博客</a></li>
+</ul>
+<h2 id="数据增强"><a href="#数据增强" class="headerlink" title="数据增强"></a>数据增强</h2><ul>
+<li>Discriminative Methods<br>传统的方法包括局部表面拟合、邻域平均和猜测底层噪声模型。PointCleanNet提出了一种基于数据驱动的方法去消除错误点减少噪声PCPNet首先对异常值进行分类并丢弃它们，然后估计一个将噪声投影到原始表面的修正投影Total Denoising，在不需要额外数据的情况下实现了非监督降噪对点云数据临界点层(CPL)在保留重要点的同时学会减少点的数量。这一层是确定性的，不确定顺序的，并且通过避免邻接搜索也很有效。通过将采样后的点近似为原始点的混合来逼近点采样的可微松弛</li>
+<li>Generative Methods<br>通过生成假样本，帮助定位网络的潜在缺陷。point perturbation and point generation：<br>  扰动是通过对已有的点进行可忽略的移动来实现的，生成是通过添加一些独立分散的点或少量具有预定义形状的点簇来实现的。除了对抗性生成（GAN），生成模型也用于点云上采样。向上采样点云通常有两种动机。一是减少数据的稀疏性和不规则性，二是恢复遮挡造成的缺失点</li>
+</ul>
+<h2 id="点云分类"><a href="#点云分类" class="headerlink" title="点云分类"></a>点云分类</h2><p>通常称为三维形状分类。通常是先通过聚合编码器生成全局嵌入，然后将嵌入通过几个完全连通的层来获得最终结果。</p>
+<ul>
+<li>基于投影的方法<br>基于投影的方法将非结构化的三维点云投影到特定的预设模态中(例如体素、柱状体)，并从目标格式中提取特征，从而在相应方向上受益于之前的研究成果。Multi-view representation<br>  MVCNN：GVCNNVolumetric representation<br>  VoxNet3D ShapeNetOctNetOCNNBasis point set<br>  BPS</li>
+<li>基于点的方法：<br>与基于投影的方法从空间邻域中聚合点相比，基于点的方法尝试从单个点中学习特征。MLP networksConvolutional networksGraph networks图网络将点云视为图，将图的顶点视为点，并根据每个点的邻居生成边。特征将在空间或光谱领域学习。</li>
+</ul>
+<h2 id="点云分割"><a href="#点云分割" class="headerlink" title="点云分割"></a>点云分割</h2><p>3D分割的目的是对每个点进行标记，这需要模型在每个点上收集全局上下文和详细的局部信息。在三维图像分割中，主要有两个任务：语义分割和实例分割。</p>
+<ul>
+<li>语义分割<br>Projection-based methodsPoint-based methodsProposal-free methods</li>
+<li>同时解决语义分割和实例分割<br>先解决语义分割，根据语义分割的结果在某些标签点上运行实例分割先解决实例分割，直接分配带有实例标签的语义标签</li>
+</ul>
+<h2 id="目标检测"><a href="#目标检测" class="headerlink" title="目标检测"></a>目标检测</h2><ul>
+<li>multi-view method</li>
+<li>projection-based method</li>
+<li>point-based method</li>
+</ul>
+
+    </div>
+    
+    <div class="reward" ontouchstart>
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            <span class="reward-type">
+                <img class="alipay" src="/img/Alipay.png"><b>支付宝打赏</b>
+            </span>
+            
+            
+            <span class="reward-type">
+                <img class="wechat" src="/img/Wepay.png"><b>微信打赏</b>
+            </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">
+        如果觉得好用请支持我
+    </p>
+</div>
+    
+    <div class="post-footer">
+        <div>
+            
+            转载声明：
+            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">言锡的小栈</a>
+            
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+    <a href="/2026/08/25/%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D%E4%B8%80%E4%B8%8BKDT_K-D%20Tree/" class="pre-post btn btn-default" title='简单介绍一下KDT/K-D Tree'>
+        <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
+        <span class="hidden-xs">
+            简单介绍一下KDT/K-D Tree</span>
+    </a>
+    
+    
+    <a href="/2026/08/25/%E8%A7%A3%E5%86%B3import%20pyqtgraph.opengl%E6%8A%A5%E9%94%99/" class="next-post btn btn-default" title='解决import pyqtgraph.opengl报错'>
+        <span class="hidden-lg">下一篇</span>
+        <span class="hidden-xs">
+            解决import pyqtgraph.opengl报错</span><i class="fa fa-angle-right fa-fw"></i>
+    </a>
+    
+</div>
+
+<div id="comments">
+    
+<p>评论系统未开启，无法评论！</p>
+
+</div>
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            Table of Contents
+        </h3>
+        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%82%B9%E4%BA%91%E5%AE%9A%E4%B9%89"><span class="toc-text">点云定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%82%B9%E4%BA%91%E7%BB%84%E6%88%90"><span class="toc-text">点云组成</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%82%B9%E4%BA%91%E5%B1%9E%E6%80%A7"><span class="toc-text">点云属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%82%B9%E4%BA%91%E7%89%B9%E7%82%B9"><span class="toc-text">点云特点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%82%B9%E4%BA%91%E8%8E%B7%E5%8F%96"><span class="toc-text">点云获取</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%82%B9%E4%BA%91%E8%A1%A8%E7%A4%BA"><span class="toc-text">点云表示</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8E%9F%E5%A7%8B%E7%82%B9%E9%9B%86"><span class="toc-text">原始点集</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E8%BE%B9%E5%BD%A2%E7%BD%91%E6%A0%BC"><span class="toc-text">多边形网格</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%93%E7%B4%A0%E6%A0%85%E6%A0%BC"><span class="toc-text">体素栅格</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%82%E6%95%B0%E5%8C%96%E6%9B%B2%E9%9D%A2"><span class="toc-text">参数化曲面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B7%B1%E5%BA%A6%E5%9B%BE%E5%83%8F"><span class="toc-text">深度图像</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AB%E5%8F%89%E6%A0%91"><span class="toc-text">八叉树</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#K-D-Tree"><span class="toc-text">K-D Tree</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%A2%9E%E5%BC%BA"><span class="toc-text">数据增强</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%82%B9%E4%BA%91%E5%88%86%E7%B1%BB"><span class="toc-text">点云分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%82%B9%E4%BA%91%E5%88%86%E5%89%B2"><span class="toc-text">点云分割</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B"><span class="toc-text">目标检测</span></a></li></ol>
+        
+    </div>
+</aside>
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+<a id="back-to-top" class="icon-btn hide">
+    <i class="fa fa-chevron-up"></i>
+</a>
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+    Total:
+    <strong id="busuanzi_value_site_pv">
+        <i class="fa fa-spinner fa-spin"></i>
+    </strong>
+    &nbsp; | &nbsp;
+    Visitors:
+    <strong id="busuanzi_value_site_uv">
+        <i class="fa fa-spinner fa-spin"></i>
+    </strong>
+    
+</div>
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;
+                    2017
+                    
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash.js"></script>
+
+</body>
+</html>
