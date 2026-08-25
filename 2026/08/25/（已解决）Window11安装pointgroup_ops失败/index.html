@@ -1,0 +1,347 @@
+<!DOCTYPE HTML>
+<html lang="zh_CN">
+
+<head>
+    <!--Setting-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta http-equiv="Cache-Control" content="no-transform">
+    <meta name="renderer" content="webkit|ie-comp|ie-stand">
+    <meta name="apple-mobile-web-app-capable" content="言锡的小栈">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no,email=no,adress=no">
+    <meta name="browsermode" content="application">
+    <meta name="screen-orientation" content="portrait">
+    <meta name="theme-version" content="1.3.0">
+    <meta name="root" content="/">
+    <link rel="dns-prefetch" href="https://cccp-lus.github.io">
+    <!--SEO-->
+
+<meta name="keywords" content="pointgroup_ops,Windows,CUDA" />
+
+
+<meta name="description" content="按照官方文档，应该在目录下运行：
+1python setup.py install --include_dirs=$&#123;CONDA_PREFIX&#125;/include
+
+但是会出现..." />
+
+
+<meta name="robots" content="all" />
+<meta name="google" content="all" />
+<meta name="googlebot" content="all" />
+<meta name="verify" content="all" />
+    <!--Title-->
+
+<title>
+    
+    （已解决）Window11安装pointgroup_ops失败 |
+    
+    言锡的小栈
+</title>
+
+<link rel="alternate" href="/atom.xml" title="言锡的小栈" type="application/atom+xml">
+
+
+<link rel="icon" href="/favicon.ico">
+
+    
+
+
+<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7.css">
+<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.7.0.css">
+<link rel="stylesheet" href="/css/style.css?rev=@@hash.css">
+
+    
+<div class="hide">
+    <script type="text/javascript">
+    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
+    document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+</div>
+
+
+
+
+    
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<!--[if lte IE 8]>
+<style>
+    html{ font-size: 1em }
+</style>
+<![endif]-->
+<!--[if lte IE 9]>
+<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
+<![endif]-->
+<body>
+    <header class="main-header"  style="background-image:url(
+    https://hexo-theme-snippet-1251680922.cos.ap-beijing.myqcloud.com/img/banner.jpg)"
+     >
+    <div class="main-header-box">
+        <a class="header-avatar" href="/" title='言锡'>
+            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
+        </a>
+        <div class="branding">
+            <!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
+            
+            <h2>
+                让每一份努力都效率最大化
+            </h2>
+            
+        </div>
+    </div>
+</header>
+    <nav class="main-navigation">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
+                        <span class="sr-only"></span>
+                        <i class="fa fa-bars"></i>
+                    </span>
+                    <a class="navbar-brand" href="https://cccp-lus.github.io">
+                        言锡的小栈</a>
+                </div>
+                <div class="collapse navbar-collapse" id="main-menu">
+                    <ul class="menu">
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/"><i class="fa "></i>
+                                Home</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/桐铃集/"><i class="fa "></i>
+                                桐铃集</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/BFU-CS/"><i class="fa "></i>
+                                BJFU-CS</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/BUAA-IST/"><i class="fa "></i>
+                                BUAA-IST</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/categories/学习资料/"><i class="fa "></i>
+                                学习资料</a>
+                        </li>
+                        
+                        <li role="presentation" class="text-center">
+                            <a href="/archives/"><i class="fa "></i>
+                                时间轴</a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+    <section class="content-wrap">
+        <div class="container">
+            <div class="row">
+                <main class="col-md-8 main-content m-post">
+                    <p id="process"></p>
+<article class="post">
+    <div class="post-head">
+        <h1 id="（已解决）Window11安装pointgroup_ops失败">
+            
+            （已解决）Window11安装pointgroup_ops失败
+            
+        </h1>
+        <div class="post-meta">
+    
+    <span class="categories-meta fa-wrap">
+        <i class="fa fa-folder-open-o"></i>
+        <a class="category-link" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a>
+    </span>
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-tags"></i>
+        <span class="tags-meta">
+            
+            <a class="tag-none-link" href="/tags/CUDA/" rel="tag">CUDA</a> <a class="tag-none-link" href="/tags/Windows/" rel="tag">Windows</a> <a class="tag-none-link" href="/tags/pointgroup-ops/" rel="tag">pointgroup_ops</a>
+            
+        </span>
+    </span>
+    
+    
+    
+    <span class="fa-wrap">
+        <i class="fa fa-clock-o"></i>
+        <span class="date-meta">
+            2026/08/25</span>
+    </span>
+    
+    <span class="fa-wrap">
+        <i class="fa fa-eye"></i>
+        <span id="busuanzi_value_page_pv"></span>
+    </span>
+    
+    
+</div>
+        
+        
+    </div>
+    
+    <div class="post-body post-content">
+        <p>按照官方文档，应该在目录下运行：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python setup.py install --include_dirs=<span class="variable">$&#123;CONDA_PREFIX&#125;</span>/include</span><br></pre></td></tr></table></figure>
+
+<p>但是会出现报错，无法正常安装。所以使用离线安装，网址如下：</p>
+<p><a target="_blank" rel="noopener" href="https://anaconda.org/channels/jithinpr2/packages/google-sparsehash/files">google-sparsehash - jithinpr2 | Anaconda.org</a></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install --use-local [你刚刚下载的文件.tar.bz2]</span><br></pre></td></tr></table></figure>
+
+<p>然后继续安装：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python setup.py install</span><br></pre></td></tr></table></figure>
+
+<p>注意，一定要使用 VS2019 以下的环境，2022 版本会报错 CUDA 版本不兼容。</p>
+<h2 id="问题一：fatal-error-C1083-无法打开包括文件：“tr1-functional”"><a href="#问题一：fatal-error-C1083-无法打开包括文件：“tr1-functional”" class="headerlink" title="问题一：fatal error C1083: 无法打开包括文件：“tr1&#x2F;functional”"></a>问题一：fatal error C1083: 无法打开包括文件：“tr1&#x2F;functional”</h2><p>如果使用了 VS2019 仍然报错，报错内容很长，但是核心只有一句话，找不到 <code>&lt;tr1/functional&gt;</code>：</p>
+<blockquote>
+<p>C:...\sparsehash\dense_hash_map(106): fatal error C1083: 无法打开包括文件：“tr1&#x2F;functional”: No such file or directory</p>
+</blockquote>
+<p>该报错源于 <code>google-sparsehash</code> 库。Linux 下的 GCC 编译器支持过时的 C++ TR1 标准，并将头文件放在 <code>tr1/</code> 目录下；而 Windows 的 MSVC 编译器已经移除了这个目录，直接将相关功能整合进了标准库 <code>&lt;functional&gt;</code> 中。</p>
+<p>虽然提示是 <code>dense_hash_map</code> 的 106 行，但是点进去只发现：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> HASH_FUN_H                 <span class="comment">// for hash&lt;&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<p>所以要继续前往 <code>internal/sparseconfig.h</code> 文件，将：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* the location of the header defining hash functions */</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> HASH_FUN_H <span class="string">&lt;tr1/functional&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* the namespace of the hash&lt;&gt; function */</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> HASH_NAMESPACE std::tr1</span></span><br></pre></td></tr></table></figure>
+
+<p>修改为：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* the location of the header defining hash functions */</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> HASH_FUN_H <span class="string">&lt;functional&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* the namespace of the hash&lt;&gt; function */</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> HASH_NAMESPACE std</span></span><br></pre></td></tr></table></figure>
+
+<p>这样就解决了该问题。</p>
+<h2 id="问题二：bfs-cluster-cpp-86-error-C2131-表达式的计算结果不是常数"><a href="#问题二：bfs-cluster-cpp-86-error-C2131-表达式的计算结果不是常数" class="headerlink" title="问题二：bfs_cluster.cpp(86): error C2131: 表达式的计算结果不是常数"></a>问题二：bfs_cluster.cpp(86): error C2131: 表达式的计算结果不是常数</h2><p>原因是 Linux 和 Windows 中的 C++ 语法差异。Windows 上，标准 C++ 不支持这种写法。数组的大小必须在编译时就是一个确定的常量（如 <code>bool visited[1000];</code>），或者必须使用动态内存分配。</p>
+<p>我已经直接修改好了 <code>src/bfs_cluster.cpp</code> 文件：</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">Ball Query with BatchIdx &amp; Clustering Algorithm</span></span><br><span class="line"><span class="comment">Written by Li Jiang</span></span><br><span class="line"><span class="comment">All Rights Reserved 2020.</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;torch/extension.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;torch/serialize/tensor.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;ATen/cuda/CUDAContext.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;cstdint&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;array&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="comment">// 注意：如果编译依然报 tr1 错误，请参考之前的建议修改 sparsehash 的头文件或暂时注释掉此行（如果代码没用到它）</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;google/dense_hash_map&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">ballquery_batch_p_cuda</span><span class="params">(<span class="type">int</span> n, <span class="type">int</span> meanActive, <span class="type">float</span> radius, <span class="type">const</span> <span class="type">float</span> *xyz, <span class="type">const</span> <span class="type">int</span> *batch_idxs, <span class="type">const</span> <span class="type">int</span> *batch_offsets, <span class="type">int</span> *idx, <span class="type">int</span> *start_len, cudaStream_t stream)</span></span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> Int = <span class="type">int32_t</span>;</span><br><span class="line"><span class="keyword">class</span> <span class="title class_">ConnectedComponent</span>&#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    std::vector&lt;Int&gt; pt_idxs &#123;&#125;;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">ConnectedComponent</span>()&#123;&#125;;</span><br><span class="line">    <span class="function"><span class="type">void</span> <span class="title">addPoint</span><span class="params">(Int pt_idx)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        pt_idxs.<span class="built_in">push_back</span>(pt_idx);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">using</span> ConnectedComponents = std::vector&lt;ConnectedComponent&gt;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* ================================== ballquery_batch_p ================================== */</span></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">ballquery_batch_p</span><span class="params">(at::Tensor xyz_tensor, at::Tensor batch_idxs_tensor, at::Tensor batch_offsets_tensor, at::Tensor idx_tensor, at::Tensor start_len_tensor, <span class="type">int</span> n, <span class="type">int</span> meanActive, <span class="type">float</span> radius)</span></span>&#123;</span><br><span class="line">    <span class="comment">// 修改 data&lt;T&gt;() 为 data_ptr&lt;T&gt;() 消除警告</span></span><br><span class="line">    <span class="type">const</span> <span class="type">float</span> *xyz = xyz_tensor.<span class="built_in">data_ptr</span>&lt;<span class="type">float</span>&gt;();</span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> *batch_idxs = batch_idxs_tensor.<span class="built_in">data_ptr</span>&lt;<span class="type">int</span>&gt;();</span><br><span class="line">    <span class="type">const</span> <span class="type">int</span> *batch_offsets = batch_offsets_tensor.<span class="built_in">data_ptr</span>&lt;<span class="type">int</span>&gt;();</span><br><span class="line">    <span class="type">int</span> *idx = idx_tensor.<span class="built_in">data_ptr</span>&lt;<span class="type">int</span>&gt;();</span><br><span class="line">    <span class="type">int</span> *start_len = start_len_tensor.<span class="built_in">data_ptr</span>&lt;<span class="type">int</span>&gt;();</span><br><span class="line"></span><br><span class="line">    cudaStream_t stream = at::cuda::<span class="built_in">getCurrentCUDAStream</span>();</span><br><span class="line">    <span class="type">int</span> cumsum = <span class="built_in">ballquery_batch_p_cuda</span>(n, meanActive, radius, xyz, batch_idxs, batch_offsets, idx, start_len, stream);</span><br><span class="line">    <span class="keyword">return</span> cumsum;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* ================================== bfs_cluster ================================== */</span></span><br><span class="line"><span class="function">ConnectedComponent <span class="title">find_cc</span><span class="params">(Int idx, <span class="type">int</span> *semantic_label, Int *ball_query_idxs, <span class="type">int</span> *start_len, <span class="type">int</span> *visited)</span></span>&#123;</span><br><span class="line">    ConnectedComponent cc;</span><br><span class="line">    cc.<span class="built_in">addPoint</span>(idx);</span><br><span class="line">    visited[idx] = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    std::queue&lt;Int&gt; Q;</span><br><span class="line">    Q.<span class="built_in">push</span>(idx);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(!Q.<span class="built_in">empty</span>())&#123;</span><br><span class="line">        Int cur = Q.<span class="built_in">front</span>(); Q.<span class="built_in">pop</span>();</span><br><span class="line">        <span class="type">int</span> start = start_len[cur * <span class="number">2</span>];</span><br><span class="line">        <span class="type">int</span> len = start_len[cur * <span class="number">2</span> + <span class="number">1</span>];</span><br><span class="line">        <span class="type">int</span> label_cur = semantic_label[cur];</span><br><span class="line">        <span class="keyword">for</span>(Int i = start; i &lt; start + len; i++)&#123;</span><br><span class="line">            Int idx_i = ball_query_idxs[i];</span><br><span class="line">            <span class="keyword">if</span>(semantic_label[idx_i] != label_cur) <span class="keyword">continue</span>;</span><br><span class="line">            <span class="keyword">if</span>(visited[idx_i] == <span class="number">1</span>) <span class="keyword">continue</span>;</span><br><span class="line"></span><br><span class="line">            cc.<span class="built_in">addPoint</span>(idx_i);</span><br><span class="line">            visited[idx_i] = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">            Q.<span class="built_in">push</span>(idx_i);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> cc;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">get_clusters</span><span class="params">(<span class="type">int</span> *semantic_label, Int *ball_query_idxs, <span class="type">int</span> *start_len, <span class="type">const</span> Int nPoint, <span class="type">int</span> threshold, ConnectedComponents &amp;clusters)</span></span>&#123;</span><br><span class="line">    <span class="comment">// 【核心修改】：使用 std::vector 代替变长数组，解决 C2131 错误</span></span><br><span class="line">    <span class="comment">// 初始化为 0 (false)</span></span><br><span class="line">    <span class="function">std::vector&lt;<span class="type">int</span>&gt; <span class="title">visited</span><span class="params">(nPoint, <span class="number">0</span>)</span></span>;</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> sumNPoint = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(Int i = <span class="number">0</span>; i &lt; nPoint; i++)&#123;</span><br><span class="line">        <span class="comment">// 使用 vector 的数据</span></span><br><span class="line">        <span class="keyword">if</span>(visited[i] == <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="comment">// 传入 visited.data() 获取底层指针以适配原函数</span></span><br><span class="line">            ConnectedComponent CC = <span class="built_in">find_cc</span>(i, semantic_label, ball_query_idxs, start_len, visited.<span class="built_in">data</span>());</span><br><span class="line">            <span class="keyword">if</span>((<span class="type">int</span>)CC.pt_idxs.<span class="built_in">size</span>() &gt;= threshold)&#123;</span><br><span class="line">                clusters.<span class="built_in">push_back</span>(CC);</span><br><span class="line">                sumNPoint += (<span class="type">int</span>)CC.pt_idxs.<span class="built_in">size</span>();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> sumNPoint;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">fill_cluster_idxs_</span><span class="params">(ConnectedComponents &amp;CCs, <span class="type">int</span> *cluster_idxs, <span class="type">int</span> *cluster_offsets)</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="type">int</span> i = <span class="number">0</span>; i &lt; (<span class="type">int</span>)CCs.<span class="built_in">size</span>(); i++)&#123;</span><br><span class="line">        cluster_offsets[i + <span class="number">1</span>] = cluster_offsets[i] + (<span class="type">int</span>)CCs[i].pt_idxs.<span class="built_in">size</span>();</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> j = <span class="number">0</span>; j &lt; (<span class="type">int</span>)CCs[i].pt_idxs.<span class="built_in">size</span>(); j++)&#123;</span><br><span class="line">            <span class="type">int</span> idx = CCs[i].pt_idxs[j];</span><br><span class="line">            cluster_idxs[(cluster_offsets[i] + j) * <span class="number">2</span> + <span class="number">0</span>] = i;</span><br><span class="line">            cluster_idxs[(cluster_offsets[i] + j) * <span class="number">2</span> + <span class="number">1</span>] = idx;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">bfs_cluster</span><span class="params">(at::Tensor semantic_label_tensor, at::Tensor ball_query_idxs_tensor, at::Tensor start_len_tensor,</span></span></span><br><span class="line"><span class="params"><span class="function">at::Tensor cluster_idxs_tensor, at::Tensor cluster_offsets_tensor, <span class="type">const</span> <span class="type">int</span> N, <span class="type">int</span> threshold)</span></span>&#123;</span><br><span class="line">    <span class="comment">// 修改 data&lt;T&gt;() 为 data_ptr&lt;T&gt;() 消除警告</span></span><br><span class="line">    <span class="type">int</span> *semantic_label = semantic_label_tensor.<span class="built_in">data_ptr</span>&lt;<span class="type">int</span>&gt;();</span><br><span class="line">    Int *ball_query_idxs = ball_query_idxs_tensor.<span class="built_in">data_ptr</span>&lt;Int&gt;();</span><br><span class="line">    <span class="type">int</span> *start_len = start_len_tensor.<span class="built_in">data_ptr</span>&lt;<span class="type">int</span>&gt;();</span><br><span class="line"></span><br><span class="line">    ConnectedComponents CCs;</span><br><span class="line">    <span class="type">int</span> sumNPoint = <span class="built_in">get_clusters</span>(semantic_label, ball_query_idxs, start_len, N, threshold, CCs);</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> nCluster = (<span class="type">int</span>)CCs.<span class="built_in">size</span>();</span><br><span class="line">    cluster_idxs_tensor.<span class="built_in">resize_</span>(&#123;sumNPoint, <span class="number">2</span>&#125;);</span><br><span class="line">    cluster_offsets_tensor.<span class="built_in">resize_</span>(&#123;nCluster + <span class="number">1</span>&#125;);</span><br><span class="line">    cluster_idxs_tensor.<span class="built_in">zero_</span>();</span><br><span class="line">    cluster_offsets_tensor.<span class="built_in">zero_</span>();</span><br><span class="line"></span><br><span class="line">    <span class="type">int</span> *cluster_idxs = cluster_idxs_tensor.<span class="built_in">data_ptr</span>&lt;<span class="type">int</span>&gt;();</span><br><span class="line">    <span class="type">int</span> *cluster_offsets = cluster_offsets_tensor.<span class="built_in">data_ptr</span>&lt;<span class="type">int</span>&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="built_in">fill_cluster_idxs_</span>(CCs, cluster_idxs, cluster_offsets);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//------------------------------------API------------------------------------------</span></span><br><span class="line"><span class="built_in">PYBIND11_MODULE</span>(TORCH_EXTENSION_NAME, m)&#123;</span><br><span class="line">    m.<span class="built_in">def</span>(<span class="string">&quot;ballquery_batch_p&quot;</span>, &amp;ballquery_batch_p, <span class="string">&quot;ballquery_batch_p&quot;</span>);</span><br><span class="line">    m.<span class="built_in">def</span>(<span class="string">&quot;bfs_cluster&quot;</span>, &amp;bfs_cluster, <span class="string">&quot;bfs_cluster&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>此时就可以安装了。</p>
+<h2 id="最终结果"><a href="#最终结果" class="headerlink" title="最终结果"></a>最终结果</h2><p><img src="/img/pointgroup_ops-install-success.png" alt="pointgroup_ops 安装成功截图"></p>
+
+    </div>
+    
+    <div class="reward" ontouchstart>
+    <div class="reward-wrap">赏
+        <div class="reward-box">
+            
+            <span class="reward-type">
+                <img class="alipay" src="/img/Alipay.png"><b>支付宝打赏</b>
+            </span>
+            
+            
+            <span class="reward-type">
+                <img class="wechat" src="/img/Wepay.png"><b>微信打赏</b>
+            </span>
+            
+        </div>
+    </div>
+    <p class="reward-tip">
+        如果觉得好用请支持我
+    </p>
+</div>
+    
+    <div class="post-footer">
+        <div>
+            
+            转载声明：
+            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">言锡的小栈</a>
+            
+            
+        </div>
+        <div>
+            
+        </div>
+    </div>
+</article>
+<div class="article-nav prev-next-wrap clearfix">
+    
+    
+    <a href="/2025/12/28/BUAA-%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%8925%E7%A7%8B%E6%9C%9F%E6%9C%AB%E8%AF%95%E9%A2%98%E5%9B%9E%E5%BF%86%E7%89%88/" class="next-post btn btn-default" title='BUAA-机器视觉25秋期末试题回忆版'>
+        <span class="hidden-lg">下一篇</span>
+        <span class="hidden-xs">
+            BUAA-机器视觉25秋期末试题回忆版</span><i class="fa fa-angle-right fa-fw"></i>
+    </a>
+    
+</div>
+
+<div id="comments">
+    
+<p>评论系统未开启，无法评论！</p>
+
+</div>
+
+                </main>
+                
+                    <aside id="article-toc" role="navigation" class="col-md-4">
+    <div class="widget">
+        <h3 class="title">
+            Table of Contents
+        </h3>
+        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E4%B8%80%EF%BC%9Afatal-error-C1083-%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E5%8C%85%E6%8B%AC%E6%96%87%E4%BB%B6%EF%BC%9A%E2%80%9Ctr1-functional%E2%80%9D"><span class="toc-text">问题一：fatal error C1083: 无法打开包括文件：“tr1&#x2F;functional”</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%97%AE%E9%A2%98%E4%BA%8C%EF%BC%9Abfs-cluster-cpp-86-error-C2131-%E8%A1%A8%E8%BE%BE%E5%BC%8F%E7%9A%84%E8%AE%A1%E7%AE%97%E7%BB%93%E6%9E%9C%E4%B8%8D%E6%98%AF%E5%B8%B8%E6%95%B0"><span class="toc-text">问题二：bfs_cluster.cpp(86): error C2131: 表达式的计算结果不是常数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E7%BB%88%E7%BB%93%E6%9E%9C"><span class="toc-text">最终结果</span></a></li></ol>
+        
+    </div>
+</aside>
+                
+            </div>
+        </div>
+    </section>
+    <footer class="main-footer">
+    <div class="container">
+        <div class="row">
+        </div>
+    </div>
+</footer>
+<a id="back-to-top" class="icon-btn hide">
+    <i class="fa fa-chevron-up"></i>
+</a>
+    <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="busuanzi">
+    
+    Total:
+    <strong id="busuanzi_value_site_pv">
+        <i class="fa fa-spinner fa-spin"></i>
+    </strong>
+    &nbsp; | &nbsp;
+    Visitors:
+    <strong id="busuanzi_value_site_uv">
+        <i class="fa fa-spinner fa-spin"></i>
+    </strong>
+    
+</div>
+            </div>
+            <div class="col-sm-12">
+                <span>Copyright &copy;
+                    2017
+                    
+                </span> |
+                <span>
+                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
+                </span> |
+                <span>
+                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+<script src="/js/app.js?rev=@@hash.js"></script>
+
+</body>
+</html>
