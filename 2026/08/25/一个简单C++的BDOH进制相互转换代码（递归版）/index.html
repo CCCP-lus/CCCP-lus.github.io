@@ -266,7 +266,9 @@ var _hmt = _hmt || [];
 
 <div id="comments">
     
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.8.0/dist/gitalk.min.css">
+    
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.8.0/dist/gitalk.min.css">
 <script src="https://cdn.jsdelivr.net/npm/gitalk@1.8.0/dist/gitalk.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.19.0/js/md5.min.js"></script>
 <div id="gitalk-container"></div>
@@ -275,16 +277,18 @@ var gitalk = new Gitalk({
     // Gitalk配置
     language: "zh-CN",
     clientID: "Ov23liIz7HCcpWlrUkNd",
-    clientSecret: "ab3b8dcdc497a5197ac2b62366db4da16c36e318",
+    clientSecret: "",
     repo: "MyReview",
     owner: "CCCP-lus",
     admin: ["CCCP-lus"],
     id: md5(location.pathname),
     perPage: 15,
-    distractionFreeMode: true
+    distractionFreeMode: true,
+    proxy: "https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token"
 });
 gitalk.render('gitalk-container');
 </script>
+
 
 
 </div>
