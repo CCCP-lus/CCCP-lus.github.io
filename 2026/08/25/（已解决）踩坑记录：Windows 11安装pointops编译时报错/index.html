@@ -19,7 +19,7 @@
     <link rel="dns-prefetch" href="https://cccp-lus.github.io">
     <!--SEO-->
 
-<meta name="keywords" content="CUDA,MSVC,pointops,PyTorch" />
+<meta name="keywords" content="pointops,CUDA,PyTorch,MSVC" />
 
 
 <meta name="description" content="正常来说，在命令行使用以下步骤进行编译安装：
@@ -60,6 +60,16 @@
     </script>
 </div>
 
+
+<script>
+var _hmt = _hmt || [];
+(function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?dfaddc2b8f4d072456544b07ac1245fc";
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(hm, s);
+})();
+</script>
 
 
 
@@ -187,11 +197,12 @@
     
     <span class="fa-wrap">
         <i class="fa fa-eye"></i>
-        <span id="busuanzi_value_page_pv"></span>
+        <span id="busuanzi_value_page_pv"></span>次
     </span>
     
     
 </div>
+
         
         
     </div>
@@ -277,7 +288,26 @@
 
 <div id="comments">
     
-<p>评论系统未开启，无法评论！</p>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/gitalk/1.4.1/gitalk.min.css">
+<script src="//cdn.bootcss.com/gitalk/1.4.1/gitalk.min.js"></script>
+<script src="//cdn.bootcss.com/blueimp-md5/2.9.0/js/md5.min.js"></script>
+<div id="gitalk-container"></div>
+<script type="text/javascript">
+var gitalk = new Gitalk({
+    // Gitalk配置
+    language: "zh-CN",
+    clientID: "Ov23liIz7HCcpWlrUkNd",
+    clientSecret: "ab3b8dcdc497a5197ac2b62366db4da16c36e318",
+    repo: "MyReview",
+    owner: "CCCP-lus",
+    admin: ["CCCP-lus"],
+    id: md5(location.pathname),
+    perPage: 15,
+    distractionFreeMode: true
+});
+gitalk.render('gitalk-container');
+</script>
+
 
 </div>
 
@@ -312,17 +342,22 @@
             <div class="col-sm-12">
                 <div class="busuanzi">
     
-    Total:
+    <i class="fa fa-eye"></i>本站总访问量:
     <strong id="busuanzi_value_site_pv">
         <i class="fa fa-spinner fa-spin"></i>
     </strong>
+    次
     &nbsp; | &nbsp;
-    Visitors:
+    
+    
+    <i class="fa fa-user"></i>本站访客数:
     <strong id="busuanzi_value_site_uv">
         <i class="fa fa-spinner fa-spin"></i>
     </strong>
+    人次
     
 </div>
+
             </div>
             <div class="col-sm-12">
                 <span>Copyright &copy;
@@ -346,6 +381,7 @@
 
 
 <script src="/js/app.js?rev=@@hash.js"></script>
+
 
 </body>
 </html>

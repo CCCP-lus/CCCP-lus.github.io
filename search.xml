@@ -1179,13 +1179,13 @@
       
         <tags>
             
-            <tag> CUDA </tag>
-            
-            <tag> MSVC </tag>
-            
             <tag> pointops </tag>
             
+            <tag> CUDA </tag>
+            
             <tag> PyTorch </tag>
+            
+            <tag> MSVC </tag>
             
         </tags>
       
@@ -1210,13 +1210,13 @@
       
         <tags>
             
-            <tag> pointgroup_ops </tag>
-            
             <tag> CUDA </tag>
             
-            <tag> C++扩展 </tag>
-            
             <tag> MSVC </tag>
+            
+            <tag> pointgroup_ops </tag>
+            
+            <tag> C++扩展 </tag>
             
         </tags>
       
