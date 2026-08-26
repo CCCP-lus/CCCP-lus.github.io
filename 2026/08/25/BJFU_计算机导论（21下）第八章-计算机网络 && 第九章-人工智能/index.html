@@ -1,213 +1,210 @@
-<!DOCTYPE HTML>
-<html lang="zh_CN">
+<!DOCTYPE html><html lang="zh_CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"><title>BJFU|计算机导论（21下）第八章-计算机网络 &amp;&amp; 第九章-人工智能 | 言锡的小栈</title><meta name="keywords" content="BJFU,计算机导论"><meta name="author" content="言锡"><meta name="copyright" content="言锡"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#f7f9fe"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-touch-fullscreen" content="yes"><meta name="apple-mobile-web-app-title" content="BJFU|计算机导论（21下）第八章-计算机网络 &amp;&amp; 第九章-人工智能"><meta name="application-name" content="BJFU|计算机导论（21下）第八章-计算机网络 &amp;&amp; 第九章-人工智能"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="#f7f9fe"><meta property="og:type" content="article"><meta property="og:title" content="BJFU|计算机导论（21下）第八章-计算机网络 &amp;&amp; 第九章-人工智能"><meta property="og:url" content="https://cccp-lus.github.io/2026/08/25/BJFU_%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA%EF%BC%8821%E4%B8%8B%EF%BC%89%E7%AC%AC%E5%85%AB%E7%AB%A0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%20&amp;&amp;%20%E7%AC%AC%E4%B9%9D%E7%AB%A0-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/index.html"><meta property="og:site_name" content="言锡的小栈"><meta property="og:description" content="前言：计算机导论是笔者大学期间第一门结课的专业课，也是在这门课上笔者取得了大学生活中第一次满分。笔者近日整理文件发现笔记数十页，不忍抛弃，因稍加整理后发布于此。 内容共八章，涵盖了计算机类专业学生的基础知识。**对于行业初学者，可以提供一个专业的视角以便后续选择进一步发展方向；对于业外人士，也可做科"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg"><meta property="article:author" content="言锡"><meta property="article:tag"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg"><meta name="description" content="前言：计算机导论是笔者大学期间第一门结课的专业课，也是在这门课上笔者取得了大学生活中第一次满分。笔者近日整理文件发现笔记数十页，不忍抛弃，因稍加整理后发布于此。 内容共八章，涵盖了计算机类专业学生的基础知识。**对于行业初学者，可以提供一个专业的视角以便后续选择进一步发展方向；对于业外人士，也可做科"><link rel="shortcut icon" href="/favicon.ico"><link rel="canonical" href="https://cccp-lus.github.io/2026/08/25/BJFU_%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA%EF%BC%8821%E4%B8%8B%EF%BC%89%E7%AC%AC%E5%85%AB%E7%AB%A0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%20&amp;&amp;%20%E7%AC%AC%E4%B9%9D%E7%AB%A0-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"><link rel="preconnect" href="//cdn.cbd.int"/><meta name="google-site-verification" content="xxx"/><meta name="baidu-site-verification" content="code-xxx"/><meta name="msvalidate.01" content="xxx"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/@fancyapps/ui@6.1.6/dist/fancybox/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  linkPageTop: undefined,
+  peoplecanvas: {"enable":true,"img":"https://upload-bbs.miyoushe.com/upload/2024/07/27/125766904/ba62475f396df9de3316a08ed9e65d86_5680958632268053399..png"},
+  postHeadAiDescription: {"enable":true,"gptName":"AnZhiYu","mode":"local","switchBtn":false,"btnLink":"https://afdian.net/item/886a79d4db6711eda42a52540025c377","randomNum":3,"basicWordCount":1000,"key":"xxxx","Referer":"https://xx.xx/"},
+  diytitle: {"enable":true,"leaveTitle":"w(ﾟДﾟ)w 不要走！再看看嘛！","backTitle":"♪(^∇^*)欢迎肥来！"},
+  LA51: undefined,
+  greetingBox: undefined,
+  twikooEnvId: '',
+  commentBarrageConfig:undefined,
+  music_page_default: "nav_music",
+  root: '/',
+  preloader: {"source":3},
+  friends_vue_info: undefined,
+  navMusic: true,
+  mainTone: undefined,
+  authorStatus: undefined,
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简","rightMenuMsgToTraditionalChinese":"转为繁体","rightMenuMsgToSimplifiedChinese":"转为简体"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":330},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    simplehomepage: true,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"copy":true,"copyrightEbable":false,"limitCount":50,"languages":{"author":"作者: 言锡","link":"链接: ","source":"来源: 言锡的小栈","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。","copySuccess":"复制成功，复制和转载请标注本文地址"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#425AEF","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.cbd.int/flickr-justified-gallery@2.2.0/dist/fjGallery.min.js',
+      css: 'https://cdn.cbd.int/flickr-justified-gallery@2.2.0/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false,
+  shortcutKey: undefined,
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  configTitle: '言锡的小栈',
+  title: 'BJFU|计算机导论（21下）第八章-计算机网络 && 第九章-人工智能',
+  postAI: '',
+  pageFillDescription: '前言：, 考点整理：前言计算机导论是笔者大学期间第一门结课的专业课也是在这门课上笔者取得了大学生活中第一次满分笔者近日整理文件发现笔记数十页不忍抛弃因稍加整理后发布于此内容共八章涵盖了计算机类专业学生的基础知识对于行业初学者可以提供一个专业的视角以便后续选择进一步发展方向对于业外人士也可做科普性质文章对待需要注意的是笔记并不等于确切的已知的考点请校友尤其是同门师弟师妹们理性对待此资料认真听讲认真复习后续章节将会逐步更新请各位读者静候考点整理计算机网络将地理上分散的计算机或其他智能设备和设备用通信线路互联起来实现互相通信资源共享的复杂的集合按照覆盖规模计算机网络可分为局域网城域网广域网按照网络拓扑结构可分为总线型网状型星型环型树型总线结构所有的网络节点连接到一条公共电缆线上这条公共电缆线称为网络的总线优点采用的线路长度较短增删节点方便工作可靠方法简单技术成熟而且成本较低特点所有发出的消息向总线的两端传输广播到整个网络网络上的节点判断消息是不是发给自己是则接收否则置之不理共享信道每个时刻只允许一个节点发送数据多用于局域网环型结构网络上的所有设备彼此串行连接构成了一个回路或环数据在环路上按统一方向单向传输数据所有的传输都是按照规定的方向绕环一周节点检测经过的消息如果是给自己的则接收否则消息传到环上的下一个节点如果线路的某一段中断或者环上的节点发生故障都会影响整个网络的正常运作不容易查找故障点主要用于星型结构所有从一个节点到另一个节点的数据传输都必须经过中央节点优点采用中央集权的方式有较好的控制性容易查找故障点缺点若中央控制器出现故障将使整个网络系统瘫痪网状结构没有主控节点网上的每个节点都有好几条路径与网络相连因此即使一条线路出故障可以通过迂回线路接续网络仍能正常工作必须对路径进行选择通常用于广域网优点结构可靠性高一个节点发生故障不会影响整个网络工作一条路径发生故障节点可以继续与网络交换信息缺点用线量大网络控制和路由选择复杂网络设计和网络管理困难树型结构从总线结构演变而来形状像一棵倒置的树从顶端的根向下分支每个分支可以延伸出多个子分支一直到叶优点配置简单易于扩展很容易增加新的节点物理层负责在物理介质中传输位流先将位编码解码成位组接着把位流转化为信号送入物理介质网络数据链路层将位组成帧的逻辑单元数据链路层将其上层网络层的信息通过加上报头和报尾为接收站或中间站定义帧通常以双地址的形式在数据中特别加入物理地址信息两个相邻站点的网卡的物理地址它负责两个相邻站点间的点对点的传递网络层负责源站点和目的站点之间的包网络层处理的数据单元的传送具体做法就是对来自上层传输层的信息单元加上报头报头中含有源地址和目的地址地址也称逻辑地址此地址就全球通信而言是唯一的注意数据链路层加入的是相邻站点的网卡物理地址随站点的变化而变化但逻辑地址是始终不变的传输层负责整个消息的源至目的地的传送端到端传输层把消息看成是一个完整的实体并确保它被正确地发送到目的地的传输层会话层用于控制用户间的会话它在通信系统间建立保持和同步会话同时会话层为防止系统或网络出错加入被称为同步点的节点以进行备份传输表示层最早定义这层是为了解决两个系统间交换的信息的语法格式和语义不同体系可能用不同的编码的问题同时为了提高效率要进行压缩和解压缩数据传输的安全性问题带来的加密解密问题等应用层使用户很容易地在计算机上应用网络进行应用开发访问网络等为了数据能成功地传输发送者和接收者必须遵守一组信息交换规则计算机之间交换数据的规则叫做协议的标准协议是称为传输控制协议网络互联协议该协议的主要功能是确认发送和接收设备的位置对通过传递的信息进行格式转换协议采用了层的层级结构网络接口和硬件层网络互连层传输层应用层每一层都呼叫它的下一层所提供的协议来完成自己的需求在年开始采用域名管理系统方法其域名类似于如下结构计算机主机名机构名网络名最高层域名统一资源定位器是页的地址俗称网址它指定了互联网上资源地址的标准方式是协议的一部分由三个部分构成协议名称服务器域名文件名其中协议名与域名之间用符号隔开域名与文件名之间用符号隔开网络互连是指将不同的网络连接起来以构成更大规模的网络系统实现网络间的数据通信资源共享和协同工作网络互联设备是构成计算网络的重要组成部分中继器适用于完全相同的两类网络的互连主要功能是通过对数据信号的重新发送或者转发来扩大网络传输的距离中继器是对信号进行再生和还原的网络设备运行在模型的第一层物理层网关网关是充当协议转换器的连接设备它可以理解不同的网络协议实现不同协议网络之间的连接能在两个网络间进行翻译应用电子邮件文件传输协议负责将文件从一台计算机传输到另一台计算机并保证其传输的可靠性远程登录万维网搜索引擎的发展趋势运营产业化应用商业化互联全球化互联宽带化多业务综合平台化智能化数据链路层网络层传输层应用层物理层数据链路层网络层传输层会话层表示层应用层作者注第九章不做考试要求但在上一届笔记当中发现了这一章',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2026-08-25 17:23:22',
+  postMainColor: '',
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
 
-<head>
-    <!--Setting-->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
-    <meta http-equiv="Cache-Control" content="no-siteapp">
-    <meta http-equiv="Cache-Control" content="no-transform">
-    <meta name="renderer" content="webkit|ie-comp|ie-stand">
-    <meta name="apple-mobile-web-app-capable" content="言锡的小栈">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="format-detection" content="telephone=no,email=no,adress=no">
-    <meta name="browsermode" content="application">
-    <meta name="screen-orientation" content="portrait">
-    <meta name="theme-version" content="1.3.0">
-    <meta name="root" content="/">
-    <link rel="dns-prefetch" href="https://cccp-lus.github.io">
-    <!--SEO-->
-
-<meta name="keywords" content="BJFU,计算机导论" />
-
-
-<meta name="description" content="前言：计算机导论是笔者大学期间第一门结课的专业课，也是在这门课上笔者取得了大学生活中第一次满分。笔者近日整理文件发现笔记数十页，不忍抛弃，因稍加整理后发布于此。
-内容共八章，涵盖了计算机类专业学..." />
-
-
-<meta name="robots" content="all" />
-<meta name="google" content="all" />
-<meta name="googlebot" content="all" />
-<meta name="verify" content="all" />
-    <!--Title-->
-
-<title>
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
     
-    BJFU|计算机导论（21下）第八章-计算机网络 &amp;&amp; 第九章-人工智能 |
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
     
-    言锡的小栈
-</title>
-
-<link rel="alternate" href="/atom.xml" title="言锡的小栈" type="application/atom+xml">
-
-
-<link rel="icon" href="/favicon.ico">
-
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
     
-
-
-<link rel="stylesheet" href="/css/bootstrap.min.css?rev=3.3.7.css">
-<link rel="stylesheet" href="/css/font-awesome.min.css?rev=4.7.0.css">
-<link rel="stylesheet" href="/css/style.css?rev=@@hash.css">
-
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#18171d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#f7f9fe')
+        }
+      }
+      const t = saveToLocal.get('theme')
     
-<div class="hide">
-    <script type="text/javascript">
-    var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");
-    document.write(unescape("%3Cspan class='cnzz_stat_icon_1263868967 hide' %3E%3Cscript%20src%3D%22https%3A%2F%2Fs95.cnzz.com%2Fz_stat.php%3Fweb_id%3D1272564536%22%3E%3C%2Fscript%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s19.cnzz.com/z_stat.php%3Fid%3D1263868967%26show%3Dpic1' type='text/javascript'%3E%3C/script%3E"));
-    </script>
-</div>
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
 
-
-<script>
-var _hmt = _hmt || [];
-(function() {
-    var hm = document.createElement("script");
-    hm.src = "https://hm.baidu.com/hm.js?dfaddc2b8f4d072456544b07ac1245fc";
-    var s = document.getElementsByTagName("script")[0];
-    s.parentNode.insertBefore(hm, s);
-})();
-</script>
-
-
-
-    
-
-<meta name="generator" content="Hexo 7.3.0"></head>
-<!--[if lte IE 8]>
-<style>
-    html{ font-size: 1em }
-</style>
-<![endif]-->
-<!--[if lte IE 9]>
-<div style="ie">你使用的浏览器版本过低，为了你更好的阅读体验，请更新浏览器的版本或者使用其他现代浏览器，比如Chrome、Firefox、Safari等。</div>
-<![endif]-->
-<body>
-    <header class="main-header"  style="background-image:url(
-    https://hexo-theme-snippet-1251680922.cos.ap-beijing.myqcloud.com/img/banner.jpg)"
-     >
-    <div class="main-header-box">
-        <a class="header-avatar" href="/" title='言锡'>
-            <img src="/img/avatar.jpg" alt="logo头像" class="img-responsive center-block">
-        </a>
-        <div class="branding">
-            <!--<h2 class="text-hide">Snippet主题,从未如此简单有趣</h2>-->
-            
-            <h2>
-                谦虚谨慎 勤思求真
-            </h2>
-            
-        </div>
-    </div>
-</header>
-    <nav class="main-navigation">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="navbar-header"><span class="nav-toggle-button collapsed pull-right" data-toggle="collapse" data-target="#main-menu" id="mnav">
-                        <span class="sr-only"></span>
-                        <i class="fa fa-bars"></i>
-                    </span>
-                    <a class="navbar-brand" href="https://cccp-lus.github.io">
-                        言锡的小栈</a>
-                </div>
-                <div class="collapse navbar-collapse" id="main-menu">
-                    <ul class="menu">
-                        
-                        <li role="presentation" class="text-center">
-                            <a href="/" title="首页，查看最新文章" aria-label="首页，查看最新文章"><i class="fa "></i>
-                                Home</a>
-                        </li>
-                        
-                        <li role="presentation" class="text-center">
-                            <a href="/categories/桐铃集/" title="随笔杂记与文学创作" aria-label="随笔杂记与文学创作"><i class="fa "></i>
-                                桐铃集</a>
-                        </li>
-                        
-                        <li role="presentation" class="text-center">
-                            <a href="/categories/BJFU-CS/" title="北京林业大学计算机课程资料" aria-label="北京林业大学计算机课程资料"><i class="fa "></i>
-                                BJFU-CS</a>
-                        </li>
-                        
-                        <li role="presentation" class="text-center">
-                            <a href="/categories/BUAA-IST/" title="北京航空航天大学机器视觉课程资料" aria-label="北京航空航天大学机器视觉课程资料"><i class="fa "></i>
-                                BUAA-IST</a>
-                        </li>
-                        
-                        <li role="presentation" class="text-center">
-                            <a href="/categories/编程拾贝/" title="项目实践、编程学习与代码讲解" aria-label="项目实践、编程学习与代码讲解"><i class="fa "></i>
-                                编程拾贝</a>
-                        </li>
-                        
-                        <li role="presentation" class="text-center">
-                            <a href="/categories/踩坑记录/" title="软件安装、配置与报错解决" aria-label="软件安装、配置与报错解决"><i class="fa "></i>
-                                踩坑记录</a>
-                        </li>
-                        
-                        <li role="presentation" class="text-center">
-                            <a href="/archives/" title="按时间浏览全部文章" aria-label="按时间浏览全部文章"><i class="fa "></i>
-                                时间轴</a>
-                        </li>
-                        
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</nav>
-
-    <section class="content-wrap">
-        <div class="container">
-            <div class="row">
-                <main class="col-md-8 main-content m-post">
-                    <p id="process"></p>
-<article class="post">
-    <div class="post-head">
-        <h1 id="BJFU|计算机导论（21下）第八章-计算机网络 &amp;&amp; 第九章-人工智能">
-            
-            BJFU|计算机导论（21下）第八章-计算机网络 &amp;&amp; 第九章-人工智能
-            
-        </h1>
-        <div class="post-meta">
-    
-    <span class="categories-meta fa-wrap">
-        <i class="fa fa-folder-open-o"></i>
-        <a class="category-link" href="/categories/BJFU-CS/">BJFU-CS</a>
-    </span>
-    
-    
-    <span class="fa-wrap">
-        <i class="fa fa-tags"></i>
-        <span class="tags-meta">
-            
-            <a class="tag-none-link" href="/tags/BJFU/" rel="tag">BJFU</a> <a class="tag-none-link" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA/" rel="tag">计算机导论</a>
-            
-        </span>
-    </span>
-    
-    
-    
-    <span class="fa-wrap">
-        <i class="fa fa-clock-o"></i>
-        <span class="date-meta">
-            2026/08/25</span>
-    </span>
-    
-    <span class="fa-wrap">
-        <i class="fa fa-eye"></i>
-        <span id="busuanzi_value_page_pv"></span>次
-    </span>
-    
-    
-</div>
-
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
         
-        
-    </div>
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
     
-    <div class="post-body post-content">
-        <h3 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h3><p>计算机导论是笔者大学期间第一门结课的专业课，也是在这门课上笔者取得了大学生活中第一次满分。笔者近日整理文件发现笔记数十页，不忍抛弃，因稍加整理后发布于此。</p>
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"><link rel="alternate" href="/atom.xml" title="言锡的小栈" type="application/atom+xml">
+</head><body data-type="anzhiyu"><div id="web_bg"></div><div id="an_music_bg"></div><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><img class="loading-img nolazyload" alt="加载头像" src="https://npm.elemecdn.com/anzhiyu-blog-static@1.0.4/img/avatar.jpg"/><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.getElementById('loading-box').classList.add("loaded");
+  },
+  initLoading: () => {
+    document.getElementById('loading-box').classList.remove("loaded")
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+setTimeout(function(){preloader.endLoading();},10000)
+
+if (true) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.10/progress_bar/progress_bar.css"/><script async="async" src="https://cdn.cbd.int/pace-js@1.2.4/pace.min.js" data-pace-options="{ &quot;restartOnRequestAfter&quot;:false,&quot;eventLag&quot;:false}"></script><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><div id="nav-group"><span id="blog_name"><a id="site-name" href="/" accesskey="h"><div class="title">言锡的小栈</div><i class="anzhiyufont anzhiyu-icon-house-chimney"></i></a></span><div class="mask-name-container"><div id="name-container"><a id="page-name" href="javascript:anzhiyu.scrollToDest(0, 500)">PAGE_NAME</a></div></div><div id="menus"></div><div id="nav-right"><div class="nav-button" id="randomPost_button"><a class="site-page" onclick="toRandomPost()" title="Random Post" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-dice"></i></a></div><input id="center-console" type="checkbox"/><label class="widget" for="center-console" title="Console" onclick="anzhiyu.switchConsole();"><i class="left"></i><i class="widget center"></i><i class="widget right"></i></label><div id="console"><div class="console-card-group-reward"><ul class="reward-all console-card"><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" target="_blank"><img class="post-qr-code-img" alt="微信" src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png" target="_blank"><img class="post-qr-code-img" alt="支付宝" src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png"/></a><div class="post-qr-code-desc">支付宝</div></li></ul></div><div class="console-card-group"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments"><div class="card-content"><div class="author-content-item-tips">Interaction</div><span class="author-content-item-title"> 最新评论</span></div><div class="aside-list"><span>正在加载中...</span></div></div></div><div class="console-card-group-right"><div class="console-card tags"><div class="card-content"><div class="author-content-item-tips">Interests</div><span class="author-content-item-title">Find your area of interest</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/ADB/" style="font-size: 1.05rem;">ADB<sup>1</sup></a><a href="/tags/Android/" style="font-size: 1.05rem;">Android<sup>1</sup></a><a href="/tags/Android-Studio/" style="font-size: 1.05rem;">Android Studio<sup>1</sup></a><a href="/tags/BJFU/" style="font-size: 1.05rem;">BJFU<sup>27</sup></a><a href="/tags/BUAA/" style="font-size: 1.05rem;">BUAA<sup>1</sup></a><a href="/tags/C/" style="font-size: 1.05rem;">C++<sup>2</sup></a><a href="/tags/C-%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80%EF%BC%8822%E4%B8%8A%EF%BC%89/" style="font-size: 1.05rem;">C++程序设计基础（22上）<sup>8</sup></a><a href="/tags/CS211/" style="font-size: 1.05rem;">CS211<sup>1</sup></a><a href="/tags/CloudComPy/" style="font-size: 1.05rem;">CloudComPy<sup>2</sup></a><a href="/tags/C%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80%EF%BC%8821%E4%B8%8B%EF%BC%89/" style="font-size: 1.05rem;">C程序设计基础（21下）<sup>4</sup></a><a href="/tags/OpenGL/" style="font-size: 1.05rem;">OpenGL<sup>1</sup></a><a href="/tags/PyInstaller/" style="font-size: 1.05rem;">PyInstaller<sup>1</sup></a><a href="/tags/PyQtGraph/" style="font-size: 1.05rem;">PyQtGraph<sup>1</sup></a><a href="/tags/Python/" style="font-size: 1.05rem;">Python<sup>2</sup></a><a href="/tags/Windows/" style="font-size: 1.05rem;">Windows<sup>1</sup></a><a href="/tags/YOLOv5/" style="font-size: 1.05rem;">YOLOv5<sup>1</sup></a><a href="/tags/%E4%B8%89%E7%BB%B4%E8%A7%86%E8%A7%89/" style="font-size: 1.05rem;">三维视觉<sup>1</sup></a><a href="/tags/%E4%B8%AA%E4%BA%BA%E6%88%90%E9%95%BF/" style="font-size: 1.05rem;">个人成长<sup>1</sup></a><a href="/tags/%E4%BF%9D%E7%A0%94%E7%BB%8F%E9%AA%8C/" style="font-size: 1.05rem;">保研经验<sup>1</sup></a><a href="/tags/%E5%8D%87%E5%AD%A6%E8%A7%84%E5%88%92/" style="font-size: 1.05rem;">升学规划<sup>1</sup></a><a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%9F%BA%E7%A1%80/" style="font-size: 1.05rem;">大数据基础<sup>1</sup></a><a href="/tags/%E6%89%93%E5%8C%85%E9%83%A8%E7%BD%B2/" style="font-size: 1.05rem;">打包部署<sup>1</sup></a><a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 1.05rem;">操作系统<sup>1</sup></a><a href="/tags/%E6%95%B0%E5%80%BC%E8%A1%A8%E7%A4%BA/" style="font-size: 1.05rem;">数值表示<sup>1</sup></a><a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84A%EF%BC%8822%E4%B8%8B%EF%BC%89/" style="font-size: 1.05rem;">数据结构A（22下）<sup>1</sup></a><a href="/tags/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/" style="font-size: 1.05rem;">机器视觉<sup>1</sup></a><a href="/tags/%E7%82%B9%E4%BA%91/" style="font-size: 1.05rem;">点云<sup>1</sup></a><a href="/tags/%E7%82%B9%E4%BA%91%E5%A4%84%E7%90%86/" style="font-size: 1.05rem;">点云处理<sup>1</sup></a><a href="/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/" style="font-size: 1.05rem;">目标检测<sup>1</sup></a><a href="/tags/%E7%9C%9F%E6%9C%BA%E8%B0%83%E8%AF%95/" style="font-size: 1.05rem;">真机调试<sup>1</sup></a><a href="/tags/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%88%86%E6%9E%90/" style="font-size: 1.05rem;">算法设计与分析<sup>1</sup></a><a href="/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" style="font-size: 1.05rem;">编译原理<sup>1</sup></a><a href="/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" style="font-size: 1.05rem;">网络编程<sup>1</sup></a><a href="/tags/%E8%8D%A3%E8%80%80%E6%89%8B%E6%9C%BA/" style="font-size: 1.05rem;">荣耀手机<sup>1</sup></a><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA/" style="font-size: 1.05rem;">计算机导论<sup>8</sup></a><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 1.05rem;">计算机网络<sup>3</sup></a><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/" style="font-size: 1.05rem;">计算机视觉<sup>1</sup></a><a href="/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/" style="font-size: 1.05rem;">路由器<sup>1</sup></a><a href="/tags/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/" style="font-size: 1.05rem;">进制转换<sup>1</sup></a><a href="/tags/%E9%80%92%E5%BD%92/" style="font-size: 1.05rem;">递归<sup>2</sup></a></div></div><hr/></div></div><div class="console-card history"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-box-archiv"></i><span>Articles</span></div><div class="card-archives"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2026/08/"><span class="card-archive-list-date">八月 2026</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">44</span><span>篇</span></div></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2025/12/"><span class="card-archive-list-date">十二月 2025</span><div class="card-archive-list-count-group"><span class="card-archive-list-count">1</span><span>篇</span></div></a></li></ul></div><hr/></div></div></div><div class="button-group"><div class="console-btn-item"><a class="darkmode_switchbutton" title="Toggle Display Mode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-moon"></i></a></div><div class="console-btn-item" id="consoleHideAside" onclick="anzhiyu.hideAsideBtn()" title="Toggle Sidebar"><a class="asideSwitch"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></a></div><div class="console-btn-item" id="consoleMusic" onclick="anzhiyu.musicToggle()" title="Toggle Music"><a class="music-switch"><i class="anzhiyufont anzhiyu-icon-music"></i></a></div></div><div class="console-mask" onclick="anzhiyu.hideConsole()" href="javascript:void(0);"></div></div><div class="nav-button" id="nav-totop"><a class="totopbtn" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i><span id="percent" onclick="anzhiyu.scrollToDest(0,500)">0</span></a></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);" title="Toggle"><i class="anzhiyufont anzhiyu-icon-bars"></i></a></div></div></div></nav><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original">原创</a><span class="post-meta-categories"><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-inbox post-meta-icon"></i><a class="post-meta-categories" href="/categories/BJFU-CS/" itemprop="url">BJFU-CS</a></span><span class="article-meta tags"><a class="article-meta__tags" href="/tags/BJFU/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>BJFU</span></a><a class="article-meta__tags" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA/" tabindex="-1" itemprop="url"> <span> <i class="anzhiyufont anzhiyu-icon-hashtag"></i>计算机导论</span></a></span></div></div><h1 class="post-title" itemprop="name headline">BJFU|计算机导论（21下）第八章-计算机网络 &amp;&amp; 第九章-人工智能</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="anzhiyufont anzhiyu-icon-calendar-days post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" itemprop="dateCreated datePublished" datetime="2026-08-24T18:33:00.000Z" title="发表于 2026-08-25 02:33:00">2026-08-25</time><span class="post-meta-separator"></span><i class="anzhiyufont anzhiyu-icon-history post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" itemprop="dateCreated datePublished" datetime="2026-08-25T09:23:22.865Z" title="更新于 2026-08-25 17:23:22">2026-08-25</time></span></div><div class="meta-secondline"><span class="post-meta-separator">       </span><span class="post-meta-position" title="作者IP属地为长沙"><i class="anzhiyufont anzhiyu-icon-location-dot"></i>长沙</span></div></div></div><section class="main-hero-waves-area waves-area"><svg class="waves-svg" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink" viewBox="0 24 150 28" preserveAspectRatio="none" shape-rendering="auto"><defs><path id="gentle-wave" d="M -160 44 c 30 0 58 -18 88 -18 s 58 18 88 18 s 58 -18 88 -18 s 58 18 88 18 v 44 h -352 Z"></path></defs><g class="parallax"><use href="#gentle-wave" x="48" y="0"></use><use href="#gentle-wave" x="48" y="3"></use><use href="#gentle-wave" x="48" y="5"></use><use href="#gentle-wave" x="48" y="7"></use></g></svg></section><div id="post-top-cover"><img class="nolazyload" id="post-top-bg" src=""></div></header><main id="blog-container"><div class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container" itemscope itemtype="https://cccp-lus.github.io/2026/08/25/BJFU_%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA%EF%BC%8821%E4%B8%8B%EF%BC%89%E7%AC%AC%E5%85%AB%E7%AB%A0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%20&amp;&amp;%20%E7%AC%AC%E4%B9%9D%E7%AB%A0-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"><header><a class="post-meta-categories" href="/categories/BJFU-CS/" itemprop="url">BJFU-CS</a><a href="/tags/BJFU/" tabindex="-1" itemprop="url">BJFU</a><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA/" tabindex="-1" itemprop="url">计算机导论</a><h1 id="CrawlerTitle" itemprop="name headline">BJFU|计算机导论（21下）第八章-计算机网络 &amp;&amp; 第九章-人工智能</h1><span itemprop="author" itemscope itemtype="http://schema.org/Person">言锡</span><time itemprop="dateCreated datePublished" datetime="2026-08-24T18:33:00.000Z" title="发表于 2026-08-25 02:33:00">2026-08-25</time><time itemprop="dateCreated datePublished" datetime="2026-08-25T09:23:22.865Z" title="更新于 2026-08-25 17:23:22">2026-08-25</time></header><h3 id="前言："><a href="#前言：" class="headerlink" title="前言："></a>前言：</h3><p>计算机导论是笔者大学期间第一门结课的专业课，也是在这门课上笔者取得了大学生活中第一次满分。笔者近日整理文件发现笔记数十页，不忍抛弃，因稍加整理后发布于此。</p>
 <p>内容共八章，涵盖了计算机类专业学生的基础知识。**对于行业初学者，可以提供一个专业的视角以便后续选择进一步发展方向；对于业外人士，也可做科普性质文章对待。**需要注意的是，<strong>笔记并不等于确切的、已知的考点</strong>，请校友（尤其是同门师弟师妹们）<strong>理性对待此资料，认真听讲，认真复习。</strong></p>
 <p>后续章节将会逐步更新，请各位读者静候。</p>
 <h3 id="考点整理："><a href="#考点整理：" class="headerlink" title="考点整理："></a>考点整理：</h3><p>计算机网络（Computer Network）：将地理上分散的计算机（或其他智能设备）和设备用通信线路互联起来，实现互相通信、资源共享的复杂的集合。</p>
@@ -235,7 +232,7 @@ var _hmt = _hmt || [];
 <p><strong>会话层：用于控制用户间的会话</strong>。它在通信系统间建立、保持和同步会话。同时会话层为防止系统或网络出错加入被称为同步点的节点，以进行备份传输。</p>
 <p><strong>表示层：最早定义这层是为了解决两个系统间交换的信息的语法（格式）和语义（不同体系可能用不同的编码）的问题；同时为了提高效率要进行压缩和解压缩，数据传输的安全性问题带来的加密解密问题等</strong>。</p>
 <p><strong>应用层：使用户很容易地在计算机上应用网络进行应用开发、访问网络等</strong>。</p>
-<p><img src="11bbbebaa1b8.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="11bbbebaa1b8.png"></p>
 <p>为了数据能成功地传输，发送者和接收者必须遵守一组信息交换规则。计算机之间交换数据的规则叫做协议。</p>
 <p><strong>Internet<strong><strong>的标准协议是</strong></strong>TCP&#x2F;IP(Transmission Control Protocol&#x2F;Internet Protocol)****，称为传输控制协议**</strong>&#x2F;<strong><strong>网络互联协议</strong>。该协议的主要功能是**确认发送和接收设备的位置</strong>，对通过Internet传递的信息进行<strong>格式转换</strong>。协议采用了<strong>4层的层级结构（网络接口和硬件层、网络互连层、传输层、应用层）</strong>，每一层都呼叫它的下一层所提供的协议来完成自己的需求。</p>
 <p>Internet在1985年开始采用域名管理系统DNS方法，</p>
@@ -244,7 +241,7 @@ var _hmt = _hmt || [];
 <p><strong>URL由三个部分构成：协议名称、Web服务器域名、文件名，其中协议名与域名之间用:&#x2F;&#x2F;符号隔开，域名与文件名之间用&#x2F;符号隔开。</strong></p>
 <p>网络互连是指将不同的网络连接起来，以构成更大规模的网络系统，实现网络间的数据通信、资源共享和协同工作。</p>
 <p>网络互联设备是构成计算网络的重要组成部分。</p>
-<p><img src="c48165f92523.png"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="c48165f92523.png"></p>
 <p>中继器（Repeater）</p>
 <p>适用于完全相同的两类网络的互连，主要功能是通过对数据信号的重新发送或者转发，来扩大网络传输的距离。</p>
 <p>中继器是对信号进行再生和还原的网络设备，*<em>运行在</em>***OSI **<strong>模型的第一层（物理层）</strong>。</p>
@@ -271,160 +268,148 @@ var _hmt = _hmt || [];
 <p>表示层:TIFF,GIF,JPEG,PICT,ASCII,EBCDIC,encryption,MPEG,MIDI,<strong>HTML</strong></p>
 <p>应用层：<strong>FTP,WWW,Telnet</strong>,NFS,SMTP,Gateway,SNMP,<strong>HTTP</strong></p>
 <p><strong>作者注：第九章不做考试要求，但在上一届笔记当中发现了这一章</strong></p>
-
-    </div>
-    
-    <div class="reward" ontouchstart>
-    <div class="reward-wrap">赏
-        <div class="reward-box">
-            
-            <span class="reward-type">
-                <img class="alipay" src="/img/Alipay.png"><b>支付宝打赏</b>
-            </span>
-            
-            
-            <span class="reward-type">
-                <img class="wechat" src="/img/Wepay.png"><b>微信打赏</b>
-            </span>
-            
-        </div>
-    </div>
-    <p class="reward-tip">
-        如果觉得好用请支持我
-    </p>
-</div>
-    
-    <div class="post-footer">
-        <div>
-            
-            转载声明：
-            商业转载请联系作者获得授权,非商业转载请注明出处 © <a href="" target="_blank">言锡的小栈</a>
-            
-            
-        </div>
-        <div>
-            
-        </div>
-    </div>
-</article>
-<div class="article-nav prev-next-wrap clearfix">
-    
-    <a href="/2026/08/25/BJFU_%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA%EF%BC%8821%E4%B8%8B%EF%BC%89%E7%AC%AC%E4%B8%83%E7%AB%A0-%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/" class="pre-post btn btn-default" title='BJFU|计算机导论（21下）第七章-软件开发'>
-        <i class="fa fa-angle-left fa-fw"></i><span class="hidden-lg">上一篇</span>
-        <span class="hidden-xs">
-            BJFU|计算机导论（21下）第七章-软件开发</span>
-    </a>
-    
-    
-    <a href="/2026/08/25/%E4%B8%AA%E4%BA%BA%E4%B9%A6%E7%B1%8D%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%BC%96%E5%86%99%E3%80%81%E5%88%B6%E4%BD%9C%E4%B8%8E%E5%AE%9E%E7%8E%B0%EF%BC%88C%E8%AF%AD%E8%A8%80%EF%BC%89/" class="next-post btn btn-default" title='个人书籍管理系统的编写、制作与实现（C语言）'>
-        <span class="hidden-lg">下一篇</span>
-        <span class="hidden-xs">
-            个人书籍管理系统的编写、制作与实现（C语言）</span><i class="fa fa-angle-right fa-fw"></i>
-    </a>
-    
-</div>
-
-<div id="comments">
-    
-    
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1.8.0/dist/gitalk.min.css">
-<script src="https://cdn.jsdelivr.net/npm/gitalk@1.8.0/dist/gitalk.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/blueimp-md5@2.19.0/js/md5.min.js"></script>
-<div id="gitalk-container"></div>
-<script type="text/javascript">
-var gitalk = new Gitalk({
-    // Gitalk配置
-    language: "zh-CN",
-    clientID: "Ov23liIz7HCcpWlrUkNd",
-    clientSecret: "",
-    repo: "MyReview",
-    owner: "CCCP-lus",
-    admin: ["CCCP-lus"],
-    id: md5(location.pathname),
-    perPage: 15,
-    distractionFreeMode: true,
-    proxy: "https://cors-anywhere.herokuapp.com/https://github.com/login/oauth/access_token"
-});
-gitalk.render('gitalk-container');
-</script>
-
-
-
-</div>
-
-
-                </main>
-                
-                    <aside id="article-toc" role="navigation" class="col-md-4">
-    <div class="widget">
-        <h3 class="title">
-            Table of Contents
-        </h3>
+</article><div class="post-copyright"><div class="copyright-cc-box"><i class="anzhiyufont anzhiyu-icon-copyright"></i></div><div class="post-copyright__author_box"><a class="post-copyright__author_img" href="/" title="头像"><img class="post-copyright__author_img_back" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg" title="头像" alt="头像"><img class="post-copyright__author_img_front" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg" title="头像" alt="头像"></a><div class="post-copyright__author_name">言锡</div><div class="post-copyright__author_desc">谦虚谨慎，勤思求真</div></div><div class="post-copyright__post__info"><a class="post-copyright__original" title="该文章为原创文章，注意版权协议" href="https://cccp-lus.github.io/2026/08/25/BJFU_%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA%EF%BC%8821%E4%B8%8B%EF%BC%89%E7%AC%AC%E5%85%AB%E7%AB%A0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%20&amp;&amp;%20%E7%AC%AC%E4%B9%9D%E7%AB%A0-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">原创</a><a class="post-copyright-title"><span onclick="rm.copyPageUrl('https://cccp-lus.github.io/2026/08/25/BJFU_%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA%EF%BC%8821%E4%B8%8B%EF%BC%89%E7%AC%AC%E5%85%AB%E7%AB%A0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%20&amp;&amp;%20%E7%AC%AC%E4%B9%9D%E7%AB%A0-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/')">BJFU|计算机导论（21下）第八章-计算机网络 &amp;&amp; 第九章-人工智能</span></a></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div class="rewardLeftButton"><div class="post-reward" onclick="anzhiyu.addRewardMask()"><div class="reward-button button--animated" title="Support Author"><i class="anzhiyufont anzhiyu-icon-hand-heart-fill"></i>Donate</div><div class="reward-main"><div class="reward-all"><span class="reward-title">Thanks for your support</span><ul class="reward-group"><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-weichat.png" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png" target="_blank"><img class="post-qr-code-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/qrcode-alipay.png" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li></ul><a class="reward-main-btn" href="/about/#about-reward" target="_blank"><div class="reward-text">Supporters</div><div class="reward-dec">Your support motivates me to write more 🙏</div></a></div></div></div><div id="quit-box" onclick="anzhiyu.removeRewardMask()" style="display: none"></div></div><div class="shareRight"><div class="share-link mobile"><div class="share-qrcode"><div class="share-button" title="使用手机访问这篇文章"><i class="anzhiyufont anzhiyu-icon-qrcode"></i></div><div class="share-main"><div class="share-main-all"><div id="qrcode" title="https://cccp-lus.github.io/2026/08/25/BJFU_%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA%EF%BC%8821%E4%B8%8B%EF%BC%89%E7%AC%AC%E5%85%AB%E7%AB%A0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%20&amp;&amp;%20%E7%AC%AC%E4%B9%9D%E7%AB%A0-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"></div><div class="reward-dec">使用手机访问这篇文章</div></div></div></div></div><div class="share-link weibo"><a class="share-button" target="_blank" href="https://service.weibo.com/share/share.php?title=BJFU|计算机导论（21下）第八章-计算机网络 &amp;&amp; 第九章-人工智能&amp;url=https://cccp-lus.github.io/2026/08/25/BJFU_%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA%EF%BC%8821%E4%B8%8B%EF%BC%89%E7%AC%AC%E5%85%AB%E7%AB%A0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%20&amp;&amp;%20%E7%AC%AC%E4%B9%9D%E7%AB%A0-%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/&amp;pic=" rel="external nofollow noreferrer noopener"><i class="anzhiyufont anzhiyu-icon-weibo"></i></a></div><script>function copyCurrentPageUrl() {
+  var currentPageUrl = window.location.href;
+  var input = document.createElement("input");
+  input.setAttribute("value", currentPageUrl);
+  document.body.appendChild(input);
+  input.select();
+  input.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  document.body.removeChild(input);
+}</script><div class="share-link copyurl"><div class="share-button" id="post-share-url" title="复制链接" onclick="copyCurrentPageUrl()"><i class="anzhiyufont anzhiyu-icon-link"></i></div></div></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://cccp-lus.github.io" target="_blank">言锡的小栈</a>！</span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__box"><div class="post-meta__box__tag-list"><a class="post-meta__box__tags" href="/tags/BJFU/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>BJFU<span class="tagsPageCount">27</span></a><a class="post-meta__box__tags" href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA/"><span class="tags-punctuation"> <i class="anzhiyufont anzhiyu-icon-tag"></i></span>计算机导论<span class="tagsPageCount">8</span></a></div></div></div><div class="post_share"><div class="social-share" data-image="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"/><script src="https://cdn.cbd.int/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer="defer"></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2026/08/25/%E4%B8%AA%E4%BA%BA%E4%B9%A6%E7%B1%8D%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%BC%96%E5%86%99%E3%80%81%E5%88%B6%E4%BD%9C%E4%B8%8E%E5%AE%9E%E7%8E%B0%EF%BC%88C%E8%AF%AD%E8%A8%80%EF%BC%89/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">个人书籍管理系统的编写、制作与实现（C语言）</div></div></a></div><div class="next-post pull-right"><a href="/2026/08/25/BJFU_%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA%EF%BC%8821%E4%B8%8B%EF%BC%89%E7%AC%AC%E4%B8%83%E7%AB%A0-%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">BJFU|计算机导论（21下）第七章-软件开发</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="anzhiyufont anzhiyu-icon-thumbs-up fa-fw" style="font-size: 1.5rem; margin-right: 4px"></i><span>喜欢这篇文章的人也看了</span></div><div class="relatedPosts-list"><div><a href="/2026/08/25/BJFU_%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA%EF%BC%8821%E4%B8%8B%EF%BC%89%E7%AC%AC%E4%B8%83%E7%AB%A0-%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91/" title="BJFU|计算机导论（21下）第七章-软件开发"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2026-08-25</div><div class="title">BJFU|计算机导论（21下）第七章-软件开发</div></div></a></div><div><a href="/2026/08/25/BJFU_%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA%EF%BC%8821%E4%B8%8B%EF%BC%89%E7%AC%AC%E4%BA%8C%E7%AB%A0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%AD%E6%95%B0%E7%9A%84%E8%AE%A1%E7%AE%97%E5%92%8C%E5%AD%98%E5%82%A8/" title="BJFU|计算机导论（21下）第二章-计算机中数的计算和存储"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2026-08-25</div><div class="title">BJFU|计算机导论（21下）第二章-计算机中数的计算和存储</div></div></a></div><div><a href="/2026/08/25/BJFU_%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA%EF%BC%8821%E4%B8%8B%EF%BC%89%E7%AC%AC%E4%B8%80%E7%AB%A0-%E5%88%9D%E8%AF%86%E8%AE%A1%E7%AE%97%E6%9C%BA/" title="BJFU|计算机导论（21下）第一章-初识计算机"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2026-08-25</div><div class="title">BJFU|计算机导论（21下）第一章-初识计算机</div></div></a></div><div><a href="/2026/08/25/BJFU_%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA%EF%BC%8821%E4%B8%8B%EF%BC%89%E7%AC%AC%E4%BA%94%E7%AB%A0-%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" title="BJFU|计算机导论（21下）第五章-操作系统"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2026-08-25</div><div class="title">BJFU|计算机导论（21下）第五章-操作系统</div></div></a></div><div><a href="/2026/08/25/BJFU_%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA%EF%BC%8821%E4%B8%8B%EF%BC%89%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" title="BJFU|计算机导论（21下）第四章-数据结构与算法"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2026-08-25</div><div class="title">BJFU|计算机导论（21下）第四章-数据结构与算法</div></div></a></div><div><a href="/2026/08/25/BJFU_%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA%EF%BC%8821%E4%B8%8B%EF%BC%89%E7%AC%AC%E4%B8%89%E7%AB%A0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86/" title="BJFU|计算机导论（21下）第三章-计算机组成原理"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/" alt="cover"><div class="content is-center"><div class="date"><i class="anzhiyufont anzhiyu-icon-calendar-days fa-fw"></i> 2026-08-25</div><div class="title">BJFU|计算机导论（21下）第三章-计算机组成原理</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="author-info-avatar"><img class="avatar-img" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://bu.dusays.com/2023/04/27/64496e511b09c.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__description">随缘分享文学、摄影、互联网</div></div></div><div class="card-widget anzhiyu-right-widget" id="card-wechat" onclick="null"><div id="flip-wrapper"><div id="flip-content"><div class="face" style="background: url(https://bu.dusays.com/2023/01/13/63c02edf44033.png) center center / 100% no-repeat"></div><div class="back face" style="background: url(https://bu.dusays.com/2023/05/13/645fa415e8694.png) center center / 100% no-repeat"></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-bars"></i><span>文章目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E8%A8%80%EF%BC%9A"><span class="toc-number">1.</span> <span class="toc-text">前言：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%80%83%E7%82%B9%E6%95%B4%E7%90%86%EF%BC%9A"><span class="toc-number">2.</span> <span class="toc-text">考点整理：</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="anzhiyufont anzhiyu-icon-history"></i><span>最近发布</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/08/25/ceshi/" title="ceshi">ceshi</a><time datetime="2026-08-25T08:40:13.000Z" title="发表于 2026-08-25 16:40:13">2026-08-25</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/08/25/BJFU_C%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80%EF%BC%8821%E4%B8%8B%EF%BC%89%E5%AE%9E%E9%AA%8C%E4%B8%80/" title="BJFU|C程序设计基础（21下）实验一">BJFU|C程序设计基础（21下）实验一</a><time datetime="2026-08-24T18:44:00.000Z" title="发表于 2026-08-25 02:44:00">2026-08-25</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/08/25/BJFU_C%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80%EF%BC%8821%E4%B8%8B%EF%BC%89%E5%AE%9E%E9%AA%8C%E4%BA%8C/" title="BJFU|C程序设计基础（21下）实验二">BJFU|C程序设计基础（21下）实验二</a><time datetime="2026-08-24T18:43:00.000Z" title="发表于 2026-08-25 02:43:00">2026-08-25</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/08/25/BJFU_C%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80%EF%BC%8821%E4%B8%8B%EF%BC%89%E5%AE%9E%E9%AA%8C%E4%B8%89/" title="BJFU|C程序设计基础（21下）实验三">BJFU|C程序设计基础（21下）实验三</a><time datetime="2026-08-24T18:42:00.000Z" title="发表于 2026-08-25 02:42:00">2026-08-25</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2026/08/25/BJFU_C%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80%EF%BC%8821%E4%B8%8B%EF%BC%89%E5%AE%9E%E9%AA%8C%E5%9B%9B/" title="BJFU|C程序设计基础（21下）实验四">BJFU|C程序设计基础（21下）实验四</a><time datetime="2026-08-24T18:41:00.000Z" title="发表于 2026-08-25 02:41:00">2026-08-25</time></div></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div id="footer-bar-tips"><div class="copyright">&copy;2020 - 2026 By <a class="footer-bar-link" href="/" title="言锡" target="_blank">言锡</a></div></div><div id="footer-type-tips"></div></div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/anzhiyu-c/hexo-theme-anzhiyu" title="主题">主题</a></div></div></div></footer></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="sidebar-site-data site-data is-center"><a href="/archives/" title="archive"><div class="headline">文章</div><div class="length-num">45</div></a><a href="/tags/" title="tag"><div class="headline">标签</div><div class="length-num">65</div></a><a href="/categories/" title="category"><div class="headline">分类</div><div class="length-num">5</div></a></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><a class="darkmode_switchbutton menu-child" href="javascript:void(0);" title="显示模式"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span>显示模式</span></a></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网页</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://hexo.anheyu.com/" title="博客"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="/img/favicon.ico" alt="博客"/><span class="back-menu-item-text">博客</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">项目</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://image.anheyu.com/" title="安知鱼图床"><img class="back-menu-item-icon" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null,this.src=&quot;/img/404.jpg&quot;" data-lazy-src="https://image.anheyu.com/favicon.ico" alt="安知鱼图床"/><span class="back-menu-item-text">安知鱼图床</span></a></div></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="item-headline"></div><div class="card-tag-cloud"><a href="/tags/ADB/" style="font-size: 0.88rem;">ADB<sup>1</sup></a><a href="/tags/Android/" style="font-size: 0.88rem;">Android<sup>1</sup></a><a href="/tags/Android-Studio/" style="font-size: 0.88rem;">Android Studio<sup>1</sup></a><a href="/tags/BJFU/" style="font-size: 0.88rem;">BJFU<sup>27</sup></a><a href="/tags/BUAA/" style="font-size: 0.88rem;">BUAA<sup>1</sup></a><a href="/tags/C/" style="font-size: 0.88rem;">C++<sup>2</sup></a><a href="/tags/C-%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80%EF%BC%8822%E4%B8%8A%EF%BC%89/" style="font-size: 0.88rem;">C++程序设计基础（22上）<sup>8</sup></a><a href="/tags/CS211/" style="font-size: 0.88rem;">CS211<sup>1</sup></a><a href="/tags/CloudComPy/" style="font-size: 0.88rem;">CloudComPy<sup>2</sup></a><a href="/tags/C%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80%EF%BC%8821%E4%B8%8B%EF%BC%89/" style="font-size: 0.88rem;">C程序设计基础（21下）<sup>4</sup></a><a href="/tags/OpenGL/" style="font-size: 0.88rem;">OpenGL<sup>1</sup></a><a href="/tags/PyInstaller/" style="font-size: 0.88rem;">PyInstaller<sup>1</sup></a><a href="/tags/PyQtGraph/" style="font-size: 0.88rem;">PyQtGraph<sup>1</sup></a><a href="/tags/Python/" style="font-size: 0.88rem;">Python<sup>2</sup></a><a href="/tags/Windows/" style="font-size: 0.88rem;">Windows<sup>1</sup></a><a href="/tags/YOLOv5/" style="font-size: 0.88rem;">YOLOv5<sup>1</sup></a><a href="/tags/%E4%B8%89%E7%BB%B4%E8%A7%86%E8%A7%89/" style="font-size: 0.88rem;">三维视觉<sup>1</sup></a><a href="/tags/%E4%B8%AA%E4%BA%BA%E6%88%90%E9%95%BF/" style="font-size: 0.88rem;">个人成长<sup>1</sup></a><a href="/tags/%E4%BF%9D%E7%A0%94%E7%BB%8F%E9%AA%8C/" style="font-size: 0.88rem;">保研经验<sup>1</sup></a><a href="/tags/%E5%8D%87%E5%AD%A6%E8%A7%84%E5%88%92/" style="font-size: 0.88rem;">升学规划<sup>1</sup></a><a href="/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE%E5%9F%BA%E7%A1%80/" style="font-size: 0.88rem;">大数据基础<sup>1</sup></a><a href="/tags/%E6%89%93%E5%8C%85%E9%83%A8%E7%BD%B2/" style="font-size: 0.88rem;">打包部署<sup>1</sup></a><a href="/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/" style="font-size: 0.88rem;">操作系统<sup>1</sup></a><a href="/tags/%E6%95%B0%E5%80%BC%E8%A1%A8%E7%A4%BA/" style="font-size: 0.88rem;">数值表示<sup>1</sup></a><a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84A%EF%BC%8822%E4%B8%8B%EF%BC%89/" style="font-size: 0.88rem;">数据结构A（22下）<sup>1</sup></a><a href="/tags/%E6%9C%BA%E5%99%A8%E8%A7%86%E8%A7%89/" style="font-size: 0.88rem;">机器视觉<sup>1</sup></a><a href="/tags/%E7%82%B9%E4%BA%91/" style="font-size: 0.88rem;">点云<sup>1</sup></a><a href="/tags/%E7%82%B9%E4%BA%91%E5%A4%84%E7%90%86/" style="font-size: 0.88rem;">点云处理<sup>1</sup></a><a href="/tags/%E7%9B%AE%E6%A0%87%E6%A3%80%E6%B5%8B/" style="font-size: 0.88rem;">目标检测<sup>1</sup></a><a href="/tags/%E7%9C%9F%E6%9C%BA%E8%B0%83%E8%AF%95/" style="font-size: 0.88rem;">真机调试<sup>1</sup></a><a href="/tags/%E7%AE%97%E6%B3%95%E8%AE%BE%E8%AE%A1%E4%B8%8E%E5%88%86%E6%9E%90/" style="font-size: 0.88rem;">算法设计与分析<sup>1</sup></a><a href="/tags/%E7%BC%96%E8%AF%91%E5%8E%9F%E7%90%86/" style="font-size: 0.88rem;">编译原理<sup>1</sup></a><a href="/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/" style="font-size: 0.88rem;">网络编程<sup>1</sup></a><a href="/tags/%E8%8D%A3%E8%80%80%E6%89%8B%E6%9C%BA/" style="font-size: 0.88rem;">荣耀手机<sup>1</sup></a><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%AF%BC%E8%AE%BA/" style="font-size: 0.88rem;">计算机导论<sup>8</sup></a><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/" style="font-size: 0.88rem;">计算机网络<sup>3</sup></a><a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/" style="font-size: 0.88rem;">计算机视觉<sup>1</sup></a><a href="/tags/%E8%B7%AF%E7%94%B1%E5%99%A8/" style="font-size: 0.88rem;">路由器<sup>1</sup></a><a href="/tags/%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2/" style="font-size: 0.88rem;">进制转换<sup>1</sup></a><a href="/tags/%E9%80%92%E5%BD%92/" style="font-size: 0.88rem;">递归<sup>2</sup></a></div></div><hr/></div></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="anzhiyufont anzhiyu-icon-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="anzhiyufont anzhiyu-icon-arrows-left-right"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="anzhiyufont anzhiyu-icon-gear"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="anzhiyufont anzhiyu-icon-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></button></div></div><div id="nav-music"><a id="nav-music-hoverTips" onclick="anzhiyu.musicToggle()" accesskey="m">播放音乐</a><div id="console-music-bg"></div><meting-js id="8152976493" server="netease" type="playlist" mutex="true" preload="none" theme="var(--anzhiyu-main)" data-lrctype="0" order="random" volume="0.7"></meting-js></div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="anzhiyufont anzhiyu-icon-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="anzhiyufont anzhiyu-icon-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="anzhiyufont anzhiyu-icon-arrow-rotate-right" style="font-size: 1rem;"></i></div><div class="rightMenu-item" id="menu-top"><i class="anzhiyufont anzhiyu-icon-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="anzhiyufont anzhiyu-icon-paste"></i><span>粘贴文本</span></div><a class="rightMenu-item" id="menu-commenttext"><i class="anzhiyufont anzhiyu-icon-comment-medical"></i><span>引用到评论</span></a><div class="rightMenu-item" id="menu-newwindow"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="anzhiyufont anzhiyu-icon-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="anzhiyufont anzhiyu-icon-images"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="anzhiyufont anzhiyu-icon-download"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-newwindowimg"><i class="anzhiyufont anzhiyu-icon-window-restore"></i><span>新窗口打开图片</span></div><div class="rightMenu-item" id="menu-search"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>站内搜索</span></div><div class="rightMenu-item" id="menu-searchBaidu"><i class="anzhiyufont anzhiyu-icon-magnifying-glass"></i><span>百度搜索</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="anzhiyufont anzhiyu-icon-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="anzhiyufont anzhiyu-icon-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="anzhiyufont anzhiyu-icon-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-playlist" onclick="window.open(&quot;https://y.qq.com/n/ryqq/playlist/8802438608&quot;, &quot;_blank&quot;);" style="display: none;"><i class="anzhiyufont anzhiyu-icon-radio"></i><span>查看所有歌曲</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item menu-link" id="menu-randomPost"><i class="anzhiyufont anzhiyu-icon-shuffle"></i><span>随便逛逛</span></a><a class="rightMenu-item menu-link" href="/categories/"><i class="anzhiyufont anzhiyu-icon-cube"></i><span>博客分类</span></a><a class="rightMenu-item menu-link" href="/tags/"><i class="anzhiyufont anzhiyu-icon-tags"></i><span>文章标签</span></a></div><div class="rightMenu-group rightMenu-line rightMenuOther"><a class="rightMenu-item" id="menu-copy" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-copy"></i><span>复制地址</span></a><a class="rightMenu-item" id="menu-commentBarrage" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-message"></i><span class="menu-commentBarrage-text">关闭热评</span></a><a class="rightMenu-item" id="menu-darkmode" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-circle-half-stroke"></i><span class="menu-darkmode-text">深色模式</span></a><a class="rightMenu-item" id="menu-translate" href="javascript:void(0);"><i class="anzhiyufont anzhiyu-icon-language"></i><span>轉為繁體</span></a></div></div><div id="rightmenu-mask"></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.cbd.int/@fancyapps/ui@6.1.6/dist/fancybox/fancybox.umd.js"></script><script src="https://cdn.cbd.int/instant.page@5.2.0/instantpage.js" type="module"></script><script src="https://cdn.cbd.int/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"></script><script src="https://cdn.cbd.int/node-snackbar@0.1.16/dist/snackbar.min.js"></script><canvas id="universe"></canvas><script async src="https://npm.elemecdn.com/anzhiyu-theme-static@1.0.0/dark/dark.js"></script><script>// 消除控制台打印
+var HoldLog = console.log;
+console.log = function () {};
+let now1 = new Date();
+queueMicrotask(() => {
+  const Log = function () {
+    HoldLog.apply(console, arguments);
+  }; //在恢复前输出日志
+  const grt = new Date("04/01/2021 00:00:00"); //此处修改你的建站时间或者网站上线时间
+  now1.setTime(now1.getTime() + 250);
+  const days = (now1 - grt) / 1000 / 60 / 60 / 24;
+  const dnum = Math.floor(days);
+  const ascll = [
+    `欢迎使用安知鱼!`,
+    `生活明朗, 万物可爱`,
+    `
         
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E8%A8%80%EF%BC%9A"><span class="toc-text">前言：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%80%83%E7%82%B9%E6%95%B4%E7%90%86%EF%BC%9A"><span class="toc-text">考点整理：</span></a></li></ol>
+       █████╗ ███╗   ██╗███████╗██╗  ██╗██╗██╗   ██╗██╗   ██╗
+      ██╔══██╗████╗  ██║╚══███╔╝██║  ██║██║╚██╗ ██╔╝██║   ██║
+      ███████║██╔██╗ ██║  ███╔╝ ███████║██║ ╚████╔╝ ██║   ██║
+      ██╔══██║██║╚██╗██║ ███╔╝  ██╔══██║██║  ╚██╔╝  ██║   ██║
+      ██║  ██║██║ ╚████║███████╗██║  ██║██║   ██║   ╚██████╔╝
+      ╚═╝  ╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝╚═╝   ╚═╝    ╚═════╝
         
-    </div>
-</aside>
-                
-            </div>
-        </div>
-    </section>
-    <footer class="main-footer">
-    <div class="container">
-        <div class="row">
-        </div>
-    </div>
-</footer>
-<a id="back-to-top" class="icon-btn hide">
-    <i class="fa fa-chevron-up"></i>
-</a>
-    <div class="copyright">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="busuanzi">
-    
-    <i class="fa fa-eye"></i>本站总访问量:
-    <strong id="busuanzi_value_site_pv">
-        <i class="fa fa-spinner fa-spin"></i>
-    </strong>
-    次
-    &nbsp; | &nbsp;
-    
-    
-    <i class="fa fa-user"></i>本站访客数:
-    <strong id="busuanzi_value_site_uv">
-        <i class="fa fa-spinner fa-spin"></i>
-    </strong>
-    人次
-    
-</div>
+        `,
+    "已上线",
+    dnum,
+    "天",
+    "©2020 By 安知鱼 V1.7.1",
+  ];
+  const ascll2 = [`NCC2-036`, `调用前置摄像头拍照成功，识别为【小笨蛋】.`, `Photo captured: `, `🤪`];
 
-            </div>
-            <div class="col-sm-12">
-                <span>Copyright &copy;
-                    2017
-                    
-                </span> |
-                <span>
-                    Powered by <a href="//hexo.io" class="copyright-links" target="_blank" rel="nofollow">Hexo</a>
-                </span> |
-                <span>
-                    Theme by <a href="//github.com/shenliyang/hexo-theme-snippet.git" class="copyright-links" target="_blank" rel="nofollow">Snippet</a>
-                </span>
-            </div>
-        </div>
-    </div>
-</div>
+  setTimeout(
+    Log.bind(
+      console,
+      `\n%c${ascll[0]} %c ${ascll[1]} %c ${ascll[2]} %c${ascll[3]}%c ${ascll[4]}%c ${ascll[5]}\n\n%c ${ascll[6]}\n`,
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      "color:#425AEF",
+      "",
+      "color:#425AEF",
+      ""
+    )
+  );
+  setTimeout(
+    Log.bind(
+      console,
+      `%c ${ascll2[0]} %c ${ascll2[1]} %c \n${ascll2[2]} %c\n${ascll2[3]}\n`,
+      "color:white; background-color:#4fd953",
+      "",
+      "",
+      'background:url("https://npm.elemecdn.com/anzhiyu-blog@1.1.6/img/post/common/tinggge.gif") no-repeat;font-size:450%'
+    )
+  );
 
+  setTimeout(Log.bind(console, "%c WELCOME %c 你好，小笨蛋.", "color:white; background-color:#4f90d9", ""));
 
+  setTimeout(
+    console.warn.bind(
+      console,
+      "%c ⚡ Powered by 安知鱼 %c 你正在访问 言锡 的博客.",
+      "color:white; background-color:#f0ad4e",
+      ""
+    )
+  );
 
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+  setTimeout(Log.bind(console, "%c W23-12 %c 你已打开控制台.", "color:white; background-color:#4f90d9", ""));
 
+  setTimeout(
+    console.warn.bind(console, "%c S013-782 %c 你现在正处于监控中.", "color:white; background-color:#d9534f", "")
+  );
+});</script><script async src="/anzhiyu/random.js"></script><div class="js-pjax"><input type="hidden" name="page-type" id="page-type" value="post"></div><script>var visitorMail = "";
+</script><script async data-pjax src="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/waterfall/waterfall.js"></script><script src="https://cdn.cbd.int/qrcodejs@1.0.0/qrcode.min.js"></script><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.1.9/icon/ali_iconfont_css.css"><link rel="stylesheet" href="https://cdn.cbd.int/anzhiyu-theme-static@1.0.0/aplayer/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.cbd.int/anzhiyu-blog-static@1.0.1/js/APlayer.min.js"></script><script src="https://cdn.cbd.int/hexo-anzhiyu-music@1.0.1/assets/js/Meting2.min.js"></script><script src="https://cdn.cbd.int/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
 
-<script src="/js/app.js?rev=@@hash.js"></script>
+document.addEventListener('pjax:send', function () {
+  // removeEventListener scroll 
+  anzhiyu.removeGlobalFnEvent('pjax')
+  anzhiyu.removeGlobalFnEvent('themeChange')
 
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
 
-</body>
-</html>
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script charset="UTF-8" src="https://cdn.cbd.int/anzhiyu-theme-static@1.1.5/accesskey/accesskey.js"></script></div><div id="popup-window"><div class="popup-window-title">通知</div><div class="popup-window-divider"></div><div class="popup-window-content"><div class="popup-tip">你好呀</div><div class="popup-link"><i class="anzhiyufont anzhiyu-icon-arrow-circle-right"></i></div></div></div></body></html>
