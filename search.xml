@@ -957,7 +957,7 @@
       
       <categories>
           
-          <category> 桐铃集 </category>
+          <category> 随笔杂记 </category>
           
       </categories>
       
@@ -995,9 +995,9 @@
       
         <tags>
             
-            <tag> K-D Tree </tag>
-            
             <tag> 数据结构 </tag>
+            
+            <tag> K-D Tree </tag>
             
             <tag> 最近邻搜索 </tag>
             
@@ -1179,13 +1179,13 @@
       
         <tags>
             
-            <tag> pointops </tag>
-            
             <tag> CUDA </tag>
             
-            <tag> PyTorch </tag>
-            
             <tag> MSVC </tag>
+            
+            <tag> pointops </tag>
+            
+            <tag> PyTorch </tag>
             
         </tags>
       
@@ -1210,13 +1210,13 @@
       
         <tags>
             
-            <tag> CUDA </tag>
-            
-            <tag> MSVC </tag>
-            
             <tag> pointgroup_ops </tag>
             
+            <tag> CUDA </tag>
+            
             <tag> C++扩展 </tag>
+            
+            <tag> MSVC </tag>
             
         </tags>
       
