@@ -54,7 +54,7 @@
   --item-theme: var(--theme);
   --item-theme-light: color-mix(in srgb, var(--item-theme) 50%, #fff);
   --background: hsla(210deg 20% 98% / 1);
-  --card: rgba(255,255,255,0.5);
+  --card: #fff;
   --bg-a20: hsla(210deg 0% 100% / 0.2);
   --bg-a50: hsla(210deg 0% 100% / 0.5);
   --bg-a60: hsla(210deg 0% 100% / 0.6);
@@ -76,7 +76,7 @@
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme]) {
     --background: hsla(210deg 8% 12% / 1);
-    --card: rgba(255,255,255,0.25);
+    --card: hsla(210deg 10% 24% / 1);
     --bg-a20: hsla(210deg 0% 0% / 0.2);
     --bg-a50: hsla(210deg 0% 0% / 0.5);
     --bg-a60: hsla(210deg 0% 0% / 0.6);
@@ -104,7 +104,7 @@
 }
 :root[data-theme="light"] {
   --background: hsla(210deg 20% 98% / 1);
-  --card: rgba(255,255,255,0.5);
+  --card: #fff;
   --bg-a20: hsla(210deg 0% 100% / 0.2);
   --bg-a50: hsla(210deg 0% 100% / 0.5);
   --bg-a60: hsla(210deg 0% 100% / 0.6);
@@ -125,7 +125,7 @@
 }
 :root[data-theme="dark"] {
   --background: hsla(210deg 8% 12% / 1);
-  --card: rgba(255,255,255,0.25);
+  --card: hsla(210deg 10% 24% / 1);
   --bg-a20: hsla(210deg 0% 0% / 0.2);
   --bg-a50: hsla(210deg 0% 0% / 0.5);
   --bg-a60: hsla(210deg 0% 0% / 0.6);
@@ -392,7 +392,7 @@
   --theme-mark: var(--theme);
   --theme-codeblock: var(--theme);
   --background: hsla(210deg 20% 98% / 1);
-  --card: rgba(255,255,255,0.5);
+  --card: #fff;
   --bg-a20: hsla(210deg 0% 100% / 0.2);
   --bg-a50: hsla(210deg 0% 100% / 0.5);
   --bg-a60: hsla(210deg 0% 100% / 0.6);
@@ -413,7 +413,7 @@
 }
 .colorful[color='dark'] {
   --background: hsla(210deg 8% 12% / 1);
-  --card: rgba(255,255,255,0.25);
+  --card: hsla(210deg 10% 24% / 1);
   --bg-a20: hsla(210deg 0% 0% / 0.2);
   --bg-a50: hsla(210deg 0% 0% / 0.5);
   --bg-a60: hsla(210deg 0% 0% / 0.6);
@@ -466,7 +466,7 @@
   --link: hsla(50.96385542168675deg 95% 32% / 1);
   --link-a20: hsla(50.96385542168675deg 95% 32% / 0.2);
   --background: hsla(210deg 20% 98% / 1);
-  --card: rgba(255,255,255,0.5);
+  --card: #fff;
   --bg-a20: hsla(210deg 0% 100% / 0.2);
   --bg-a50: hsla(210deg 0% 100% / 0.5);
   --bg-a60: hsla(210deg 0% 100% / 0.6);
@@ -513,7 +513,7 @@
   --link: hsla(4.105263157894738deg 80% 60% / 1);
   --link-a20: hsla(4.105263157894738deg 80% 60% / 0.2);
   --background: hsla(210deg 8% 12% / 1);
-  --card: rgba(255,255,255,0.25);
+  --card: hsla(210deg 10% 24% / 1);
   --bg-a20: hsla(210deg 0% 0% / 0.2);
   --bg-a50: hsla(210deg 0% 0% / 0.5);
   --bg-a60: hsla(210deg 0% 0% / 0.6);
@@ -9059,6 +9059,11 @@ details.toc[open] >div.body section .header+.doc_tree {
   border-radius: 4px;
 }
 @media screen and (min-width: 1180px) {
+  .widget-wrapper.toc {
+    background: var(--background);
+  }
+}
+@media screen and (min-width: 1180px) {
   [data-ui-surface='glass'] .widget-wrapper.toc,
   [data-ui-surface='card'] .widget-wrapper.toc {
     background: none;
@@ -10682,7 +10687,6 @@ body>.sitebg {
   right: 0;
   bottom: 0;
   background-size: cover;
-  background-image: url("/images/site/background.jpg");
 }
 body>.sitebg .siteblur {
   width: 100%;
