@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>初次到访指南</title>
+      <link href="/2026/08/26/%E5%88%9D%E6%AC%A1%E5%88%B0%E8%AE%BF%E6%8C%87%E5%8D%97/"/>
+      <url>/2026/08/26/%E5%88%9D%E6%AC%A1%E5%88%B0%E8%AE%BF%E6%8C%87%E5%8D%97/</url>
+      
+        <content type="html"><![CDATA[<p>欢迎来到言锡的小栈。网站内容分为左侧栏的“文章”和“文档”两部分：</p><ul><li><strong>文章</strong>以课程笔记、编程实践和深度学习相关整理为主。</li><li><strong>文档</strong>是知识库入口，目前收录个人文学创作、生活分享与阶段性记录。</li></ul><h2 id="文章"><a href="#文章" class="headerlink" title="文章"></a>文章</h2><h3 id="BJFU-CS"><a href="#BJFU-CS" class="headerlink" title="BJFU-CS"></a><a href="/categories/BJFU-CS/">BJFU-CS</a></h3><p>北京林业大学计算机课程的章节笔记、实验资料、复习提纲和考前速记。课程内容可从<a href="/topic/">课程专栏</a>按课程连续阅读。</p><h3 id="编程拾贝"><a href="#编程拾贝" class="headerlink" title="编程拾贝"></a><a href="/categories/%E7%BC%96%E7%A8%8B%E6%8B%BE%E8%B4%9D/">编程拾贝</a></h3><p>编程练习、算法实现、项目代码与技术整理，也收录点云、计算机视觉、深度学习应用等内容。</p><h3 id="踩坑记录"><a href="#踩坑记录" class="headerlink" title="踩坑记录"></a><a href="/categories/%E8%B8%A9%E5%9D%91%E8%AE%B0%E5%BD%95/">踩坑记录</a></h3><p>开发环境、依赖安装、编译打包和工具使用中遇到的问题，以及对应的解决过程。</p><h3 id="BUAA-IST"><a href="#BUAA-IST" class="headerlink" title="BUAA-IST"></a><a href="/categories/BUAA-IST/">BUAA-IST</a></h3><p>北航仪器科学与技术相关课程与学习资料。</p><h3 id="随笔杂记"><a href="#随笔杂记" class="headerlink" title="随笔杂记"></a><a href="/categories/%E9%9A%8F%E7%AC%94%E6%9D%82%E8%AE%B0/">随笔杂记</a></h3><p>不属于课程与技术笔记的经验文章和阶段性思考，目前包括保研经验帖。</p><h2 id="文档"><a href="#文档" class="headerlink" title="文档"></a>文档</h2><p>文档区目前只有一个知识库项目：<a href="/wiki/tonglingji/">桐铃集</a>。它以专题目录组织，不与博客文章分类混用。</p><h3 id="年终总结"><a href="#年终总结" class="headerlink" title="年终总结"></a><a href="/wiki/tonglingji/year-end-2024/">年终总结</a></h3><p>对过去一年学习、生活与重要阶段的回顾。</p><h3 id="个人随笔"><a href="#个人随笔" class="headerlink" title="个人随笔"></a><a href="/wiki/tonglingji/hammer-law-and-junzi-buqi/">个人随笔</a></h3><p>围绕成长、选择和生活经验写下的短文与思考。</p><h3 id="读书笔记"><a href="#读书笔记" class="headerlink" title="读书笔记"></a><a href="/wiki/tonglingji/reading-notes/">读书笔记</a></h3><p>阅读过程中的摘录、感受与后续整理。</p><h3 id="南柯杂记"><a href="#南柯杂记" class="headerlink" title="南柯杂记"></a><a href="/wiki/tonglingji/south-notes/">南柯杂记</a></h3><p>生活记录与未归入其他主题的文字，也包含保研经验的知识库版本。</p><p>网站仍在持续整理中。若你有明确的阅读目标，可以先从对应栏目进入；若只是随意看看，从近期发布开始即可。</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 随笔杂记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 网站导览 </tag>
+            
+            <tag> 内容索引 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>BJFU|C程序设计基础（21下）实验一</title>
       <link href="/2026/08/25/BJFU_C%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80%EF%BC%8821%E4%B8%8B%EF%BC%89%E5%AE%9E%E9%AA%8C%E4%B8%80/"/>
       <url>/2026/08/25/BJFU_C%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E5%9F%BA%E7%A1%80%EF%BC%8821%E4%B8%8B%EF%BC%89%E5%AE%9E%E9%AA%8C%E4%B8%80/</url>
@@ -995,9 +1022,9 @@
       
         <tags>
             
-            <tag> 数据结构 </tag>
-            
             <tag> K-D Tree </tag>
+            
+            <tag> 数据结构 </tag>
             
             <tag> 最近邻搜索 </tag>
             
