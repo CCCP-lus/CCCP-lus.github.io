@@ -1,0 +1,33 @@
+/* 普通 Markdown 表格；Stellar 的代码高亮和 table 标签不使用此容器。 */
+.md-text .md-table-scroll {
+  scrollbar-width: thin;
+}
+
+.md-text .md-table-scroll::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.md-text .md-table-scroll::-webkit-scrollbar-thumb {
+  background: var(--text-meta);
+  border-radius: 4px;
+}
+
+.md-text .md-table-scroll > table:not([class]) {
+  table-layout: fixed;
+  width: 100%;
+  max-width: 100%;
+}
+
+.md-text .md-table-scroll > table:not([class]) tr,
+.md-text .md-table-scroll > table:not([class]) th,
+.md-text .md-table-scroll > table:not([class]) td {
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: anywhere;
+}
+
+.md-text .md-table-scroll > table:not([class]) th,
+.md-text .md-table-scroll > table:not([class]) td {
+  vertical-align: top;
+}
