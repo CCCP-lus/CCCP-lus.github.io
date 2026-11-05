@@ -1,0 +1,18 @@
+/* Surface/text colors not exposed by Stellar's style.color configuration.
+   Theme, link, accent and menu colors belong in _config.stellar.yml. */
+:root:root {
+  --background: #f8f7f3;
+  --card: #fdfcf9;
+  --block: #e9ece4;
+  --block-border: #dddfd7;
+  --text: #222b28;
+  --text-p1: #3c4841;
+  --text-p2: #566259;
+  --text-p3: #626c65;
+  --text-p4: #747b75;
+  --text-meta: #626c65;
+  --theme-block: #e9ece3;
+  --theme-border: #b5c3b5;
+  --leftbar-item-bg: #e9ece4;
+  --leftbar-search-line: #dddfd7;
+}

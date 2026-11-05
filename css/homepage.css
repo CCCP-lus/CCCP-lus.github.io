@@ -1,29 +1,4 @@
-/* Shared homepage/category palette, sampled from the supplied reference. */
-body:has([layout="home-categories"]) {
-  --background: #f8f7f3;
-  --card: #fdfcf9;
-  --block: #e9ece4;
-  --block-border: #dddfd7;
-  --text: #222b28;
-  --text-meta: #626c65;
-  --theme: #335f4e;
-  --theme-block: #e9ece3;
-  --theme-border: #b5c3b5;
-  --link: #335f4e;
-  background: var(--background);
-  color: var(--text);
-}
-[layout="home-categories"] .l_left {
-  --item-theme: #335f4e;
-  --leftbar-item-bg: #e9ece4;
-  --leftbar-search-line: #dddfd7;
-}
-[layout="home-categories"] .menu .is-themed {
-  --item-theme: #335f4e !important;
-  --item-theme-light: #8ca38b !important;
-}
-[layout="home-categories"] .sidebg { background: #fdfcf9; }
-[layout="home-categories"] .recent-widget { --text-meta: #626c65; }
+/* Homepage layout only; global palette is configured in _config.stellar.yml. */
 .home-hub .home-welcome { background: #e9ece3; }
 .home-hub .home-kicker { color: #335f4e; }
 .home-hub .home-tabs a.active { background: #335f4e; color: #fff; }
