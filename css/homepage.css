@@ -1,4 +1,33 @@
-/* Homepage only: inherit Stellar colors, including its dark theme. */
+/* Shared homepage/category palette, sampled from the supplied reference. */
+body:has([layout="home-categories"]) {
+  --background: #f8f7f3;
+  --card: #fdfcf9;
+  --block: #e9ece4;
+  --block-border: #dddfd7;
+  --text: #222b28;
+  --text-meta: #626c65;
+  --theme: #335f4e;
+  --theme-block: #e9ece3;
+  --theme-border: #b5c3b5;
+  --link: #335f4e;
+  background: var(--background);
+  color: var(--text);
+}
+[layout="home-categories"] .l_left {
+  --item-theme: #335f4e;
+  --leftbar-item-bg: #e9ece4;
+  --leftbar-search-line: #dddfd7;
+}
+[layout="home-categories"] .menu .is-themed {
+  --item-theme: #335f4e !important;
+  --item-theme-light: #8ca38b !important;
+}
+[layout="home-categories"] .sidebg { background: #fdfcf9; }
+[layout="home-categories"] .recent-widget { --text-meta: #626c65; }
+.home-hub .home-welcome { background: #e9ece3; }
+.home-hub .home-kicker { color: #335f4e; }
+.home-hub .home-tabs a.active { background: #335f4e; color: #fff; }
+.home-hub .home-orbit span { background: #bd8c52; }
 .home-hub { --home-radius: 18px; --home-muted: color-mix(in srgb, var(--text) 72%, var(--card)); color: var(--text); }
 .home-welcome { position: relative; overflow: hidden; padding: 32px; border: 1px solid var(--block-border); border-radius: var(--home-radius); background: var(--card); }
 .home-welcome-copy { position: relative; z-index: 1; max-width: 80%; }
@@ -26,7 +55,7 @@
 .home-category p { color: var(--home-muted); font-size: 13px; line-height: 1.7; margin: 0; padding-right: 16px; }
 .home-category-arrow { position: absolute; right: 22px; bottom: 22px; color: var(--home-muted); }
 .home-hub a:focus-visible { outline: 2px solid var(--theme); outline-offset: 4px; }
-[layout="home-categories"] .recent-widget .ui-collection__title { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; white-space: normal; line-height: 1.6; }
+[layout="home-categories"] .recent-widget .ui-collection__title { display: block; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
 @media (hover: hover) { .home-category:hover { transform: translateY(-3px); border-color: var(--theme); } .home-tabs a:hover { color: var(--text); background: var(--block); } }
 @media (max-width: 580px) { .home-welcome { padding: 24px; } .home-welcome-copy { max-width: 90%; } .home-orbit { right: -110px; } .home-category-grid { grid-template-columns: 1fr; } .home-category { padding: 22px; } .home-tabs a { padding: 9px 11px; } .home-section-heading { flex-wrap: wrap; } }
 @media (prefers-reduced-motion: reduce) { .home-category { transition: none; } .home-category:hover { transform: none; } }
