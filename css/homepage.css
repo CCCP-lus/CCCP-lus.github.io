@@ -27,7 +27,6 @@ body:has([layout="home-categories"]) {
 .home-hub .home-welcome { background: #e9ece3; }
 .home-hub .home-kicker { color: #335f4e; }
 .home-hub .home-tabs a.active { background: #335f4e; color: #fff; }
-.home-hub .home-orbit span { background: #bd8c52; }
 .home-hub { --home-radius: 18px; --home-muted: color-mix(in srgb, var(--text) 72%, var(--card)); color: var(--text); }
 .home-welcome { position: relative; overflow: hidden; padding: 32px; border: 1px solid var(--block-border); border-radius: var(--home-radius); background: var(--card); }
 .home-welcome-copy { position: relative; z-index: 1; max-width: 80%; }
@@ -35,10 +34,6 @@ body:has([layout="home-categories"]) {
 .home-welcome h1 { font-size: clamp(25px, 3vw, 34px); line-height: 1.3; margin: 0 0 14px; font-weight: 650; }
 .home-intro { font-size: 14px; line-height: 1.9; color: var(--home-muted); margin: 0 0 22px; }
 .home-guide { display: inline-flex; gap: 20px; align-items: center; color: var(--text); font-size: 13px; border-bottom: 1px solid var(--theme); padding-bottom: 5px; }
-.home-orbit { position: absolute; right: -55px; top: 32px; width: 185px; height: 185px; border: 1px solid color-mix(in srgb, var(--theme) 28%, var(--card)); border-radius: 50%; }
-.home-orbit::before, .home-orbit::after { content: ''; position: absolute; inset: 23px; border: 1px solid color-mix(in srgb, var(--theme) 28%, var(--card)); border-radius: 50%; }
-.home-orbit::after { inset: 47px; background: var(--theme-block); }
-.home-orbit span { position: absolute; top: 23px; left: 18px; width: 12px; height: 12px; border-radius: 50%; background: var(--theme); }
 .home-tabs { display: flex; gap: 4px; overflow-x: auto; padding: 6px; margin: 20px 0 28px; border-radius: 12px; background: var(--card); border: 1px solid var(--block-border); }
 .home-tabs a { flex-shrink: 0; padding: 9px 15px; color: var(--home-muted); border-radius: 8px; font-size: 14px; }
 .home-tabs a.active { color: var(--text); background: var(--block); font-weight: 600; }
@@ -57,5 +52,28 @@ body:has([layout="home-categories"]) {
 .home-hub a:focus-visible { outline: 2px solid var(--theme); outline-offset: 4px; }
 [layout="home-categories"] .recent-widget .ui-collection__title { display: block; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
 @media (hover: hover) { .home-category:hover { transform: translateY(-3px); border-color: var(--theme); } .home-tabs a:hover { color: var(--text); background: var(--block); } }
-@media (max-width: 580px) { .home-welcome { padding: 24px; } .home-welcome-copy { max-width: 90%; } .home-orbit { right: -110px; } .home-category-grid { grid-template-columns: 1fr; } .home-category { padding: 22px; } .home-tabs a { padding: 9px 11px; } .home-section-heading { flex-wrap: wrap; } }
 @media (prefers-reduced-motion: reduce) { .home-category { transition: none; } .home-category:hover { transform: none; } }
+
+/* Reference illustration: static CSS, no image/font/script request. */
+.home-hub .home-welcome { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 24px; padding: 28px; background: #f8f7f3; }
+.home-welcome-copy { max-width: none; min-width: 0; }
+.home-art { position: relative; width: 100%; aspect-ratio: 402 / 430; overflow: hidden; border-radius: 42% 42% 3px 3px; background-color: #e9ece3; background-image: linear-gradient(#aab6a81a 1px, transparent 1px), linear-gradient(90deg, #aab6a81a 1px, transparent 1px); background-size: 9% 8.4%; }
+.home-art-label { position: absolute; top: 11.5%; width: 100%; text-align: center; font-size: 7px; letter-spacing: 2px; color: #71806e; }
+.home-art-sphere { position: absolute; width: 42.3%; aspect-ratio: 1; left: 28.85%; top: 28%; border-radius: 50%; background: radial-gradient(circle at 30% 25%, #d7e0c7, #859c7a 45%, #345641 85%); box-shadow: 10px 18px 28px #38513924; }
+.home-art-orbit { position: absolute; left: 12%; top: 25%; width: 76%; height: 49%; border: 1px solid #5d765575; border-radius: 50%; transform: rotate(-30deg); }
+.home-art .orbit-two { transform: rotate(40deg); height: 51%; }
+.home-art .orbit-three { transform: rotate(95deg); height: 46.5%; }
+.home-art-point { position: absolute; border-radius: 50%; }
+.home-art .point-gold { width: 4%; aspect-ratio: 1; top: 32%; left: 16%; background: #bd8c52; }
+.home-art .point-green { width: 2%; aspect-ratio: 1; top: 69%; right: 26%; background: #335f4e; }
+.home-art-cross { position: absolute; right: 10%; top: 25%; color: #7c8a73; font-size: 18px; }
+.home-art-caption { position: absolute; bottom: 11%; left: 8.7%; color: #222b28; font-size: 12px; line-height: 1.7; letter-spacing: 2px; }
+.home-art-coordinate { position: absolute; bottom: 6%; right: 7%; font-size: 5px; letter-spacing: 1px; color: #6b7766; }
+@media (max-width: 580px) {
+  .home-hub .home-welcome { grid-template-columns: 1fr; padding: 24px; }
+  .home-art { width: min(100%, 280px); justify-self: center; }
+  .home-category-grid { grid-template-columns: 1fr; }
+  .home-category { padding: 22px; }
+  .home-tabs a { padding: 9px 11px; }
+  .home-section-heading { flex-wrap: wrap; }
+}
